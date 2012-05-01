@@ -1,0 +1,162 @@
+.nav-bar {
+    padding: 0 12px;
+    margin: 0 0 0;
+    float: left;
+    clear: left;
+}
+#nav {
+    float: left;
+}
+#nav li {
+    position: relative;
+    text-align: left;
+}
+#nav li.over {
+    z-index: 99;
+}
+#nav li.over a {
+    z-index: 99;
+}
+#nav li.active {
+    z-index: 100;
+}
+#nav li.active > a {
+    color: #e35101;
+}
+#nav a, #nav a:hover {
+    display: block;
+    text-decoration: none;
+    font: 12px/15px Tahoma,  Arial,  Helvetica,  san-serif;
+}
+#nav span {
+    display: block;
+    cursor: pointer;
+}
+#nav > li {
+    float: left;
+    padding: 0;
+    margin: 0;
+    background: url(images/bkg_subnav.png) no-repeat -5000px 5000px;
+}
+#nav > li > a {
+    float: left;
+    padding: 0 0 0 12px;
+    color: #535353;
+    background: url(images/bkg_navparent.png) no-repeat -5000px 5000px;
+}
+#nav > li > a > span {
+    padding: 14px 12px 10px 0;
+}
+#nav > li.parent.over {
+    margin: 0 -6px;
+}
+#nav > li.parent.over > a {
+    color: #fff;
+    background: url(images/bkg_subnav.png) no-repeat -1200px 3px;
+    position: relative;
+    z-index: 3;
+}
+#nav > li.parent.over > a > span {
+    background: url(images/bkg_subnav.png) no-repeat 100% 3px;
+    padding: 16px 18px 8px 6px;
+}
+#nav ul {
+    position: absolute;
+    z-index: 2;
+    background: url(images/bkg_subnav.png) no-repeat 0 0;
+    width: 190px;
+    top: 35px;
+    left: -10000px;
+    padding: 4px 0 0;
+}
+#nav ul ul {
+    top: -4px;
+    z-index: 1;
+    width: 190px;
+}
+#nav li.over > ul {
+    left: 2px;
+}
+#nav li.over ul ul {
+    left: -10000px;
+}
+#nav li.over ul li.over > ul {
+    left: 180px;
+}
+#nav li.over ul ul li.over > ul {
+    left: 180px;
+}
+#nav ul li {
+    background: url(images/bkg_subnav.png) repeat-y -788px 0;
+    padding: 0 6px 0 5px;
+}
+#nav ul li.last {
+    background: url(images/bkg_subnav.png) no-repeat -987px 100%;
+    padding-bottom: 7px;
+}
+#nav ul li a {
+    padding: 6px 9px;
+    color: #fff;
+    border-bottom: 1px solid #bcbcbc;
+    border-bottom: 1px solid rgba( 255,  255,  255,  0.2);
+}
+#nav ul li.last a {
+    border-bottom: 0;
+    padding-bottom: 9px;
+}
+#nav ul li:hover, #nav ul li.over {
+    background-position: -788px 0;
+}
+#nav ul li.last:hover, #nav ul li.last.over {
+    background-position: -987px 100%}
+#nav ul li:hover, #nav ul li.over {
+    background-position: -196px 0;
+}
+#nav ul li.last:hover, #nav ul li.last.over {
+    background-position: -395px 100%}
+#nav ul li.active > a {
+    color: #e35101;
+}
+#nav ul li.parent > a, #nav ul li.parent li.parent > a {
+    background-image: url(images/bkg_navparent.png);
+    background-position: 100% 10px;
+    background-repeat: no-repeat;
+}
+#nav ul li:hover > a, #nav ul li.over > a {
+    background-position: 100% -416px;
+}
+#nav li.parent a, #nav li.parent li.parent a, #nav li.parent li.parent li.parent a {
+    cursor: default;
+}
+#nav li.parent li a, #nav li.parent li.parent li a, #nav li.parent li.parent li.parent li a {
+    cursor: pointer;
+}
+.nav-bar:after {
+    content: ".";
+    display: block;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.gsw-bar {
+    height: 34px;
+    padding: 0 14px;
+    margin: 0 0 -6px;
+    background: url(images/gsw/bkg_gsw-bar.png) 0 0 repeat-x;
+    cursor: pointer;
+    position: relative;
+    z-index: 999;
+}
+.gsw-bar h2 {
+    font: bold 13px/28px Tahoma,  Verdana,  Arial,  sans-serif;
+    color: #fff;
+    padding: 0 16px;
+}
+.gsw-bar h2 span {
+    display: inline-block;
+    padding-left: 42px;
+    font-weight: normal;
+}

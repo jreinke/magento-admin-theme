@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JR_AdminTheme>
+            <version>0.1.0</version>
+        </JR_AdminTheme>
+    </modules>
+    <stores>
+        <admin>
+            <design>
+                <theme>
+                    <default>go</default>
+                </theme>
+            </design>
+        </admin>
+    </stores>
+</config>

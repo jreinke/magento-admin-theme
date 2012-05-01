@@ -1,0 +1,136 @@
+/**
+ * Magento Go
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Go License Agreement.
+ * The licenses is available through the world-wide-web at this URL:
+ * http://www.magentocommerce.com/license/Go.
+ * If you are unable to obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @copyright  Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license    http://www.magentocommerce.com/license/Go
+ */
+/* Clearing */
+.message-popup .message-popup-head,
+.message-popup .message-popup-content,
+.message-popup .message-popup-content .message,
+.login-form .form-buttons,
+.wrapper,
+.footer,
+.option-title,
+.columns,
+.main-col,
+.field-row,
+.nav-bar,
+ul.tabs-horiz,
+dl.accordion dt,
+.field-100,
+.entry-edit fieldset li,
+#nav,
+.main,
+.middle,
+.clear,
+.container,
+dl.accordion dt,
+.grid thead th a,
+.content,
+.box-head,
+.header-top,
+ul.tabs,
+ul.tabs li,
+.address-list li,
+.entry-edit .entry-edit-head,
+.notification-global,
+.files .row,
+.files-wide .row,
+.uploader .file-row,
+.grid tr.filter .range .range-line,
+.centinel .authentication,
+.paypal-payment-notice,
+.header-container,
+.header,
+.notifications-wrapper,
+.messages,
+.login-form,
+.grid tr.headings th span { zoom:1; }
+
+.clear { display:block; clear:both; height:0; font-size:0; line-height:0; overflow:hidden; }
+
+input.input-file { padding:2px; }
+input.checkbox,
+input.radio { width:13px; height:13px; }
+button.disabled span span span { filter:alpha(opacity=50); }
+
+/* Opacity fix */
+#loading-mask { filter:alpha(opacity=80); }
+#message-popup-window-mask { filter:alpha(opacity=20); }
+.content-header-floating { filter:alpha(opacity=85); }
+
+.message-popup .message-popup-content .message { _height:4.5em; }
+
+/* Scalable Button Override */
+button,
+.form-button { width:auto; margin-left:5px; overflow:visible; }
+.massaction button { width:auto; height:28px; margin-left:0; overflow:hidden; }
+.content-header button,
+.entry-edit .entry-edit-head button { height:28px; }
+.connect-block .search button span { padding:0; }
+
+.hor-scroll { overflow-y:hidden; padding-bottom:20px; /*margin-bottom:-16px;*/ }
+
+/* Grid Filter Override */
+.grid tr.filter th              { padding-top:3px; padding-bottom:3px; }
+.grid tr.filter th input        { margin-right: -10px; }
+.grid tr.filter th .range input { margin-right: 2px; }
+button.icon-btn                 { height:28px; width:31px; }
+
+.nested-content .content-header { position:relative; zoom:1; }
+.product-image-gallery .grid tbody td { padding: 4px !important; }
+.massaction .entry-edit fieldset{ float: right;}
+.massaction .entry-edit fieldset  button.scalable {text-align:center !important; padding-left:0;padding-right:0; margin-top:1px;}
+.content-header {zoom:1;}
+.content-header .form-buttons form select { margin-top:8px; }
+
+#tree-div {overflow-x:auto !important; height:auto !important; overflow-y:hidden !important; padding-bottom:30px; }
+
+#nav ul li,
+#nav ul li.active { float:left; clear:left; width:179px; }
+#nav ul a span { zoom:1; }
+
+.grid-severity-critical,
+.grid-severity-major,
+.grid-severity-minor { margin:3px 0; }
+.login-container button.forgot-password span { width: expression(runtimeStyle.width = "auto",appendChild(createElement("n"))); }
+.login-container button.forgot-password span { zoom:expression(runtimeStyle.zoom = 0, insertBefore(createElement("m"), firstChild)); }
+.login-container button.forgot-password m,
+.login-container button.forgot-password n { display:block; height:34px; position:absolute; top:0; background:url(images/bkg_btn_sides.png) no-repeat 0 0;}
+.login-container button.forgot-password n { width:15px; left:-15px; }
+.login-container button.forgot-password m { width:34px; right:-34px; background-position:-16px 0; }
+
+.mdte .theme-item { display:inline; }
+.grid tr.filter .range div.date { width:121px; }
+.grid tr.headings th { background:#df6800 url(images/bkg_row-headings.png) repeat-x 0 0; }
+.grid tr.headings th a span { cursor:pointer; }
+.option-box .grid table td.last,
+.giftcard-amounts table.border tbody td.last { width:1%; text-align:center; }
+.option-box .grid table td.last button,
+.giftcard-amounts table.border tbody td.last button { margin:0; }
+.order-search-items .hor-scroll { width:auto; }
+
+.entry-edit .entry-edit-head > div:first-child { margin:2px 3px 0 0; padding-bottom:4px; }
+.entry-edit .entry-edit-head > div:first-child button { float:none; }
+.entry-edit .order-address td.label { width:36% !important; }
+.entry-edit .order-address input.input-text,
+.entry-edit .order-address .textarea,
+.entry-edit .order-address .select { position:relative; z-index:1; }
+
+.adminhtml-googleshopping-items-index .massaction { position:static; }
+#page_tabs_content_section_content .form-list tr:first-child td.value { width:90% !important; }
