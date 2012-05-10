@@ -5,6 +5,15 @@
             <version>0.1.0</version>
         </JR_AdminTheme>
     </modules>
+    <global>
+        <blocks>
+            <adminhtml>
+                <rewrite>
+                    <widget_button>JR_AdminTheme_Block_Adminhtml_Widget_Button</widget_button>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+    </global>
     <stores>
         <admin>
             <design>
