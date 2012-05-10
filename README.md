@@ -12,6 +12,6 @@ Install with [modgit](https://github.com/jreinke/modgit):
 
 or download package manually:
 
-* Download latest version [here](https://github.com/jreinke/magento-admin-theme/downloads)
+* Download branch 1.6 [here](https://github.com/jreinke/magento-admin-theme/zipball/1.6)
 * Unzip in Magento root folder
 * Clean cache
