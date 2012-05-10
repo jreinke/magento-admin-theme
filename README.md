@@ -1,12 +1,14 @@
+# This branch is for Magento 1.6
+
 ![Magento Admin Theme](http://i.imgur.com/ELDeA.png)
 
-## Installation
+## Installation on Magento 1.6 only
 
 Install with [modgit](https://github.com/jreinke/modgit):
 
     $ cd /path/to/magento
     $ modgit init
-    $ modgit -e README.md clone admin-theme https://github.com/jreinke/magento-admin-theme.git
+    $ modgit -e README.md clone admin-theme https://github.com/jreinke/magento-admin-theme.git --branch 1.6
 
 or download package manually:
 
