@@ -659,7 +659,7 @@ td.divider              { font-size:1px; line-height:0; }
 body { background:#fff url(images/bkg_body.png) repeat-x 0 100%; background-attachment:fixed; }
 .wrapper { min-width:960px; text-align: left; }
 .wrapper-popup { min-width:750px; }
-.middle { min-height:450px; /* background:url(images/bkg_page-middle.png) repeat-x #fff 0 100%; background-attachment:fixed;*/ padding:11px 11px 20px 36px; }
+.middle { min-height:450px; /* background:url(images/bkg_page-middle.png) repeat-x #fff 0 100%; background-attachment:fixed;*/ padding:11px 11px 20px 11px; }
 .middle-popup { border-bottom:3px solid #fff; /* background:url(images/middle_bg.gif) repeat-x 0 100% #fff; */ padding:0; /* background:yellow; */ }
 .container-collapsed { padding:1.8em 2.2em 1.8em 2em; padding-top:0; }
 .columns { /* background:url(images/side_col_bg.gif) repeat-y 217px 0; */ }
