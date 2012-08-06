@@ -767,7 +767,7 @@ h3 { font:normal 15px/1.1 Tahoma, Arial, helvetica, sans-serif; color:#000; }
 /* .content-buttons button,
 .content-header button,
 .filter-actions button          { margin:0 0 0 5px; } */
-.side-col h3 { font:normal 22px/1.05 Verdana, Geneva, sans-serif; margin:0; color:#f15a24; }
+.side-col h3 { font:normal 22px/1.05 Verdana, Geneva, sans-serif; margin:0 0 .6em; color:#f15a24; }
 .side-col .content-header       { border-bottom:0; margin-right:12px; margin-bottom:.6em; }
 .catalog-categories .side-col .content-header { margin-right:0; }  /* Catalog/Categories */
 
