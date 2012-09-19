@@ -10,6 +10,10 @@
             <design>
                 <theme>
                     <default>go</default>
+                    <skin>go</skin>
+                    <layout>go</layout>
+                    <template>go</template>
+                    <locale>go</locale>
                 </theme>
             </design>
         </admin>
