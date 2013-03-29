@@ -7,5 +7,11 @@
             <action method="removeItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name></action>
             <action method="addItem"><type>skin_css</type><name>calendar.css</name><params/></action>
         </reference>
+        <reference name="footer">
+            <action method="setTemplate">
+                <!-- needed because of base/default/layout/bubbleadmintheme.xml -->
+                <template>page/footer.phtml</template>
+            </action>
+        </reference>
     </default>
 </layout>

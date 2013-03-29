@@ -679,7 +679,8 @@ div.autocomplete ul li { padding:.5em .7em; min-height:32px; cursor:pointer; tex
 /* Footer */
 .footer { clear:both; font-size:11px; margin:10px 8px 15px 8px; padding:0 19px 0 0; background:url(images/bkg_footer.png) no-repeat 100% 0; }
 .footer .footer-inner { padding:13px 0 0 19px; background:url(images/bkg_footer.png) no-repeat 0 0; }
-.footer .language-select { float:right; text-align:right; color:#484848; width:35%; }
+.footer .footer-select { float:right; text-align:right; color:#484848; width:35%; }
+.footer .language-select {  }
 .footer .language-select select { width:300px !important; -moz-box-shadow:none; box-shadow:none; border:1px solid #b7b8b9; padding:0; }
 .footer .legality { float:left; width:30%; color:#484848; }
 .footer .legality .copyright { color:#000; padding-left:28px; margin-bottom:7px; line-height:22px; display:block; background:url(images/bkg_footer-logo.png) no-repeat 0 0; }
@@ -1797,7 +1798,7 @@ button.btn-duplicate span span span { background:url(images/btn_duplicate_icon.p
 /* Getting Started Wizard */
 .gsw { text-align:left; position:relative; z-index:999; }
 .gsw-bar { height:34px; padding:0 14px; margin:0 0 -6px; background:url(images/gsw/bkg_gsw-bar.png) 0 0 repeat-x; cursor:pointer; position:relative; z-index:999; }
-.gsw-bar h2 { background:url(images/gsw/i_gsw-down.gif) 0 12px no-repeat; font:bold 13px/28px Tahoma, Verdana, Arial, sans-serif; color:#fff; padding:0 16px; }
+.gsw-bar h2 { font:bold 13px/28px Tahoma, Verdana, Arial, sans-serif; color:#fff; padding:0 16px; }
 .gsw-bar.gsw-opened h2 { background-position:0 -83px; }
 .gsw-bar h2 span { display:inline-block; padding-left:42px; font-weight:normal; }
 .gsw-content { position:absolute; top:22px; right:0; left:0; background:url(images/gsw/bkg_gsw.png) 0 100% repeat-x; z-index:997; }

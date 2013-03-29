@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <bubble translate="label">
+            <label>Bubble Code</label>
+            <sort_order>1000</sort_order>
+        </bubble>
+    </tabs>
+    <sections>
+        <bubble_admintheme translate="label" module="bubble_admintheme">
+            <label>Bubble AdminTheme</label>
+            <tab>bubble</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <hint>
+                    <frontend_model>bubble_admintheme/adminhtml_system_config_fieldset_hint</frontend_model>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </hint>
+                <config translate="label">
+                    <label>Admin Theme Settings</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <theme translate="label">
+                            <label>Current Admin Theme</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>bubble_admintheme/adminhtml_system_config_source_themes</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </theme>
+                    </fields>
+                </config>
+            </groups>
+        </bubble_admintheme>
+    </sections>
+</config>

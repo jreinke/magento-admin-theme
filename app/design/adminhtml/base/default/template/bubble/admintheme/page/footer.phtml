@@ -24,21 +24,18 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="footer-inner">
-<div class="footer-select">
-    <p class="language-select"><?php echo $this->__('Interface Locale: %s', $this->getLanguageSelect()) ?></p>
-    <p class="theme-select">
-        <?php echo $this->helper('bubble_admintheme')->__('Current Theme:'); ?>
-        <?php echo $this->getLayout()->createBlock('bubble_admintheme/adminhtml_themes_select')->getHtml(); ?>
-    </p>
-</div>
-<div class="legality">
-    <address class="copyright"><?php echo $this->__('Magento&trade; is a trademark of Magento Inc.') ?></address>
-    <p><?php echo $this->__('Copyright &copy; %s Magento Inc.', date('Y')) ?></p>
-    <p><?php echo $this->__('Magento ver. %s', Mage::getVersion()) ?></p>
-    <p><a href="http://www.magentocommerce.com" id="footer_connect"><?php echo $this->__('Connect with the Magento Community') ?></a></p>
-    <input id="footer_bug_tracking" type="hidden" value="" />
-</div>
+<p class="bug-report">
+    <a href="<?php echo $this->getBugreportUrl() ?>" id="footer_bug_tracking"><?php echo $this->__('Help Us Keep Magento Healthy - Report All Bugs') ?></a><br/>
+    <?php echo $this->__('Interface Locale: %s', $this->getLanguageSelect()) ?><br/>
+    <?php echo $this->helper('bubble_admintheme')->__('Current Theme:'); ?>
+    <?php echo $this->getLayout()->createBlock('bubble_admintheme/adminhtml_themes_select')->getHtml(); ?>
+</p>
+<p class="legality">
+    <a href="http://www.magentocommerce.com" id="footer_connect"><?php echo $this->__('Connect with the Magento Community') ?></a><br/>
+    <img src="<?php echo $this->getSkinUrl('images/varien_logo.gif') ?>" class="v-middle" alt="" />&nbsp;&nbsp;
+    <?php echo $this->__('Magento&trade; is a trademark of Magento Inc.<br/>Copyright &copy; %s Magento Inc.', date('Y')) ?>
+</p>
+<?php echo $this->__('Magento ver. %s', Mage::getVersion()) ?>
 <script type="text/javascript">
     $('footer_bug_tracking').target = 'Varien_External';
     $('footer_connect').target = 'Varien_External';
@@ -59,4 +56,3 @@
     }
     Event.observe('interface_theme', 'change', setInterfaceTheme);
 </script>
-</div>

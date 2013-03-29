@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="footer">
+            <action method="setTemplate">
+                <template>bubble/admintheme/page/footer.phtml</template>
+            </action>
+        </reference>
+    </default>
+</layout>
