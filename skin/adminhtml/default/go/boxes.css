@@ -354,11 +354,11 @@ table.form-edit { width:100%; }
 .box h3,
 .entry-edit fieldset h3,
 .entry-edit .fieldset h3 { padding-left:5px; }
-.box fieldeset,
+.box fieldset,
 .box .fieldset,
 .entry-edit fieldset .fieldset,
 .entry-edit fieldset fieldset,
-.entry-edit .fieldset fielset,
+.entry-edit .fieldset fieldset,
 .entry-edit .fieldset .fieldset { padding:16px; border:1px solid #e0e0e0; -moz-border-radius:0; border-radius:0; background:#eceded url(images/bkg_box.png) repeat-x 0 -20px; margin:10px 0 20px; }
 .entry-edit .entry-edit-head h4 { float:left; color:#000; font:15px/1.1 Tahoma, Arial, Helvetica, sans-serif; display:block; text-decoration:none; padding:5px 16px 5px 16px; margin:2px 0 0 0; }
 .entry-edit .entry-edit-head button { float:right; margin:1px 4px 0 0; }
@@ -1386,7 +1386,6 @@ ul.config-tabs dl { margin-bottom:15px; }
 
 /* Accordion with configure button */
 .with-button.active > .config { z-index:1; position:relative; }
-.with-button.active { border-bottom-color:; }
 .with-button.active:after { background:transparent url(images/bkg_config-shaddow.png) repeat-x 0 0; height:5px; overflow:hidden; position:relative; left:0; margin:0 0 -5px; z-index:2; display:block; content:''; }
 tr:last-child .with-button.active:after { display:none; }
 .config-heading { padding:10px 10px 10px 0; background:#dfdfdf url(images/bkg_config-heading.png) repeat-x 0 0; border-top:1px solid #d6d6d6; margin:0; }
