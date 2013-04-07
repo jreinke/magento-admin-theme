@@ -831,6 +831,8 @@ html[lang="de"] .side-col h3 { font-size:24px; }
 .login-container button.btn-login span:before { width:15px; left:-15px; }
 .login-container button.btn-login span:after { width:34px; right:-34px; background-position:-16px 0; }
 .login-container button.btn-login span { text-shadow:0 -2px 1px #a35112; }
+.login-container .form-button { width:95px; height:34px; text-align:left; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; cursor:pointer; padding:0; background:transparent url(images/btn-admin-login.png) no-repeat 0 0; border:0; }
+html[lang="fr"] .login-container .form-button { background-image:url(images/btn-admin-login-vf.png) }
 
 .login-container .messages { margin:-15px 72px 30px; }
 
