@@ -2,7 +2,7 @@
 <config>
     <tabs>
         <bubble translate="label">
-            <label>Bubble Code</label>
+            <label><![CDATA[<div><img src="http://i.imgur.com/xct7woP.png" alt="BubbleCode" title="BubbleCode" width="108" height="23" style="display:block;" /></div>]]></label>
             <sort_order>1000</sort_order>
         </bubble>
     </tabs>
