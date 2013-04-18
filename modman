@@ -1,0 +1,22 @@
+#
+# Bubble_AdminTheme modman file
+#
+
+app/code/community/Bubble/AdminTheme    app/code/community/Bubble/AdminTheme
+app/etc/modules/Bubble_AdminTheme.xml   app/etc/modules/Bubble_AdminTheme.xml
+
+app/design/adminhtml/base/default/layout/bubbleadmintheme.xml   app/design/adminhtml/base/default/layout/bubbleadmintheme.xml
+app/design/adminhtml/base/default/template/bubble/admintheme/page/footer.phtml  app/design/adminhtml/base/default/template/bubble/admintheme/page/footer.phtml
+app/design/adminhtml/base/default/template/bubble/admintheme/system/config/fieldset/hint.phtml  app/design/adminhtml/base/default/template/bubble/admintheme/system/config/fieldset/hint.phtml
+app/design/adminhtml/default/go/layout/local.xml    app/design/adminhtml/default/go/layout/local.xml
+app/design/adminhtml/default/go/template/page.phtml app/design/adminhtml/default/go/template/page.phtml
+app/design/adminhtml/default/go/template/login.phtml    app/design/adminhtml/default/go/template/login.phtml
+app/design/adminhtml/default/go/template/page/menu.phtml    app/design/adminhtml/default/go/template/page/menu.phtml
+app/design/adminhtml/default/go/template/page/footer.phtml  app/design/adminhtml/default/go/template/page/footer.phtml
+app/design/adminhtml/default/go/template/catalog/product/edit/price/group.phtml app/design/adminhtml/default/go/template/catalog/product/edit/price/group.phtml
+app/design/adminhtml/default/go/template/forgotpassword.phtml   app/design/adminhtml/default/go/template/forgotpassword.phtml
+app/design/adminhtml/default/go/template/backup/dialogs.phtml   app/design/adminhtml/default/go/template/backup/dialogs.phtml
+
+app/locale/fr_FR/Bubble_AdminTheme.csv  app/locale/fr_FR/Bubble_AdminTheme.csv
+
+skin/adminhtml/default/go   skin/adminhtml/default/go
