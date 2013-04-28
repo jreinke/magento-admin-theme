@@ -47,7 +47,7 @@
         <layout>
             <updates>
                 <bubble_admintheme>
-                    <file>bubbleadmintheme.xml</file>
+                    <file>bubble/admintheme.xml</file>
                 </bubble_admintheme>
             </updates>
         </layout>
