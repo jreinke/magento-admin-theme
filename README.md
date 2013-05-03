@@ -18,4 +18,4 @@ or download package manually:
 
 Please refer to [branch 1.6](https://github.com/jreinke/magento-admin-theme/tree/1.6)
 
-Full overview available [here](http://bubbleco.de/en/2012/05/02/give-your-magento-admin-panel-a-facelift/).
+Full overview available [here](http://www.bubblecode.net/en/2012/05/02/give-your-magento-admin-panel-a-facelift/).
