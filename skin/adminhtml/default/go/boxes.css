@@ -2062,3 +2062,8 @@ div.actions:after,
 .gsw-popup .gsw-popup-title:after,
 .gsw-popup .gsw-form li:after,
 .store-scope:after { display:block; clear:both; content:"."; font-size:0; line-height:0; height:0; overflow:hidden; }
+
+/* !important sur magento.css */
+.top.table_window { background:#dc6700 url(images/magento/top_bg.gif) 0 0 repeat-x !important; }
+.magento_close { background:url(images/magento/window_close.png) no-repeat 0 0 !important; }
+.magento_content { height: auto !important; }
