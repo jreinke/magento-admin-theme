@@ -364,7 +364,7 @@ AdminOrder.prototype = {
                         field.disabled = false;
                         if (!el.include('_before') && !el.include('_after') && !field.bindChange) {
                             field.bindChange = true;
-                            field.paymentContainer = form; //@deprecated after 1.4.0.0-rc1
+                            field.paymentContainer = form; // @deprecated after 1.4.0.0-rc1
                             field.method = method;
                             field.observe('change', this.changePaymentData.bind(this))
                         }
