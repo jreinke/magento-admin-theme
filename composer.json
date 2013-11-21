@@ -2,6 +2,7 @@
    "name": "jreinke/magento-admin-theme",
    "type": "magento-module",
    "description": "Magento Go Backend Theme ",
+   "license":"AFL-3.0",
    "homepage": "https://github.com/jreinke/magento-admin-theme",
    "require": {
       "magento-hackathon/magento-composer-installer": "dev-master"
