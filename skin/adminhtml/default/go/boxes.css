@@ -1887,17 +1887,17 @@ button.btn-duplicate span span span { background:url(images/btn_duplicate_icon.p
 .gsw-popup .gsw-popup-fieldset .input-box .validation-advice { font-weight:normal!important; font-size:12px!important; color:#e51a1a!important; background:none; padding:4px 0 0 4px; margin:0; }
 .gsw-popup .gsw-popup-fieldset input[type="text"] { border:1px solid #bcbcbc; border-radius:4px; background:#fff; padding:5px 10px; width:306px; font-size:16px; line-height:1; color:#111; }
 .gsw-popup .gsw-popup-fieldset input[type="text"] {
-    -webkit-box-shadow: inset 0px 1px 2px 0 rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: inset 0px 1px 2px 0 rgba(0, 0, 0, 0.4);
-    box-shadow: inset 0px 1px 2px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4);
 }
 html[lang|="fr"] .gsw-popup .gsw-popup-fieldset input[type="text"] { width:266px; }
 html[lang|="de"] .gsw-popup .gsw-popup-fieldset input[type="text"] { width:260px; }
 html[lang|="es"] .gsw-popup .gsw-popup-fieldset input[type="text"] { width:288px; }
 .gsw-popup .gsw-popup-fieldset input[type="text"]:focus { border-color:#488ecb;
-    -moz-box-shadow: inset 0px 1px 2px 0 rgba(0, 0, 0, 0.4), 0px 0px 2px 0 rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: inset 0px 1px 2px 0 rgba(0, 0, 0, 0.4), 0px 0px 2px 0 rgba(0, 0, 0, 0.4);
-    box-shadow: inset 0px 1px 2px 0 rgba(0, 0, 0, 0.4), 0px 0px 2px 0 rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 2px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 2px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 2px 0 rgba(0, 0, 0, 0.4);
 }
 .gsw-popup .gsw-popup-fieldset input[type="text"].validation-failed { border-color:#cf1010; }
 .gsw-popup .gsw-express-checkout .buttons-set { text-align:left; padding:0 0 0 9px; }
@@ -1922,7 +1922,7 @@ html[lang|="es"] .gsw-popup .gsw-popup-fieldset input[type="text"] { width:288px
 .gsw-popup button.btn-gsw { -webkit-border-fit:lines; }
 
 .gsw-popup button.btn-gsw { margin:0; overflow:visible; background:none; border:0; padding:0; font:bold 16px/36px Arial, Helvetica, sans-serif; color:#fff; }
-.gsw-popup button.btn-gsw span span { text-shadow: 0px -1px 1px #7e7e7e; }
+.gsw-popup button.btn-gsw span span { text-shadow: 0 -1px 1px #7e7e7e; }
 .gsw-popup button.btn-gsw span { display:block; height:36px; font:bold 16px/36px Arial, Helvetica, sans-serif; color:#fff; background:url(images/gsw/bkg_gsw-buttons.png) 0 0 no-repeat; padding:0 0 0 5px; }
 .gsw-popup button.btn-gsw:hover span { background-position:0 -36px; }
 .gsw-popup button.btn-gsw span span { background-position:100% 0; padding:0 30px 0 25px; }
@@ -1943,7 +1943,7 @@ html[lang|="es"] .gsw-popup .gsw-popup-fieldset input[type="text"] { width:288px
 .gsw-popup .input-box button.btn-update:hover > span > span { background-position:100% -70px; }
 
 .gsw-popup-loading-mask { width:100%; height:100%; position:absolute; top:0; right:0; bottom:0; left:0; background:rgba(0, 0, 0, 0.5); color:#d85909; font-size:1.1em; font-weight:bold; text-align:center; -moz-border-radius:0 0 5px 5px; border-radius:0 0 5px 5px; z-index:1007; }
-.gsw-popup-loading-mask .loader { position:absolute; top:45%; left:50%; width:120px; margin-left:-120px; padding:15px 60px; background:#fff4e9; border:2px solid #f1af73; color:#d85909; font-weight:bold; text-align:center; z-index:1000; } */
+.gsw-popup-loading-mask .loader { position:absolute; top:45%; left:50%; width:120px; margin-left:-120px; padding:15px 60px; background:#fff4e9; border:2px solid #f1af73; color:#d85909; font-weight:bold; text-align:center; z-index:1000; }
 
 /* Google Shopping */
 .adminhtml-googleshopping-types-new .form-list,
@@ -2013,8 +2013,8 @@ html[lang|="es"] .gsw-popup .gsw-popup-fieldset input[type="text"] { width:288px
 .normal { font-weight:normal !important; }
 
 /* IE hacks */
-.mdte .themes-section .themes-grid .theme-actions button { min-width:85 px\0/ }
-.gsw-popup-loading-mask { background:url(images/bkg_transparent.png) 0 0 repeat\0/; }
+.mdte .themes-section .themes-grid .theme-actions button { min-width:85px; }
+.gsw-popup-loading-mask { background:url(images/bkg_transparent.png) 0 0 repeat; }
 
 /* Clear */ /* This keeps our HTML free of buncha clearing elements */
 .config-heading:after,
