@@ -1,0 +1,15 @@
+{
+  "name": "jreinke/magento-admin-theme",
+  "type": "magento-module",
+  "description": "Give your Magento admin panel a facelift (fork with fixes)",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Johann Reinke",
+      "email": "info@bubbleshop.net"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "extra": {}
+}
