@@ -1677,41 +1677,34 @@ button {
     padding: 0;
     border: 0;
   }
-  -webkit-border-fit: lines;
-  overflow: visible;
-  width: auto;
-  border: 0;
-  padding: 0;
-  margin: 0 0 0 2px;
-  background: transparent;
-  cursor: pointer;
+  overflow:visible;
+  width:auto;
+  border:0;
+  padding:0 4px 0 0;
+  margin:0 8px 0 2px;
+  background:transparent url(images/bkg_btn.png) 100% 0 no-repeat;
+  cursor:pointer;
+
   span {
     float: left;
     height: 28px;
     background: transparent url(images/bkg_btn.png) 0 0 no-repeat;
-    padding: 0 0 0 5px;
+    padding: 0 0 0 8px;
     font: bold 12px / 27px Tahoma, Verdana, Arial, sans-serif;
     text-align: center;
     white-space: nowrap;
     color: #f15a24;
-    span {
-      background-position: 100% 0;
-      padding: 0 8px 0 2px;
-      span {
-        background: none;
-        padding: 0;
-      }
+    position: relative;
+    right: 4px;
     }
-  }
-  &:not(.disabled) {
+  &:not(.disabled):hover {
+    background-position: 100% -70px;
     &:hover > span {
       background-position: 0 -70px;
-      > span {
-        background-position: 100% -70px;
-      }
     }
     &:active > span {
       position: relative;
+      background-position:0 -70px;
       bottom: -1px;
       right: -1px;
     }
