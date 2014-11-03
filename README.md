@@ -1,6 +1,6 @@
-![Magento Admin Theme](http://i.imgur.com/ELDeA.png)
+![Magento Admin Theme](http://i.imgur.com/gYzYTeI.png)
 
-## Installation on Magento 1.7.x
+## Installation on Magento 1.7.x, 1.8.x, 1.9.x
 
 Install with [modgit](https://github.com/jreinke/modgit):
 
@@ -11,8 +11,14 @@ Install with [modgit](https://github.com/jreinke/modgit):
 or download package manually:
 
 * Download latest version [here](https://github.com/jreinke/magento-admin-theme/archive/master.zip)
+* Logout from admin
 * Unzip in Magento root folder
 * Clear cache
+* Login to admin
+
+## Usage
+
+Switch theme from dropdown added in footer or go to "System > Configuration > Bubble AdminTheme"
 
 ## Installation on Magento 1.6.x
 
