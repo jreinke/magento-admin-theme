@@ -1,4 +1,6 @@
-![Magento Admin Theme](http://i.imgur.com/gYzYTeI.png)
+![Magento Admin Theme - Magento 2](http://i.imgur.com/gYzYTeI.png)
+ 
+![Magento Admin Theme - Flat Blue](http://i.imgur.com/aJWxNBm.png)
 
 ## Installation on Magento 1.7.x, 1.8.x, 1.9.x
 
