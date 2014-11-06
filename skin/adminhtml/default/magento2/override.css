@@ -24,6 +24,10 @@ a:visited, a:active {
     color: #026294;
 }
 
+strong, b {
+    font-weight: 600;
+}
+
 small {
     font-size: 12px;
     color: #676056;
@@ -143,11 +147,8 @@ dl.accordion dt, .entry-edit .entry-edit-head {
 }
 
 .grid table tbody tr.selected td,
-.grid table tbody tr.selected th,
 .grid table tbody tr:hover td,
-.grid table tbody tr:hover th,
-.grid table tbody tr:nth-child(odd):hover td,
-.grid table tbody tr:nth-child(odd):hover th {
+.grid table tbody tr:nth-child(odd):hover td {
     background: #fff;
 }
 
@@ -227,8 +228,12 @@ dl.accordion dt, .entry-edit .entry-edit-head {
 }
 
 table tbody tr:not(:last-child) td {
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+table tbody tr td:last-child {
+    border-right: 0;
 }
 
 .header {
@@ -391,25 +396,6 @@ ul.tabs span, ul.tabs a.active span, ul.tabs a.active span, ul.tabs a:hover.acti
     font-weight: 400;
 }
 
-ul.tabs a.active:after,
-ul.tabs a.active:before {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: 14px;
-    margin-top: -14px;
-    font-style: normal;
-    speak: none;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    content: '\e02b';
-    /* left turned triangle icon */
-    font-size: 22px;
-    color: #f5f2ed;
-    overflow: hidden;
-    z-index: 4;
-}
-
 ul.tabs a.active:before {
     color: #bdbbb7;
     margin-top: -13px;
@@ -432,7 +418,7 @@ dl.accordion dt a:hover,
 div.collapseable a:hover,
 dl.accordion dt.open a,
 div.collapseable a.open {
-    color: #524c44;
+    color: #676056;
     font-weight: 600;
     font-size: 16px;
     line-height: 32px;
@@ -827,6 +813,19 @@ div.autocomplete ul li.selected {
 .custom-options .option-header {
     background: #fff;
     border-bottom-color: #fff;
+}
+
+#address_form_container {
+    margin-top: 0;
+}
+
+.sub-btn-set {
+    border: 0;
+    padding: 6px 10px;
+}
+
+.address-list li.on {
+    background: #fff;
 }
 
 .no-display {

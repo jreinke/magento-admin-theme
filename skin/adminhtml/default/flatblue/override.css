@@ -848,6 +848,21 @@ div.autocomplete ul li.selected {
     font-weight: 600 !important;
 }
 
+#address_form_container {
+    margin-top: 0;
+}
+
+.sub-btn-set {
+    border: 0;
+    padding: 6px 10px;
+    background: #eee;
+    border-top: 1px solid #ddd;
+}
+
+.address-list li.on {
+    background: #fff;
+}
+
 .no-display {
     display: none !important;
 }
