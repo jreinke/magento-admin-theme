@@ -2,7 +2,7 @@
 /**
  * @category    Bubble
  * @package     Bubble_AdminTheme
- * @version     1.1.1
+ * @version     1.1.2
  * @copyright   Copyright (c) 2014 BubbleShop (https://www.bubbleshop.net)
  */
 class Bubble_AdminTheme_Model_Adminhtml_Observer
