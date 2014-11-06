@@ -237,7 +237,6 @@ button.large,
 
 .field-100 textarea, .field-100 input.input-text {
     float: none;
-    width: auto !important;
     border: 1px solid #ccc !important;
     padding: 1px 3px !important;
 }

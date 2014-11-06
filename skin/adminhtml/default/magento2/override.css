@@ -125,13 +125,17 @@ dl.accordion dt, .entry-edit .entry-edit-head {
 }
 
 .grid tr.filter .range .range-line {
-    width: 110px;
+    width: 120px;
 }
 
 .grid tr.filter .range .label {
     font-weight: 600;
     width: 40px;
     padding: 4px;
+}
+
+.grid tr.filter .range select {
+    width: 66px !important;
 }
 
 .grid tr.filter .date img {
@@ -220,10 +224,6 @@ dl.accordion dt, .entry-edit .entry-edit-head {
 
 .grid tbody.odd tr td {
     background: #f5f2ed !important;
-}
-
-.grid td input.input-text {
-    width: 80px;
 }
 
 table tbody tr:not(:last-child) td {
@@ -809,6 +809,24 @@ div.autocomplete ul li.selected {
     border: 1px solid #c76f35;
     background: #fffbf0;
     color: #c76f35;
+}
+
+.custom-options .box {
+    overflow: auto;
+}
+
+.custom-options .option-box {
+    border: 0;
+    background: #fff;
+}
+
+.custom-options .option-box .border {
+    width: 700px;
+}
+
+.custom-options .option-header {
+    background: #fff;
+    border-bottom-color: #fff;
 }
 
 .no-display {

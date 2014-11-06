@@ -33,6 +33,10 @@ input {
     font-size: 12px;
 }
 
+.form-list td.value {
+    padding-left: 0 !important;
+}
+
 .form-list td.value p.note {
     color: #676056;
     font-size: 12px;
@@ -247,7 +251,6 @@ button.large,
 
 .field-100 textarea, .field-100 input.input-text {
     float: none;
-    width: auto !important;
     border: inherit !important;
     padding: 4px !important;
 }

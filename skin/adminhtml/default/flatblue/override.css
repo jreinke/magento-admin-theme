@@ -835,6 +835,10 @@ div.autocomplete ul li.selected {
     background: #fff;
 }
 
+.custom-options .option-box .border {
+    width: 700px;
+}
+
 .custom-options .option-header {
     background: #fff;
     border-bottom-color: #fff;
