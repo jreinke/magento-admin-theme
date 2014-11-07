@@ -2,7 +2,7 @@
 /**
  * @category    Bubble
  * @package     Bubble_AdminTheme
- * @version     1.1.3
+ * @version     1.2.0
  * @copyright   Copyright (c) 2014 BubbleShop (https://www.bubbleshop.net)
  */
 class Bubble_AdminTheme_Block_Adminhtml_System_Config_Fieldset_Hint
