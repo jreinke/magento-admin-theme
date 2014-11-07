@@ -482,6 +482,11 @@ div.collapseable a.open:after {
     border-color: transparent transparent #888 transparent;
 }
 
+.section-config .config-advanced > .entry-edit-head.collapseable a:after,
+.section-config .config-advanced > .entry-edit-head.collapseable a.open:after {
+    border: none;
+}
+
 table.actions {
     padding: 15px;
     background: #fff;
@@ -756,7 +761,7 @@ div.autocomplete ul li.selected {
 }
 
 .config-heading {
-    background: none;
+    background-color: #fff;
     border: 0;
     margin: 4px 0 0;
 }
@@ -766,6 +771,56 @@ div.autocomplete ul li.selected {
     font-weight: 400;
     line-height: 28px;
     text-shadow: none;
+}
+
+.section-config .section-config > .config {
+    border: 0;
+}
+
+.section-config .section-config .section-config > .config,
+.section-config .section-config .section-config .section-config .section-config > .config {
+    background: #f8f8f8;
+}
+
+.section-config .section-config .section-config .section-config > .config {
+    background: #fefefe;
+}
+
+.section-config .config-advanced > .config {
+    padding: 10px;
+}
+
+.section-config .config-advanced > .entry-edit-head {
+    border: 0;
+    font-size: 14px;
+    box-shadow: none;
+}
+
+.section-config .config-advanced > .entry-edit-head a:after {
+    top: 5px;
+}
+
+.section-config .section-config > .entry-edit-head {
+    border: 0;
+}
+
+.section-config .section-config > .entry-edit-head > a {
+    background: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 400;
+    border: 0;
+}
+
+.with-button.active:after {
+    background: none;
+    margin: 0;
+}
+
+#payment_pphs_settings_advanced-head,
+#payment_settings_payments_standart_advanced-head,
+#payment_settings_ec_advanced-head {
+    margin-bottom: 10px;
 }
 
 .wrapper-popup .content-header table {
