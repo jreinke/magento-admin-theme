@@ -586,8 +586,9 @@ table.actions td {
 }
 
 .order-totals {
-    background: #43a0f2;
+    background: #eee;
     border: 0 !important;
+    border-top: 1px solid #ddd !important;
 }
 
 .order-choose-address, .order-save-in-address-book {
