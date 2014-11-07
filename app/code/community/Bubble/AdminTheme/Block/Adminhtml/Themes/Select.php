@@ -2,7 +2,7 @@
 /**
  * @category    Bubble
  * @package     Bubble_AdminTheme
- * @version     1.1.2
+ * @version     1.1.3
  * @copyright   Copyright (c) 2014 BubbleShop (https://www.bubbleshop.net)
  */
 class Bubble_AdminTheme_Block_Adminhtml_Themes_Select extends Mage_Adminhtml_Block_Html_Select
