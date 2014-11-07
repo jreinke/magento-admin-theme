@@ -73,6 +73,9 @@
             <flatblue module="bubble_admintheme">
                 <label>Flat Blue</label>
             </flatblue>
+            <flatorange module="bubble_admintheme">
+                <label>Flat Orange</label>
+            </flatorange>
         </themes>
     </adminhtml>
     <default>
