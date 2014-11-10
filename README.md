@@ -1,4 +1,6 @@
 ![Magento Admin Theme - Magento 2](http://i.imgur.com/gYzYTeI.png)
+
+![Magento Admin Theme - Flat Gray](http://i.imgur.com/RZ5CjHA.png)
  
 ![Magento Admin Theme - Flat Blue](http://i.imgur.com/aJWxNBm.png)
 
