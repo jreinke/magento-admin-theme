@@ -152,11 +152,8 @@ dl.accordion dt, .entry-edit .entry-edit-head {
 }
 
 .grid table tbody tr.selected td,
-.grid table tbody tr.selected th,
 .grid table tbody tr:hover td,
-.grid table tbody tr:hover th,
-.grid table tbody tr:nth-child(odd):hover td,
-.grid table tbody tr:nth-child(odd):hover th {
+.grid table tbody tr:nth-child(odd):hover td {
     background: #e0f3ff;
 }
 
@@ -538,7 +535,6 @@ table.actions td {
 }
 
 .content-header-floating {
-    background: #eee;
     opacity: .9;
 }
 
