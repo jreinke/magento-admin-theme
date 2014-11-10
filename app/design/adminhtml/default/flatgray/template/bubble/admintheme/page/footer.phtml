@@ -1,0 +1,59 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="footer-content">
+<div class="bug-report">
+    <p><a href="<?php echo $this->getBugreportUrl() ?>" id="footer_bug_tracking"><?php echo $this->__('Help Us Keep Magento Healthy - Report All Bugs') ?></a></p>
+    <p><?php echo $this->__('Interface Locale: %s', $this->getLanguageSelect()) ?></p>
+    <p><?php echo $this->helper('bubble_admintheme')->__('Current Theme:'); ?>&nbsp;<?php echo $this->getLayout()->createBlock('bubble_admintheme/adminhtml_themes_select')->getHtml(); ?></p>
+</div>
+<div class="legality">
+    <p><a href="http://www.magentocommerce.com" id="footer_connect"><?php echo $this->__('Connect with the Magento Community') ?></a></p>
+    <p><?php echo $this->__('Magento&trade; is a trademark of Magento Inc.<br/>Copyright &copy; %s Magento Inc.', date('Y')) ?></p>
+</div>
+<p><?php echo $this->__('Magento ver. %s', Mage::getVersion()) ?></p>
+<p><?php echo $this->__('Theme created by <a href="https://twitter.com/johannreinke" target="_blank" title="Follow me on Twitter">Johann Reinke</a> for <a href="https://www.bubbleshop.net" target="_blank" title="BubbleShop by Johann Reinke">BubbleShop</a>') ?></p>
+<script type="text/javascript">
+    $('footer_bug_tracking').target = 'Varien_External';
+    $('footer_connect').target = 'Varien_External';
+    function setInterfaceLanguage(evt){
+        var elem = Event.element(evt);
+        if(elem){
+            setLocation('<?php echo $this->getChangeLocaleUrl() ?>locale/'+elem.value+'/<?php echo $this->getRefererParamName() ?>/<?php echo $this->getUrlForReferer() ?>');
+        }
+    }
+    Event.observe('interface_locale', 'change', setInterfaceLanguage);
+
+    // Bubble_AdminTheme
+    function setInterfaceTheme(evt){
+        var elem = Event.element(evt);
+        if(elem){
+            setLocation('<?php echo $this->getUrl('adminhtml/theme/change'); ?>theme/'+elem.value+'/<?php echo $this->getRefererParamName() ?>/<?php echo $this->getUrlForReferer() ?>');
+        }
+    }
+    Event.observe('interface_theme', 'change', setInterfaceTheme);
+</script>
+</div>
