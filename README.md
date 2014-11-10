@@ -2,6 +2,8 @@
  
 ![Magento Admin Theme - Flat Blue](http://i.imgur.com/aJWxNBm.png)
 
+![Magento Admin Theme - Flat Orange](http://i.imgur.com/Yb2JWNL.png)
+
 ## Installation on Magento 1.7.x, 1.8.x, 1.9.x
 
 Install with [modgit](https://github.com/jreinke/modgit):
