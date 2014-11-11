@@ -436,7 +436,10 @@ html[lang|="fr"] .form-list td.label label { width:280px; }
 .form-list td.value select.select-date { width:90px; }
 .form-list td.value select.select-day { width:65px; }
 .form-list td.value select.select-month { width:120px; }
+.form-list select#reports_dashboard_ytd_start,
+.form-list select#reports_dashboard_mtd_start,
 .form-list td.value select[type="time"] { width:5.5em !important; }
+.form-list select#reports_dashboard_ytd_start:first-child { width:10em !important; }
 .form-list td.value .label-color { float:left; display:block; width:auto !important; height:23px; padding:1px; margin-top:2px; border:1px solid #c6cbc7; }
 .form-list td.value .label-color .color { display:block; width:23px; height:23px; }
 .form-list td.value .color-field { float:left; width:75px !important; margin:2px 0 0 6px; background:#fff !important; color:#000 !important; }
@@ -2062,3 +2065,8 @@ div.actions:after,
 .gsw-popup .gsw-popup-title:after,
 .gsw-popup .gsw-form li:after,
 .store-scope:after { display:block; clear:both; content:"."; font-size:0; line-height:0; height:0; overflow:hidden; }
+
+/* !important sur magento.css */
+.top.table_window { background:#dc6700 url(images/magento/top_bg.gif) 0 0 repeat-x !important; }
+.magento_close { background:url(images/magento/window_close.png) no-repeat 0 0 !important; }
+.magento_content { height: auto !important; }
