@@ -18,6 +18,15 @@ input {
     vertical-align: middle;
 }
 
+input[type=text].disabled,
+input[type=text]:disabled,
+textarea:disabled,
+textarea.disabled,
+select.disabled,
+select:disabled {
+    background: #eee;
+}
+
 .form-list td.label label {
     padding: 5px 15px 0 0;
 }
