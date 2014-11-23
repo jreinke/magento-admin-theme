@@ -1,0 +1,7898 @@
+/**
+ * Magento Go
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Go License Agreement.
+ * The licenses is available through the world-wide-web at this URL:
+ * http://www.magentocommerce.com/license/Go.
+ * If you are unable to obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design
+ * @package    default_go
+ * @copyright  Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license    http://www.magentocommerce.com/license/Go
+ */
+/***************** WIDGETS ******************
+    Loading Indicator
+    Tables
+    Grid ( ubiquitous, massaction and dynamic)
+    Accordion
+    Tabs ( vertical and horizontal )
+    Messages
+    Forms ( setter and elements)
+    Switcher
+    Space
+    Boxes
+    Scroller
+*/
+/**************** STRUCTURE *****************
+    Layout
+    Header & Footer
+    Columns
+    Headings
+*/
+/************** PAGE-SPECIFIC ***************
+    Login
+    Sales
+    Catalog
+    Customers
+    Newsletter
+    System
+*/
+/********** ALIGNMENT AND CLEARS ***********/
+/******************************************************************/
+/**************************** WIDGETS *****************************/
+/******************************************************************/
+/* LOADING INDICATOR
+*******************************************************************/
+/* line 63, scss/boxes.scss */
+#loading-process {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-left: -60px;
+  border: 2px solid #f1af73;
+  padding: 15px 60px;
+  background: #fff4e9;
+  color: #d85909;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  z-index: 501;
+}
+
+/* line 78, scss/boxes.scss */
+#loading-mask {
+  position: absolute;
+  color: #d85909;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  z-index: 500;
+}
+/* line 85, scss/boxes.scss */
+#loading-mask .loader {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  width: 150px;
+  margin-left: -105px;
+  padding: 15px 30px;
+  background: #fff4e9;
+  border: 2px solid #f1af73;
+  color: #d85909;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0.80;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  /* IE8 */
+}
+
+/* line 104, scss/boxes.scss */
+#message-popup-window-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: #efefef;
+  opacity: .5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  /*IE8*/
+}
+
+/* line 119, scss/boxes.scss */
+.message-popup {
+  position: absolute;
+  z-index: 99999;
+  width: 407px;
+  top: -9999em;
+  left: 50%;
+  margin: 0 0 0 -203px;
+  background: #f3bf8f;
+  padding: 0 4px 4px;
+}
+/* line 128, scss/boxes.scss */
+.message-popup.show {
+  top: 280px;
+}
+/* line 131, scss/boxes.scss */
+.message-popup .message-popup-head {
+  padding: 1px 0;
+}
+/* line 133, scss/boxes.scss */
+.message-popup .message-popup-head h2 {
+  padding: 0 10px;
+  margin: 0;
+  font: bold 12px / 19px Arial, Helvetica, sans-serif;
+  color: #644f3b;
+}
+/* line 139, scss/boxes.scss */
+.message-popup .message-popup-head a {
+  float: right;
+  border: 1px solid #ea7601;
+  padding: 0 12px 0 7px;
+  background: url(images/bkg_btn-close.gif) 0 50% repeat-x !important;
+  font: normal 12px / 17px Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+/* line 148, scss/boxes.scss */
+.message-popup .message-popup-head a span {
+  float: left;
+  background: url(images/bkg_btn-close2.gif) 0 50% no-repeat;
+  padding-left: 19px;
+}
+/* line 155, scss/boxes.scss */
+.message-popup .message-popup-content {
+  background: #fdf4eb;
+  padding: 21px 21px 10px;
+}
+/* line 158, scss/boxes.scss */
+.message-popup .message-popup-content .message-icon {
+  float: left;
+  width: 50px;
+  padding: 47px 0 0;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+}
+/* line 170, scss/boxes.scss */
+.message-popup .message-popup-content .message-critical {
+  color: #e41101;
+}
+/* line 173, scss/boxes.scss */
+.message-popup .message-popup-content .message-major {
+  color: #f55600;
+}
+/* line 176, scss/boxes.scss */
+.message-popup .message-popup-content .message-minor {
+  color: #ff9e22;
+}
+/* line 179, scss/boxes.scss */
+.message-popup .message-popup-content .message-notice {
+  color: #659601;
+}
+/* line 182, scss/boxes.scss */
+.message-popup .message-popup-content .message-text {
+  float: right;
+  width: 295px;
+  min-height: 4.5em;
+  overflow: hidden;
+  color: #644f3b;
+}
+/* line 189, scss/boxes.scss */
+.message-popup .message-popup-content .read-more {
+  margin: 7px 0 0;
+  text-align: right;
+}
+/* line 192, scss/boxes.scss */
+.message-popup .message-popup-content .read-more a {
+  background: url(images/more_arrow.gif) 0 50% no-repeat;
+  padding-left: 14px;
+  text-decoration: underline;
+}
+/* line 196, scss/boxes.scss */
+.message-popup .message-popup-content .read-more a:hover {
+  text-decoration: none;
+}
+
+/* TITLES
+*******************************************************************************/
+/* line 207, scss/boxes.scss */
+.page-title {
+  margin: 10px 0 10px 0;
+}
+/* line 209, scss/boxes.scss */
+.page-title h1 {
+  color: #f15a24;
+  font: normal 30px / 1.2 Tahoma, Arial, Helvetica, sans-serif;
+}
+
+/* TABLES
+*******************************************************************************/
+/* Grid - General */
+/* line 220, scss/boxes.scss */
+.grid {
+  border-bottom: 0;
+  padding-bottom: .5em;
+  margin: 0 1px;
+}
+/* line 224, scss/boxes.scss */
+.grid table {
+  width: 100%;
+  border: 1px solid #cbd3d4 !important;
+  border-top-width: 0;
+  border-collapse: collapse;
+}
+
+/* line 232, scss/boxes.scss */
+.hor-scroll table {
+  /* outline:0; */
+}
+
+/* line 237, scss/boxes.scss */
+.grid table.border {
+  border: 1px solid #cbd3d4;
+  border-top-width: 0;
+}
+/* line 241, scss/boxes.scss */
+.grid.np {
+  margin: 0;
+}
+/* line 244, scss/boxes.scss */
+.grid tbody {
+  background: #fff;
+}
+/* line 246, scss/boxes.scss */
+.grid tbody tr:first-child {
+  background-image: url(images/bkg_gridshadow.png);
+  background-repeat: repeat-x;
+  background-position: 0 0;
+}
+/* line 250, scss/boxes.scss */
+.grid tbody tr:first-child td {
+  padding-top: 14px;
+}
+/* line 256, scss/boxes.scss */
+.grid tr.even {
+  background-color: #f7f7f7;
+}
+/* line 258, scss/boxes.scss */
+.grid tr.even tr {
+  background-color: #f7f7f7;
+}
+/* line 262, scss/boxes.scss */
+.grid tr.on-mouse {
+  background-color: #fbdfc9;
+  cursor: pointer;
+}
+/* line 266, scss/boxes.scss */
+.grid tr.invalid {
+  background-color: #f5d6c7;
+}
+/* line 270, scss/boxes.scss */
+.grid th, .grid td {
+  padding: 7px 4px 7px 4px;
+}
+/* line 273, scss/boxes.scss */
+.grid th {
+  white-space: nowrap;
+}
+/* line 277, scss/boxes.scss */
+.grid td.editable input.input-text {
+  width: 50px !important;
+  margin-left: 4px !important;
+}
+/* line 282, scss/boxes.scss */
+.grid td input.input-text {
+  width: 86%;
+}
+/* line 285, scss/boxes.scss */
+.grid td input.input-text-export-filter {
+  width: 274px;
+}
+/* line 288, scss/boxes.scss */
+.grid td input.input-text-range {
+  width: 106px;
+}
+/* line 291, scss/boxes.scss */
+.grid td input.input-text-range-date {
+  width: 89px;
+}
+/* line 297, scss/boxes.scss */
+.grid table td {
+  border-width: 1px 1px 0 0;
+  border-color: #f3f3f3 #e3e3e3 transparent transparent;
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-style: solid;
+  color: #4c4c4c;
+  font-size: 11px;
+}
+/* line 305, scss/boxes.scss */
+.grid table tr:first-child td {
+  border-top: 0;
+}
+/* line 308, scss/boxes.scss */
+.grid table.border tbody td {
+  background: #fff !important;
+}
+/* line 312, scss/boxes.scss */
+.grid table td.last {
+  border-right: 0;
+}
+/* line 315, scss/boxes.scss */
+.grid table td.product {
+  text-align: right;
+}
+/* line 318, scss/boxes.scss */
+.grid table td.empty-text {
+  padding: 15px;
+}
+/* line 321, scss/boxes.scss */
+.grid table td .action-select {
+  width: 100%;
+}
+/* line 326, scss/boxes.scss */
+.grid .separator {
+  padding: 0 4px;
+  color: #b9b9b9;
+}
+/* line 331, scss/boxes.scss */
+.grid tbody.odd tr {
+  background: #fff !important;
+}
+/* line 334, scss/boxes.scss */
+.grid tbody.even tr {
+  background: #f7f7f7 !important;
+}
+/* line 337, scss/boxes.scss */
+.grid tbody.odd tr td, .grid tbody.even tr td {
+  border-bottom: 0;
+}
+/* line 340, scss/boxes.scss */
+.grid tbody.odd tr.border td, .grid tbody.even tr.border td {
+  border-bottom: 1px solid #dadfe0;
+}
+
+/* Zebra odd-row */
+/* Zebra even-row */
+/* Rows mouse-over */
+/* Grid - Pager and Buttons row */
+/* line 354, scss/boxes.scss */
+table.actions {
+  width: 100%;
+  margin: 10px 0 20px;
+  color: #666;
+  font-size: 11px;
+}
+/* line 359, scss/boxes.scss */
+table.actions button {
+  display: inline-block;
+  float: none !important;
+  vertical-align: middle;
+}
+/* line 364, scss/boxes.scss */
+table.actions td {
+  vertical-align: top;
+  line-height: 28px;
+}
+/* line 367, scss/boxes.scss */
+table.actions td .input-text {
+  font-size: 11px;
+  padding: 2px 3px 1px;
+}
+
+/* line 374, scss/boxes.scss */
+.pager .input-text {
+  font-size: 11px;
+  padding: 2px 3px 1px;
+}
+
+/* line 380, scss/boxes.scss */
+table.actions td select {
+  padding: 0;
+  font-size: 11px;
+}
+/* line 384, scss/boxes.scss */
+table.actions .pager {
+  line-height: 28px;
+}
+
+/* line 390, scss/boxes.scss */
+.pager select {
+  padding: 0;
+  font-size: 11px;
+  width: 4em !important;
+  margin: 0 4px;
+}
+/* line 396, scss/boxes.scss */
+.pager input.page {
+  width: 2em !important;
+}
+/* line 399, scss/boxes.scss */
+.pager .arrow {
+  margin: 0 3px;
+  vertical-align: middle;
+}
+
+/* line 406, scss/boxes.scss */
+table.actions input.input-text, table.actions textarea, table.actions select {
+  border-color: #b2b2b2;
+  box-shadow: 0 3px 6px #dadada;
+}
+
+/* Grid - Headings */
+/* line 414, scss/boxes.scss */
+.grid tr.headings {
+  background: url(images/bkg_row-headings.png) 0 0 #df6800 repeat-x;
+}
+/* line 416, scss/boxes.scss */
+.grid tr.headings th {
+  border: none;
+  padding: 8px 4px 7px;
+  line-height: 1;
+  font-size: 12px;
+  color: #fff;
+  font-weight: normal;
+  background: url(images/bkg_headings-cell.png) repeat-x 0 100%;
+}
+/* line 424, scss/boxes.scss */
+.grid tr.headings th.last {
+  border-right: 0;
+}
+/* line 427, scss/boxes.scss */
+.grid tr.headings th.no-link {
+  /* Grid th with no sorting functionality */
+  color: #fff;
+}
+/* line 431, scss/boxes.scss */
+.grid tr.headings th span.nobr {
+  display: block;
+  /* FF3 fix */
+  line-height: 1;
+  margin: -8px -4px -7px;
+  padding: 8px 4px 7px;
+}
+/* line 438, scss/boxes.scss */
+.grid tr.headings th.no-link span.nobr {
+  /* padding:8px 4px 7px 4px; */
+}
+/* line 441, scss/boxes.scss */
+.grid tr.headings th a {
+  display: block;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+  margin: -8px -4px -7px;
+}
+/* line 447, scss/boxes.scss */
+.grid tr.headings th a:hover {
+  color: #e0c0ae;
+  text-decoration: none;
+}
+/* line 451, scss/boxes.scss */
+.grid tr.headings th a.sort-arrow-desc, .grid tr.headings th a.sort-arrow-asc {
+  background: url(images/bkg_sorton.png) 0 0 repeat-x;
+  color: #e0c0ae;
+  border: solid #e2802a;
+  border-width: 0 1px;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+/* line 459, scss/boxes.scss */
+.grid tr.headings th span.sort-title {
+  display: block;
+  padding: 8px 18px 7px 4px;
+  line-height: 1;
+  margin: 0;
+}
+/* line 466, scss/boxes.scss */
+.grid tr.headings th a.sort-arrow-desc span.sort-title, .grid tr.headings th a.sort-arrow-asc span.sort-title {
+  background: url(images/bkg_grid-sort.png) no-repeat 100% 0;
+  border: solid #d2702a;
+  border-width: 0 1px;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+/* line 472, scss/boxes.scss */
+.grid tr.headings th a.sort-arrow-desc span.sort-title {
+  background-position: 100% 12px;
+}
+/* line 475, scss/boxes.scss */
+.grid tr.headings th a.sort-arrow-asc span.sort-title {
+  background-position: 100% -181px;
+}
+/* line 479, scss/boxes.scss */
+.grid tr.headings th span.required {
+  position: relative;
+  right: 0;
+}
+
+/* Grid - Mass Action */
+/* line 488, scss/boxes.scss */
+.massaction {
+  width: 100%;
+  height: 26px;
+  font-size: .9em;
+  position: relative;
+  z-index: 1;
+  background: #dfdfdf url(images/bkg_content-header.png) repeat-x 0 0;
+  border: 1px solid #cbd3d4;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  padding: 0 12px;
+}
+/* line 499, scss/boxes.scss */
+.massaction td {
+  width: 50%;
+  line-height: 28px;
+  border-top: 1px solid #fff;
+  padding: 5px 8px 2px;
+  vertical-align: top;
+}
+/* line 506, scss/boxes.scss */
+.massaction .entry-edit {
+  margin: 0 !important;
+  padding: 0;
+}
+/* line 507, scss/boxes.scss */
+.massaction .entry-edit fieldset {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+/* line 508, scss/boxes.scss */
+.massaction .entry-edit fieldset .select {
+  width: auto;
+  /*width:120px;*/
+  display: inline;
+  padding: 0;
+  border-color: #b2b2b2;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 517, scss/boxes.scss */
+.massaction .entry-edit fieldset select.validation-failed {
+  border: 1px dashed #eb340a !important;
+  background: #faebe7 !important;
+}
+/* line 525, scss/boxes.scss */
+.massaction .entry-edit fieldset .field-row {
+  display: inline;
+}
+/* line 529, scss/boxes.scss */
+.massaction .entry-edit .field-row label {
+  float: none;
+  width: auto;
+  margin-left: 13px;
+}
+/* line 536, scss/boxes.scss */
+.massaction .entry-edit .validation-advice {
+  display: none !important;
+}
+/* line 540, scss/boxes.scss */
+.massaction a {
+  text-decoration: none;
+}
+/* line 545, scss/boxes.scss */
+.massaction .entry-edit fieldset span.form_row, .massaction .entry-edit fieldset span.field-row {
+  clear: none !important;
+  display: inline;
+  float: left !important;
+  margin: 0;
+  padding: 0 5px 0 0;
+}
+/* line 553, scss/boxes.scss */
+.massaction .entry-edit .outer-span {
+  float: left;
+}
+
+/* Grid - Filter */
+/* line 562, scss/boxes.scss */
+.grid tr.filter {
+  background: url(images/bkg_row-filter.png) repeat-x 0 100% white;
+  cursor: default;
+}
+/* line 565, scss/boxes.scss */
+.grid tr.filter th {
+  padding-top: 6px;
+  padding-bottom: 15px;
+  border-top: 1px solid #eaeaea;
+  white-space: normal;
+  color: #808080;
+  font-size: 11px;
+  font-weight: normal;
+}
+/* line 573, scss/boxes.scss */
+.grid tr.filter th.last {
+  border-right: 0;
+}
+/* line 577, scss/boxes.scss */
+.grid tr.filter input.input-text {
+  width: 85%;
+  padding: 1px;
+  font-size: 11px;
+}
+/* line 582, scss/boxes.scss */
+.grid tr.filter select {
+  width: 100%;
+  padding: 0;
+  font-size: 11px;
+}
+/* line 588, scss/boxes.scss */
+.grid tr.filter .range .range-line {
+  margin-bottom: 5px;
+  width: 100px;
+}
+/* line 592, scss/boxes.scss */
+.grid tr.filter .range div.date {
+  min-width: 121px;
+}
+/* line 595, scss/boxes.scss */
+.grid tr.filter .range input {
+  float: right;
+  width: 50px !important;
+  margin-top: 0;
+}
+/* line 600, scss/boxes.scss */
+.grid tr.filter .range select {
+  float: right;
+  width: 54px !important;
+  margin-top: 0;
+}
+/* line 605, scss/boxes.scss */
+.grid tr.filter .range .label {
+  display: block;
+  width: 36px;
+  float: left;
+  padding-left: 2px;
+}
+/* line 612, scss/boxes.scss */
+.grid tr.filter .date img {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+/* line 619, scss/boxes.scss */
+.grid .head-massaction select {
+  width: auto !important;
+  max-width: 90px;
+}
+/* line 623, scss/boxes.scss */
+.grid input.input-text, .grid textarea {
+  padding: 1px;
+  border: 1px solid #b2b2b2;
+  color: #000;
+  background: #fff;
+  font: 12px Arial, Helvetica, sans-serif;
+  -moz-box-shadow: 0 0 2px 1px #dadada;
+  box-shadow: 0 0 2px 1px #dadada;
+}
+/* line 632, scss/boxes.scss */
+.grid select {
+  padding: 1px;
+  border: 1px solid #b2b2b2;
+  color: #000;
+  background: #fff;
+  font: 12px Arial, Helvetica, sans-serif;
+  -moz-box-shadow: 0 0 2px 1px #dadada;
+  box-shadow: 0 0 2px 1px #dadada;
+  padding: 0;
+}
+/* line 641, scss/boxes.scss */
+.grid select.select-export-filter, .grid select.multiselect-export-filter {
+  width: 278px;
+}
+/* line 645, scss/boxes.scss */
+.grid .field-100 {
+  background-color: #fff;
+  border: 1px solid #b2b2b2;
+  padding: 1px 2px 1px;
+  -moz-box-shadow: 0 0 2px 1px #dadada;
+  box-shadow: 0 0 2px 1px #dadada;
+}
+/* line 651, scss/boxes.scss */
+.grid .field-100 textarea, .grid .field-100 input.input-text {
+  float: left;
+  width: 100% !important;
+  border: 0 !important;
+  padding: 0 !important;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 662, scss/boxes.scss */
+.grid table tfoot tr:first-child {
+  background: #eeeeee url(images/bkg_gridshadow.png) repeat-x 0 0;
+}
+/* line 665, scss/boxes.scss */
+.grid table tfoot tr td {
+  background-color: #eee;
+  line-height: 1.7em;
+  border: none;
+}
+/* line 671, scss/boxes.scss */
+.grid table.border tfoot tr td {
+  background-color: #eee !important;
+}
+/* line 674, scss/boxes.scss */
+.grid table tfoot tr:first-child td {
+  background-image: url(images/bkg_gridshadow.png);
+  background-repeat: repeat-x;
+  background-position: 0 0;
+}
+
+/* .grid input.input-text:focus,.grid textarea:focus,.grid select:focus { -moz-box-shadow:0px 0 2px 1px #949494; box-shadow:0px 0 2px 1px #949494; } */
+/* Grid Footer */
+/* Dynamic Grid */
+/* Used in pages like Catalog -> Attributes */
+/* line 690, scss/boxes.scss */
+.dynamic-grid th {
+  padding: 2px;
+  width: 100px;
+}
+/* line 694, scss/boxes.scss */
+.dynamic-grid td {
+  padding: 2px;
+}
+/* line 696, scss/boxes.scss */
+.dynamic-grid td input {
+  width: 94px;
+}
+
+/* line 703, scss/boxes.scss */
+tr.dynamic-grid td, tr.dynamic-grid th {
+  padding: 2px 10px 2px 0;
+  width: auto;
+}
+/* line 707, scss/boxes.scss */
+tr.dynamic-grid input.input-text {
+  width: 154px;
+}
+
+/* line 712, scss/boxes.scss */
+.available {
+  color: #080;
+  font-weight: bold;
+}
+
+/* line 717, scss/boxes.scss */
+.not-available {
+  color: #800;
+}
+
+/* ACCORDION
+*******************************************************************************/
+/* line 725, scss/boxes.scss */
+dl.accordion .grid {
+  margin-bottom: 0;
+}
+/* line 728, scss/boxes.scss */
+dl.accordion dt {
+  background: #d5d6d6 url(images/bkg_head-accordion.png) repeat-x 0 0;
+  border: 1px solid #acacac;
+  -moz-box-shadow: 0 3px 6px #d7d7d7;
+  box-shadow: 0 3px 10px #d7d7d7;
+  z-index: 2;
+  margin-bottom: 6px;
+}
+
+/* line 738, scss/boxes.scss */
+.entry-edit .entry-edit-head {
+  background: #d5d6d6 url(images/bkg_head-accordion.png) repeat-x 0 0;
+  border: 1px solid #acacac;
+  -moz-box-shadow: 0 3px 6px #d7d7d7;
+  box-shadow: 0 3px 10px #d7d7d7;
+  z-index: 2;
+  margin-bottom: 6px;
+}
+
+/* line 747, scss/boxes.scss */
+dl.accordion dt, div.collapseable {
+  margin-top: 1px;
+}
+
+/* line 751, scss/boxes.scss */
+dl.accordion dt a {
+  background: url(images/bkg_accordion-arrows.png) 100% 4px no-repeat;
+  color: #000;
+  font: 15px / 1.1 Tahoma, Arial, Helvetica, sans-serif;
+  display: block;
+  text-decoration: none;
+  padding: 4px 15px 4px 15px;
+  border: 1px solid;
+  border-color: #fafafa #eaeaeb #d0d0d1 #f2f2f2;
+}
+
+/* line 763, scss/boxes.scss */
+div.collapseable a {
+  background: url(images/bkg_accordion-arrows.png) 100% 4px no-repeat;
+  color: #000;
+  font: 15px / 1.1 Tahoma, Arial, Helvetica, sans-serif;
+  display: block;
+  text-decoration: none;
+  padding: 4px 15px 4px 15px;
+  border: 1px solid;
+  border-color: #fafafa #eaeaeb #d0d0d1 #f2f2f2;
+}
+/* line 773, scss/boxes.scss */
+div.disabled a {
+  background-position: 100% -358px;
+  color: #a0a0a0 !important;
+}
+
+/* line 779, scss/boxes.scss */
+dl.accordion dt .form-buttons {
+  margin-bottom: -1px;
+}
+
+/* line 784, scss/boxes.scss */
+.entry-edit .entry-edit-head .form-buttons {
+  margin-bottom: -1px;
+}
+/* line 787, scss/boxes.scss */
+.entry-edit fieldset.collapseable {
+  margin-bottom: 10px;
+}
+
+/* line 792, scss/boxes.scss */
+dl.accordion dt a:hover, div.collapseable a:hover {
+  color: #F15A24;
+  text-decoration: none;
+}
+
+/* line 797, scss/boxes.scss */
+dl.accordion dt.open a, div.collapseable a.open {
+  background: url(images/bkg_accordion-arrows.png) 100% -179px no-repeat;
+}
+
+/* line 801, scss/boxes.scss */
+dl.accordion dd {
+  display: none;
+  position: relative;
+  z-index: 1;
+}
+/* line 805, scss/boxes.scss */
+dl.accordion dd.open {
+  display: block;
+}
+
+/* line 810, scss/boxes.scss */
+img.accordion-btn {
+  float: right;
+  margin-top: 1px;
+  margin-right: 5px;
+}
+
+/* TABS
+*******************************************************************************/
+/* Vertical Tabs */
+/* line 822, scss/boxes.scss */
+ul.tabs {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #666;
+}
+/* line 823, scss/boxes.scss */
+ul.tabs a, ul.tabs span {
+  display: block;
+}
+/* line 826, scss/boxes.scss */
+ul.tabs a {
+  text-decoration: none;
+  color: #f15a24;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #666;
+}
+/* line 828, scss/boxes.scss */
+ul.tabs a:hover {
+  text-decoration: none;
+  color: #f15a24;
+}
+/* line 841, scss/boxes.scss */
+ul.tabs a {
+  padding: 5px 8px 5px 7px;
+  margin: 1px 0;
+}
+/* line 844, scss/boxes.scss */
+ul.tabs a:hover {
+  border: 1px solid #dbdbdb;
+  padding: 4px 7px 4px 6px;
+  color: #f15a24;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 850, scss/boxes.scss */
+ul.tabs a:hover span {
+  /* background:url(images/bkg_tabs-item.png) 100% 50% no-repeat; */
+}
+/* line 854, scss/boxes.scss */
+ul.tabs a.active {
+  border: 1px solid #dbdbdb;
+  padding: 4px 7px 4px 6px;
+  color: #f15a24;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 860, scss/boxes.scss */
+ul.tabs a.active span {
+  background: url(images/bkg_tabs-item.png) 100% 50% no-repeat;
+}
+/* line 865, scss/boxes.scss */
+ul.tabs span em {
+  float: right;
+}
+/* line 868, scss/boxes.scss */
+ul.tabs a.subitem {
+  padding-left: 2.2em;
+}
+/* line 872, scss/boxes.scss */
+ul.tabs span.changed, ul.tabs span.error {
+  display: inline-block;
+  background: 0;
+  padding: 0;
+  vertical-align: top;
+  margin-top: 1px;
+}
+/* line 881, scss/boxes.scss */
+ul.tabs a.changed span.changed {
+  background: url(images/fam_bullet_disk.png) 0 0 no-repeat !important;
+  width: 16px;
+  height: 16px;
+}
+/* line 886, scss/boxes.scss */
+ul.tabs a.error span.error {
+  background: url(images/fam_bullet_error.gif) 0 0 no-repeat !important;
+  width: 16px;
+  height: 16px;
+}
+/* line 891, scss/boxes.scss */
+ul.tabs a.changed {
+  font-style: italic;
+}
+/* line 896, scss/boxes.scss */
+ul.tabs-horiz {
+  margin: 0 0 18px 0;
+  background: url(images/horiz_tabs_ul_bg.gif) repeat-x 0 100% #f8f8f8;
+  padding: 8px 0 0 5px;
+}
+/* line 900, scss/boxes.scss */
+ul.tabs-horiz li {
+  float: left;
+  margin: 0 4px;
+}
+/* line 903, scss/boxes.scss */
+ul.tabs-horiz li a {
+  display: block;
+  background: #e2e2e2;
+  border: 1px solid #ccc;
+  padding: 2px 10px;
+  color: #333 !important;
+  text-decoration: none !important;
+}
+/* line 910, scss/boxes.scss */
+ul.tabs-horiz li a.notloaded {
+  /* not used for now */
+}
+/* line 913, scss/boxes.scss */
+ul.tabs-horiz li a.active {
+  border-bottom: 1px solid #fff;
+  background: #fff;
+}
+
+/*ul.tabs a.notloaded { color:#999; }*/
+/* Horizontal Tabs */
+/* line 927, scss/boxes.scss */
+.mm_ctrl .m-arrows {
+  width: 42px;
+  height: 17px;
+  text-indent: -2000em;
+  background: url(images/r-arrow.gif) no-repeat 0 0;
+  border: 0;
+  float: left;
+  cursor: pointer;
+}
+/* line 936, scss/boxes.scss */
+.mm_ctrl .l-arrow {
+  background: url(images/l-arrow.gif) no-repeat 0 0;
+  margin: 0 0 0 5px;
+}
+/* line 940, scss/boxes.scss */
+.mm_ctrl .full-arrow {
+  width: 84px;
+  background: url(images/full-arrow.gif) no-repeat 0 0;
+  margin: 0 0 0 5px;
+}
+
+/* line 947, scss/boxes.scss */
+.mm_name span {
+  border: 1px solid #bdbdbd;
+  display: block;
+  padding: 2px 0;
+  text-align: center;
+  margin: 0 7px 5px 7px;
+}
+
+/* line 955, scss/boxes.scss */
+.mm_img {
+  background: url(images/xmlconnect_tab.png) 50% 50% no-repeat;
+  width: 84px;
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* line 963, scss/boxes.scss */
+.mm-edit-form {
+  border: 1px solid red;
+}
+
+/* line 967, scss/boxes.scss */
+.mm-box-blue {
+  border: 1px solid #cadcdc;
+  background: #e6eef0;
+  padding: 10px 20px;
+}
+
+/* line 973, scss/boxes.scss */
+.mm-pager {
+  margin: 10px 0 0 50px;
+}
+/* line 975, scss/boxes.scss */
+.mm-pager ul, .mm-pager strong {
+  float: left;
+}
+/* line 978, scss/boxes.scss */
+.mm-pager ul li {
+  float: left;
+}
+/* line 980, scss/boxes.scss */
+.mm-pager ul li a {
+  float: left;
+  margin: 0 0 0 5px;
+  text-decoration: none;
+  display: block;
+  padding: 0 5px;
+  color: #303030;
+  border: 1px solid #aaa;
+}
+/* line 988, scss/boxes.scss */
+.mm-pager ul li a.active {
+  border: 1px solid #6c8991;
+  background: #6c8991;
+  color: #fff;
+}
+
+/* line 997, scss/boxes.scss */
+#fieldTabs {
+  padding: 0 !important;
+}
+/* line 999, scss/boxes.scss */
+#fieldTabs .mm-tabs-title {
+  background: #ececec;
+  padding: 4px 10px;
+  margin: 0 -10px 15px;
+  font-weight: bold;
+}
+/* line 1005, scss/boxes.scss */
+#fieldTabs table {
+  width: 500px !important;
+  margin: 0 10px 20px 10px;
+}
+
+/* MESSAGES
+*******************************************************************************/
+/* line 1014, scss/boxes.scss */
+.notifications-wrapper {
+  background: #eaeef2 url(images/bkg_notifications-wrapper.gif) 0 100% repeat-x;
+  padding: 0 0 13px;
+}
+/* line 1017, scss/boxes.scss */
+.notifications-wrapper #messages {
+  margin: 0 11px 0 36px;
+}
+
+/* line 1022, scss/boxes.scss */
+.notification-global {
+  padding: 4px 0 4px 35px;
+  background: url(images/i_msg-error.png) 0 4px no-repeat;
+  font: normal 12px / 16px Tahoma, Geneva, sans-serif;
+  margin: 0 11px 0 36px;
+  color: #333;
+  position: relative;
+}
+
+/* line 1031, scss/boxes.scss */
+.notification-global-notice {
+  background: url(images/i_msg-notice.png) 0 2px no-repeat;
+}
+
+/* line 1036, scss/boxes.scss */
+.notification-global .label {
+  font-weight: bold;
+  color: #252728;
+}
+/* line 1040, scss/boxes.scss */
+.notification-global .clickable {
+  cursor: pointer;
+}
+/* line 1043, scss/boxes.scss */
+.notification-global span.critical {
+  color: #d20000;
+}
+/* line 1046, scss/boxes.scss */
+.notification-global a {
+  text-decoration: underline;
+  color: #f15a24;
+}
+/* line 1049, scss/boxes.scss */
+.notification-global a:hover {
+  text-decoration: none;
+  color: #f15a24;
+}
+
+/* line 1056, scss/boxes.scss */
+.error, a.error span, .required, .validation-advice {
+  color: #D40707 !important;
+  font-weight: bold !important;
+}
+
+/* line 1061, scss/boxes.scss */
+.notice {
+  color: #ea7601;
+}
+
+/* line 1066, scss/boxes.scss */
+.messages ul {
+  border: 0 !important;
+}
+/* line 1069, scss/boxes.scss */
+.messages li {
+  margin: 0 !important;
+  padding: 6px 0 6px 35px !important;
+  font: normal 12px / 16px Tahoma, Geneva, sans-serif !important;
+  background-position: 0 5px;
+  background-repeat: no-repeat;
+  color: #333 !important;
+}
+/* line 1077, scss/boxes.scss */
+.messages ul li {
+  padding: 0 !important;
+}
+/* line 1079, scss/boxes.scss */
+.messages ul li button {
+  vertical-align: middle;
+  margin: -8px 0 -2px 5px;
+}
+
+/* line 1086, scss/boxes.scss */
+.error-msg {
+  background-image: url(images/i_msg-error.png);
+}
+
+/* line 1090, scss/boxes.scss */
+.success-msg {
+  background-image: url(images/i_msg-success.png);
+}
+
+/* line 1094, scss/boxes.scss */
+.notice-msg {
+  background-image: url(images/i_msg-notice.png);
+  background-position: 0 3px !important;
+}
+
+/* line 1099, scss/boxes.scss */
+.warning-msg {
+  border: 1px solid #666e73 !important;
+  background: #e6e6e6 url(images/warning_msg_icon.gif) no-repeat 10px 10px !important;
+  color: #000 !important;
+}
+
+/* line 1105, scss/boxes.scss */
+.validation-advice {
+  clear: both;
+  min-height: 15px;
+  margin: 3px 0 0 9px;
+  background: url(images/validation_advice_bg.gif) no-repeat 2px 1px;
+  padding-left: 16px;
+  font-size: .95em;
+  font-weight: bold;
+  line-height: 1.25em;
+}
+
+/* line 1116, scss/boxes.scss */
+input.validation-failed, textarea.validation-failed {
+  background: #fef0ed;
+  border: 1px dashed #d6340e;
+}
+
+/* line 1121, scss/boxes.scss */
+.staging-datetime-advice .validation-advice {
+  background-position: right center;
+  padding: 0 16px 0 0;
+}
+
+/* Noscript Notice */
+/* line 1128, scss/boxes.scss */
+.noscript {
+  border: solid #000;
+  border-width: 0 0 1px;
+  background: #ffff90;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+  color: #2f2f2f;
+}
+/* line 1136, scss/boxes.scss */
+.noscript .noscript-inner {
+  width: 900px;
+  margin: 0 auto;
+  padding: 12px 0 12px;
+  background: url(images/i_notice.gif) 20px 50% no-repeat;
+}
+/* line 1142, scss/boxes.scss */
+.noscript p {
+  margin: 0;
+}
+
+/* For Demo store only */
+/* line 1149, scss/boxes.scss */
+.demo-notice {
+  border: 1px solid #dfdfdf;
+  border-bottom: 0;
+  background: #b9b9b9 url(images/bkg_bar-global.gif) 0 100% repeat-x;
+  font: bold 13px / 1.15 Tahoma, Geneva, sans-serif;
+  color: #000;
+  text-align: right;
+  overflow: hidden;
+}
+/* line 1157, scss/boxes.scss */
+.demo-notice p {
+  float: right;
+  margin: 0;
+  padding: 3px 18px 5px 27px;
+  background: url(images/i_bar-global.png) 0 50% no-repeat;
+}
+
+/* FORMS
+*******************************************************************************/
+/* line 1168, scss/boxes.scss */
+select.countries option {
+  background-repeat: no-repeat;
+}
+
+/* line 1173, scss/boxes.scss */
+.entry-edit .fieldset .tree li, .entry-edit .tree li {
+  margin: 0;
+}
+
+/* Entry Edit */
+/* Site-wide form fieldset */
+/* line 1181, scss/boxes.scss */
+table.form-edit {
+  width: 100%;
+}
+
+/* line 1185, scss/boxes.scss */
+.box {
+  padding: 20px 16px;
+  border: solid #dedede;
+  border-width: 0 2px 2px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  background: #eceded url(images/bkg_box.png) repeat-x 0 0;
+  margin: -6px 0 20px;
+}
+
+/* line 1196, scss/boxes.scss */
+.entry-edit fieldset, .entry-edit .fieldset {
+  padding: 20px 16px;
+  border: solid #dedede;
+  border-width: 0 2px 2px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  background: #eceded url(images/bkg_box.png) repeat-x 0 0;
+  margin: -6px 0 20px;
+}
+
+/* line 1207, scss/boxes.scss */
+.box h3 {
+  padding-left: 5px;
+}
+
+/* line 1212, scss/boxes.scss */
+.entry-edit fieldset h3, .entry-edit .fieldset h3 {
+  padding-left: 5px;
+}
+
+/* line 1218, scss/boxes.scss */
+.box fieldset, .box .fieldset {
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: #eceded url(images/bkg_box.png) repeat-x 0 -20px;
+  margin: 10px 0 20px;
+}
+
+/* line 1230, scss/boxes.scss */
+.entry-edit fieldset .fieldset, .entry-edit fieldset fieldset {
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: #eceded url(images/bkg_box.png) repeat-x 0 -20px;
+  margin: 10px 0 20px;
+}
+/* line 1240, scss/boxes.scss */
+.entry-edit .fieldset fieldset, .entry-edit .fieldset .fieldset {
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: #eceded url(images/bkg_box.png) repeat-x 0 -20px;
+  margin: 10px 0 20px;
+}
+/* line 1250, scss/boxes.scss */
+.entry-edit .entry-edit-head h4 {
+  float: left;
+  color: #000;
+  font: 15px / 1.1 Tahoma, Arial, Helvetica, sans-serif;
+  display: block;
+  text-decoration: none;
+  padding: 5px 16px 5px 16px;
+  margin: 2px 0 0 0;
+}
+/* line 1259, scss/boxes.scss */
+.entry-edit .entry-edit-head button {
+  float: right;
+  margin: 1px 4px 0 0;
+}
+/* line 1263, scss/boxes.scss */
+.entry-edit .entry-edit-head strong, .entry-edit .entry-edit-head a {
+  /* color:#fff; font-size:1em; line-height:18px; min-height:0; font-weight:bold */
+}
+/* line 1266, scss/boxes.scss */
+.entry-edit .entry-edit-head .tools {
+  float: left;
+  padding: 8px 0 0;
+}
+/* line 1271, scss/boxes.scss */
+.entry-edit .content {
+  margin-left: 0 !important;
+  padding: 10px 15px;
+}
+/* line 1274, scss/boxes.scss */
+.entry-edit .content button {
+  vertical-align: middle;
+}
+/* line 1278, scss/boxes.scss */
+.entry-edit fieldset li, .entry-edit .fieldset li {
+  margin: 4px 0;
+}
+/* line 1281, scss/boxes.scss */
+.entry-edit fieldset span.form_row, .entry-edit .fieldset span.form_row, .entry-edit fieldset .field-row .hint, .entry-edit .fieldset .field-row .hint {
+  float: left;
+  color: #999;
+  padding-left: 12em;
+}
+/* line 1286, scss/boxes.scss */
+.entry-edit .entry-edit-head > div:first-child[style*="right"], .entry-edit .form-buttons {
+  float: right;
+  margin: 2px 3px 0 0;
+  padding-bottom: 4px;
+}
+
+/* line 1293, scss/boxes.scss */
+label.inline {
+  float: none !important;
+  width: auto !important;
+}
+
+/* line 1298, scss/boxes.scss */
+.nested-content .entry-edit {
+  margin-left: 2em;
+}
+/* line 1300, scss/boxes.scss */
+.nested-content .entry-edit .entry-edit {
+  margin-left: 0;
+}
+
+/* line 1305, scss/boxes.scss */
+#coupon_container .entry-edit {
+  min-width: 310px;
+}
+
+/* Form Elements */
+/* line 1311, scss/boxes.scss */
+input.input-text, textarea {
+  border: 1px solid #e0e0e0;
+  color: #000;
+  background: #fff;
+  font: 12px Arial, Helvetica, sans-serif;
+  -moz-box-shadow: 0 3px 6px #dadada;
+  -webkit-box-shadow: 0 3px 6px #dadada;
+  box-shadow: 0 3px 6px #dadada;
+}
+
+/* line 1321, scss/boxes.scss */
+select {
+  border: 1px solid #e0e0e0;
+  color: #000;
+  background: #fff;
+  font: 12px Arial, Helvetica, sans-serif;
+  -moz-box-shadow: 0 3px 6px #dadada;
+  -webkit-box-shadow: 0 3px 6px #dadada;
+  box-shadow: 0 3px 6px #dadada;
+  min-height: 17px;
+  /* to set the height for empty selects */
+  padding: 4px 10px;
+}
+/* line 1332, scss/boxes.scss */
+select option {
+  padding: 0 10px;
+}
+
+/* select option { padding:0 10px 0 0; } */
+/* line 1339, scss/boxes.scss */
+input.input-text, textarea {
+  padding: 5px 10px;
+}
+
+/* line 1344, scss/boxes.scss */
+input.qty {
+  width: 40px !important;
+}
+/* line 1347, scss/boxes.scss */
+input.item-qty {
+  width: 22px !important;
+}
+/* line 1350, scss/boxes.scss */
+input.price {
+  width: 50px !important;
+  text-align: right;
+}
+
+/* line 1356, scss/boxes.scss */
+select optgroup {
+  font-style: normal;
+  padding: 5px 0;
+}
+/* line 1359, scss/boxes.scss */
+select optgroup option {
+  padding-left: 10px;
+}
+/* line 1361, scss/boxes.scss */
+select optgroup option.even {
+  background: #f6f6f6;
+}
+
+/* line 1367, scss/boxes.scss */
+input.input-text[disabled], textarea[disabled], select[disabled] {
+  background: #f2f2f2;
+  color: #888;
+}
+
+/* line 1372, scss/boxes.scss */
+input[type=file] {
+  height: 25px;
+  line-height: 25px;
+}
+
+/* for IE 7-9 */
+/* Zebra even-row */
+/* line 1381, scss/boxes.scss */
+select.multiselect {
+  height: 214px;
+}
+/* line 1383, scss/boxes.scss */
+select.multiselect option {
+  padding: 5px 4px;
+  border-bottom: 1px solid #ddd;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* line 1391, scss/boxes.scss */
+  select option:disabled, select:disabled option {
+    color: #cacaca !important;
+    text-shadow: 2px 2px 2px #000;
+  }
+}
+/* line 1398, scss/boxes.scss */
+.checkboxes li {
+  margin: 0 0 5px !important;
+}
+
+/* line 1402, scss/boxes.scss */
+.field-100 {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 2px;
+  -moz-box-shadow: 0 3px 6px #dadada;
+  box-shadow: 0 3px 6px #dadada;
+}
+/* line 1408, scss/boxes.scss */
+.field-100 textarea, .field-100 input.input-text {
+  float: left;
+  width: 100% !important;
+  border: 0 !important;
+  padding: 0 !important;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Form List */
+/* Table for default form data */
+/* line 1421, scss/boxes.scss */
+.form-list {
+  width: auto;
+  border: 0 !important;
+}
+/* line 1425, scss/boxes.scss */
+.form-list td.label, .form-list td.value, .form-list td.value2, .form-list td.note, .form-list td.scope-label, .form-list td.use-default {
+  border: 0 !important;
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+  padding-left: 5px !important;
+  background: 0 !important;
+}
+/* line 1432, scss/boxes.scss */
+.form-list td.hidden {
+  border: 0 !important;
+  padding: 0 !important;
+  background: 0 !important;
+}
+/* line 1437, scss/boxes.scss */
+.form-list td.label {
+  width: 180px;
+  text-align: right;
+  padding-right: 20px;
+}
+/* line 1441, scss/boxes.scss */
+.form-list td.label label {
+  display: block;
+  width: 180px;
+  float: right;
+  padding: 3px 0 0;
+  font: normal 13px Tahoma, Arial, Helvetica, sans-serif;
+  color: #000;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 1455, scss/boxes.scss */
+html[lang|="fr"] .form-list td.label {
+  width: 280px;
+}
+/* line 1457, scss/boxes.scss */
+html[lang|="fr"] .form-list td.label label {
+  width: 280px;
+}
+
+/* line 1465, scss/boxes.scss */
+.form-list td.value input.input-text {
+  width: 274px;
+}
+/* line 1468, scss/boxes.scss */
+.form-list td.value textarea {
+  width: 274px;
+  height: 15em;
+}
+/* line 1472, scss/boxes.scss */
+.form-list td.value select {
+  width: 296px;
+}
+/* line 1474, scss/boxes.scss */
+.form-list td.value select.select-date {
+  width: 90px;
+}
+/* line 1477, scss/boxes.scss */
+.form-list td.value select.select-day {
+  width: 65px;
+}
+/* line 1480, scss/boxes.scss */
+.form-list td.value select.select-month {
+  width: 120px;
+}
+/* line 1483, scss/boxes.scss */
+.form-list td.value select[type="time"] {
+  width: 5.5em !important;
+}
+/* line 1487, scss/boxes.scss */
+.form-list td.value .label-color {
+  float: left;
+  display: block;
+  width: auto !important;
+  height: 23px;
+  padding: 1px;
+  margin-top: 2px;
+  border: 1px solid #c6cbc7;
+}
+/* line 1495, scss/boxes.scss */
+.form-list td.value .label-color .color {
+  display: block;
+  width: 23px;
+  height: 23px;
+}
+/* line 1501, scss/boxes.scss */
+.form-list td.value .color-field {
+  float: left;
+  width: 75px !important;
+  margin: 2px 0 0 6px;
+  background: #fff !important;
+  color: #000 !important;
+}
+/* line 1509, scss/boxes.scss */
+.form-list td.note {
+  background: url(images/note_cell_bg.gif) 6px 10px no-repeat !important;
+  padding-left: 18px;
+}
+/* line 1513, scss/boxes.scss */
+.form-list td.scope-label {
+  padding-left: 5px;
+  color: #6f8992;
+  font-size: .9em;
+  padding-top: 11px !important;
+}
+/* line 1519, scss/boxes.scss */
+.form-list td.use-default {
+  padding-top: 10px !important;
+  padding-right: 10px !important;
+}
+/* line 1524, scss/boxes.scss */
+.form-list p.note {
+  margin: 4px 0 0;
+  padding: 0 0 0 13px;
+  background: url(images/note_bg.gif) 1px 6px no-repeat;
+  font-size: 11px;
+  color: #666;
+}
+/* line 1531, scss/boxes.scss */
+.form-list span.required {
+  position: absolute;
+  right: -12px;
+  bottom: 0;
+}
+
+/* line 1538, scss/boxes.scss */
+.columns .form-list {
+  width: auto;
+}
+/* line 1540, scss/boxes.scss */
+.columns .form-list td.value {
+  width: 315px;
+  padding-right: 5px !important;
+}
+/* line 1543, scss/boxes.scss */
+.columns .form-list td.value .next-toinput {
+  width: 120px;
+  display: inline;
+  margin-right: 5px;
+}
+/* line 1548, scss/boxes.scss */
+.columns .form-list td.value .next-toselect input.input-text {
+  width: 180px !important;
+  display: inline;
+}
+/* line 1552, scss/boxes.scss */
+.columns .form-list td.value input[type="checkbox"][id*="use_"] {
+  margin-right: 10px;
+  margin-top: 7px;
+  vertical-align: top;
+}
+/* line 1556, scss/boxes.scss */
+.columns .form-list td.value input[type="checkbox"][id*="use_"] + label {
+  display: inline-block;
+  padding-top: 5px;
+  vertical-align: top;
+  margin-left: -7px;
+}
+
+/* line 1566, scss/boxes.scss */
+.fieldset-wide .form-list {
+  width: 100% !important;
+}
+/* line 1569, scss/boxes.scss */
+.fieldset-wide .form-list td.value {
+  width: auto !important;
+}
+/* line 1571, scss/boxes.scss */
+.fieldset-wide .form-list td.value input.input-text, .fieldset-wide .form-list td.value textarea {
+  width: 90% !important;
+}
+/* line 1575, scss/boxes.scss */
+.fieldset-wide .form-list td.scope-label {
+  white-space: nowrap;
+  width: 1px;
+}
+/* line 1579, scss/boxes.scss */
+.fieldset-wide .form-list td.note {
+  width: 120px;
+}
+
+/*.fieldset-wide .form-list td.value select { display:block; }*/
+/* line 1587, scss/boxes.scss */
+.multi-input {
+  margin-bottom: 8px;
+}
+
+/* Example: Address fields with 2 input lines */
+/* line 1594, scss/boxes.scss */
+.grid tr .form-list tr {
+  background: #fff !important;
+}
+/* line 1597, scss/boxes.scss */
+.grid tr.even .form-list tr {
+  background: #f6f6f6 !important;
+}
+/* line 1600, scss/boxes.scss */
+.grid tr.on-mouse .form-list tr {
+  background: #fbdfc9 !important;
+}
+/* line 1603, scss/boxes.scss */
+.grid tr .form-list {
+  margin: 8px 0;
+}
+
+/* Follows grid row background-color */
+/* Follows grid row background-color */
+/* Follows grid row background-color */
+/* line 1614, scss/boxes.scss */
+.field-row {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* line 1620, scss/boxes.scss */
+span.delete-image {
+  display: block;
+  white-space: nowrap;
+  padding-left: 26px;
+}
+/* line 1625, scss/boxes.scss */
+span.delete-file {
+  display: block;
+  white-space: nowrap;
+  padding-left: 26px;
+  padding: 0;
+}
+
+/* Back compatibility with span forms */
+/* line 1635, scss/boxes.scss */
+.entry-edit .field-row {
+  display: block;
+}
+/* line 1637, scss/boxes.scss */
+.entry-edit .field-row label {
+  float: left;
+  width: 150px;
+}
+
+/* Form Button */
+/* line 1645, scss/boxes.scss */
+.content-buttons.form-buttons, .content-header .form-buttons {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+/* line 1650, scss/boxes.scss */
+.dialog .content-header .form-buttons {
+  white-space: normal;
+}
+
+/* line 1655, scss/boxes.scss */
+.content-header .content-buttons-placeholder {
+  display: inline !important;
+}
+/* line 1658, scss/boxes.scss */
+.content-header .form-buttons {
+  float: right;
+}
+/* line 1661, scss/boxes.scss */
+.content-header td.form-buttons {
+  float: none;
+  vertical-align: top;
+}
+
+/* line 1667, scss/boxes.scss */
+.sub-btn-set {
+  border: solid #ddd;
+  border-width: 0 1px;
+  background: url(images/sub_button_bg.gif) repeat;
+  padding: 3px 10px;
+  text-align: right;
+}
+
+/* line 1675, scss/boxes.scss */
+button {
+  -webkit-border-fit: lines;
+  overflow: visible;
+  width: auto;
+  border: 0;
+  padding: 0;
+  margin: 0 0 0 2px;
+  background: transparent;
+  cursor: pointer;
+}
+/* line 1676, scss/boxes.scss */
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+/* line 1688, scss/boxes.scss */
+button span {
+  float: left;
+  height: 28px;
+  background: transparent url(images/bkg_btn.png) 0 0 no-repeat;
+  padding: 0 0 0 5px;
+  font: bold 12px / 27px Tahoma, Verdana, Arial, sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  color: #f15a24;
+}
+/* line 1697, scss/boxes.scss */
+button span span {
+  background-position: 100% 0;
+  padding: 0 8px 0 2px;
+}
+/* line 1700, scss/boxes.scss */
+button span span span {
+  background: none;
+  padding: 0;
+}
+/* line 1707, scss/boxes.scss */
+button:not(.disabled):hover > span {
+  background-position: 0 -70px;
+}
+/* line 1709, scss/boxes.scss */
+button:not(.disabled):hover > span > span {
+  background-position: 100% -70px;
+}
+/* line 1713, scss/boxes.scss */
+button:not(.disabled):active > span {
+  position: relative;
+  bottom: -1px;
+  right: -1px;
+}
+/* line 1719, scss/boxes.scss */
+button.disabled {
+  cursor: default;
+}
+/* line 1721, scss/boxes.scss */
+button.disabled span {
+  background-image: url(images/bkg_btn-disabled.png);
+  cursor: default;
+}
+/* line 1724, scss/boxes.scss */
+button.disabled span span span {
+  background: none;
+  color: #999;
+  opacity: .5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  /* IE8 */
+}
+/* line 1733, scss/boxes.scss */
+button.btn-wysiwyg span span span, button.cancel_button span span span, button.ok_button span span span, button.delete span span span, button.cancel span span span, button.fail span span span, button.save span span span, button.add span span span, button.back span span span, button.show-hide span span span, button.add-image span span span, button.add-widget span span span, button.add-variable span span span, button.go span span span {
+  padding-left: 25px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+/* line 1738, scss/boxes.scss */
+button.delete span span span, button.cancel span span span, button.fail span span span {
+  background-image: url(images/bkg_btn-delete.png);
+  padding-left: 16px;
+}
+/* line 1742, scss/boxes.scss */
+button.save span span span {
+  background-image: url(images/i_btn-save.png);
+  padding-left: 20px;
+}
+/* line 1746, scss/boxes.scss */
+button.add span span span {
+  background-image: url(images/i_btn-add.png);
+  padding-left: 20px;
+}
+/* line 1750, scss/boxes.scss */
+button.back span span span {
+  background-image: url(images/bkg_btn-back.png);
+  padding-left: 16px;
+}
+/* line 1754, scss/boxes.scss */
+button.show-hide span span span {
+  background-image: url(images/i_btn-showhide.png);
+  padding-left: 20px;
+}
+/* line 1758, scss/boxes.scss */
+button.add-image span span span {
+  background-image: url(images/btn_add-image_icon.gif);
+  padding-left: 16px;
+}
+/* line 1762, scss/boxes.scss */
+button.add-widget span span span {
+  background-image: url(images/btn_add-widget_icon.gif);
+}
+/* line 1765, scss/boxes.scss */
+button.add-variable span span span {
+  background-image: url(images/btn_add-variable_icon.gif);
+}
+/* line 1768, scss/boxes.scss */
+button.go span span span {
+  background-image: url(images/btn_go.gif);
+  padding-left: 16px;
+}
+/* line 1772, scss/boxes.scss */
+button.btn-wysiwyg span span span {
+  background-image: url(images/i_btn-editor.png);
+  background-position: 0 6px;
+  padding-left: 23px;
+}
+/* line 1777, scss/boxes.scss */
+button.ok_button span span span {
+  background-image: url(images/i_btn-save.png);
+  padding-left: 20px;
+}
+/* line 1781, scss/boxes.scss */
+button.cancel_button span span span {
+  background-image: url(images/bkg_btn-delete.png);
+  padding-left: 16px;
+}
+/* line 1785, scss/boxes.scss */
+button.btn-chooser {
+  display: block;
+  margin: 0 0 10px;
+}
+/* line 1789, scss/boxes.scss */
+button.icon-btn > span {
+  /* width:28px !important; */
+}
+/* line 1791, scss/boxes.scss */
+button.icon-btn > span > span {
+  display: block;
+  overflow: hidden;
+}
+/* line 1794, scss/boxes.scss */
+button.icon-btn > span > span > span {
+  background-position: 50% 50%;
+  width: 16px;
+  padding: 0;
+  text-indent: -999em;
+}
+
+/* FF Fix */
+/* <- Safari & Google Chrome Fix */
+/*button.success { background-image:url(images/btn_gr_bg.gif); border-color:#46745E; }
+button.success:hover { background:url(images/btn_gr_over.gif) #6cac46; }
+button.success:active { background:url(images/btn_gr_on.gif) repeat-x 0 0 #3fa05e; }*/
+/* line 1812, scss/boxes.scss */
+.buttons-set {
+  margin: 0 0 10px;
+}
+/* line 1814, scss/boxes.scss */
+.buttons-set button {
+  margin-right: 5px;
+}
+
+/* line 1819, scss/boxes.scss */
+#catalog_management button {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* line 1824, scss/boxes.scss */
+textarea + button.btn-wysiwyg {
+  display: block;
+  margin-top: 5px;
+}
+
+/* SWITCHER
+*******************************************************************************/
+/* line 1832, scss/boxes.scss */
+.switcher {
+  margin: 10px 0;
+}
+/* line 1834, scss/boxes.scss */
+.switcher label {
+  color: #777;
+  display: inline;
+  vertical-align: middle;
+}
+/* line 1839, scss/boxes.scss */
+.switcher select {
+  display: inline-block;
+  color: #333;
+  border: 1px solid #9e9e9e;
+  margin: 5px 0;
+  vertical-align: middle;
+  padding: 0;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 1848, scss/boxes.scss */
+.switcher select option {
+  padding: 0 2px;
+}
+/* line 1852, scss/boxes.scss */
+.switcher label {
+  font-weight: bold;
+}
+/* line 1855, scss/boxes.scss */
+.switcher p {
+  margin: 0 !important;
+}
+
+/* line 1860, scss/boxes.scss */
+.side-col .switcher {
+  margin: 0 0 10px;
+  padding: 6px 0;
+}
+/* line 1863, scss/boxes.scss */
+.side-col .switcher select {
+  width: 100%;
+  margin: 5px 0 5px;
+}
+
+/* line 1869, scss/boxes.scss */
+.catalog-categories .side-col .switcher {
+  margin-right: 0;
+  margin-bottom: 15px;
+}
+
+/* line 1874, scss/boxes.scss */
+.link-store-scope {
+  display: inline-block;
+  vertical-align: middle;
+  width: 17px;
+  height: 16px;
+  background: url(images/i_question-mark.png) 0 0 no-repeat;
+  text-decoration: none !important;
+  text-indent: -999em;
+  overflow: hidden;
+}
+
+/* line 1886, scss/boxes.scss */
+.store-scope .link-store-scope {
+  float: left;
+  margin-right: 10px;
+}
+/* line 1890, scss/boxes.scss */
+.store-scope .tree-store-scope {
+  float: left;
+  padding: 7px 10px;
+  border: 1px dotted #dedede;
+}
+/* line 1895, scss/boxes.scss */
+.store-scope table.stores-tree {
+  float: left;
+  width: auto !important;
+}
+
+/* line 1902, scss/boxes.scss */
+.form-list td.value .store-scope {
+  white-space: nowrap;
+}
+/* line 1905, scss/boxes.scss */
+.form-list td.value .link-store-scope {
+  float: none;
+  margin-right: 0;
+  vertical-align: top;
+  margin-top: 6px;
+}
+
+/* SPACE
+*******************************************************************************/
+/* line 1916, scss/boxes.scss */
+.box-left, .box-right {
+  width: 48.5%;
+}
+
+/* line 1920, scss/boxes.scss */
+.box-left {
+  float: left;
+}
+
+/* line 1924, scss/boxes.scss */
+.box-right {
+  float: right;
+}
+
+/* line 1928, scss/boxes.scss */
+.box-left .content, .box-right .content {
+  padding: 6px 14px;
+}
+
+/* line 1932, scss/boxes.scss */
+.separator, .pipe {
+  padding: 0 6px;
+  font-size: .9em;
+  color: #b8b8b8;
+}
+
+/* vertical pipe */
+/* line 1940, scss/boxes.scss */
+.divider {
+  display: block;
+  height: 1px;
+  margin: 8px 0;
+  background: #ddd;
+  overflow: hidden;
+}
+
+/* horizontal pipe */
+/* line 1950, scss/boxes.scss */
+td.divider {
+  font-size: 1px;
+  line-height: 0;
+}
+
+/* line 1955, scss/boxes.scss */
+.box-left .field-row textarea {
+  width: 97% !important;
+}
+
+/* SCOLLER */
+/* Used primarily in Sales -> Order -> Create Order */
+/*
+*******************************************************************************/
+/* line 1964, scss/boxes.scss */
+.scroll-cont {
+  position: absolute;
+  top: -25px;
+  left: 503px;
+  width: 16px;
+  height: 265px;
+  background: transparent url(images/db-scroll-bg.gif) no-repeat top;
+  z-index: 10000;
+}
+
+/* line 1974, scss/boxes.scss */
+.auto-scroll {
+  overflow: auto;
+  height: 11em;
+}
+
+/* line 1979, scss/boxes.scss */
+.root {
+  position: relative;
+  height: 260px;
+  margin: 0;
+  width: 1px;
+}
+
+/* line 1986, scss/boxes.scss */
+.thumb {
+  position: absolute;
+  height: 40px;
+  width: 16px;
+  margin-top: -28px;
+  z-index: 11000;
+}
+
+/* line 1994, scss/boxes.scss */
+.up {
+  margin-top: 254px;
+  height: 16px;
+}
+
+/* line 1999, scss/boxes.scss */
+.dn {
+  margin-top: 0;
+  padding: 0;
+  height: 15px;
+}
+
+/* line 2005, scss/boxes.scss */
+.up a, .dn a, .thumb a {
+  border: 0;
+}
+/* line 2007, scss/boxes.scss */
+.up a img, .dn a img, .thumb a img {
+  border: 0;
+}
+
+/* line 2012, scss/boxes.scss */
+.up a:active, .dn a:active {
+  outline: none;
+}
+
+/* line 2016, scss/boxes.scss */
+.scrollContainer {
+  position: absolute;
+  left: 0;
+  top: 19px;
+  clip: rect(0 467px 200px 0);
+  overflow: auto;
+  border: 0;
+}
+
+/* line 2025, scss/boxes.scss */
+.scrollContent {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Horizontal scroll */
+/* line 2033, scss/boxes.scss */
+.hor-scroll {
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 10px;
+  margin: 0;
+  /* outline:1px solid #cbd3d4; outline-width:0 1px; */
+}
+
+/* IE has personal style, see iestyles.css */
+/**/
+/* line 2044, scss/boxes.scss */
+.note-list {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 2047, scss/boxes.scss */
+.note-list li {
+  border-top: 1px solid #e3e3e3;
+  margin-top: 9px !important;
+  background: url(images/icon_note_list.gif) no-repeat 0 4px;
+  padding-bottom: 9px;
+  padding-left: 18px;
+}
+
+/******************************************************************************/
+/********************************** STRUCTURE *********************************/
+/******************************************************************************/
+/* LAYOUT
+*******************************************************************************/
+/* line 2063, scss/boxes.scss */
+body {
+  background: white url(images/bkg_body.png) repeat-x 0 100% fixed;
+}
+
+/* line 2067, scss/boxes.scss */
+.wrapper {
+  min-width: 960px;
+  text-align: left;
+}
+
+/* line 2072, scss/boxes.scss */
+.wrapper-popup {
+  min-width: 750px;
+}
+
+/* line 2076, scss/boxes.scss */
+.middle {
+  min-height: 450px;
+  /* background:url(images/bkg_page-middle.png) repeat-x #fff 0 100%; background-attachment:fixed;*/
+  padding: 11px 11px 20px 11px;
+}
+
+/* line 2082, scss/boxes.scss */
+.middle-popup {
+  border-bottom: 3px solid #fff;
+  /* background:url(images/middle_bg.gif) repeat-x 0 100% #fff; */
+  padding: 0;
+  /* background:yellow; */
+}
+
+/* line 2089, scss/boxes.scss */
+.container-collapsed {
+  padding: 0 2.2em 1.8em 2em;
+}
+
+/* line 2093, scss/boxes.scss */
+.columns {
+  /* background:url(images/side_col_bg.gif) repeat-y 217px 0; */
+}
+
+/* line 2097, scss/boxes.scss */
+div.side-col {
+  float: left;
+  width: 210px;
+  margin-right: -210px;
+  padding-bottom: 25px;
+}
+
+/* line 2105, scss/boxes.scss */
+html[lang="de"] div.side-col, html[lang="fr"] div.side-col {
+  width: 250px;
+  margin-right: -250px;
+}
+
+/* line 2111, scss/boxes.scss */
+div.main-col {
+  margin-left: 210px;
+  min-height: 450px;
+  padding: 0 0 25px 25px;
+}
+
+/* line 2118, scss/boxes.scss */
+html[lang="de"] div.main-col, html[lang="fr"] div.main-col {
+  margin-left: 250px;
+}
+
+/* line 2123, scss/boxes.scss */
+div.main-col-inner {
+  float: left;
+  /* Fixes some inner clears in the liquid main-col */
+  width: 100%;
+}
+
+/* line 2129, scss/boxes.scss */
+.simple-container-popup {
+  min-height: 50px !important;
+  padding: 1.8em 2.3em 6em 2.3em;
+  background: url(images/simple_container_bg.gif) repeat-x;
+}
+
+/* line 2135, scss/boxes.scss */
+.page-popup {
+  background: #fff;
+}
+
+/******************************************************************************/
+/************************************* BOXES **********************************/
+/******************************************************************************/
+/* HEADER & FOOTER
+*******************************************************************************/
+/* line 2146, scss/boxes.scss */
+.header-container {
+  background: url(images/bkg_header.png) no-repeat 0 100%;
+  padding: 0 0 0 18px;
+  margin: 0 auto 3px;
+}
+
+/* line 2152, scss/boxes.scss */
+.header {
+  background: url(images/bkg_header.png) no-repeat 100% 100%;
+  padding: 0 18px 11px 0;
+}
+
+/* line 2157, scss/boxes.scss */
+.logo {
+  float: left;
+  height: 47px;
+  margin: 9px 0 0 25px;
+}
+
+/* line 2163, scss/boxes.scss */
+.header .clear {
+  display: none;
+}
+
+/* line 2167, scss/boxes.scss */
+.header-top {
+  display: inline;
+}
+
+/* Header right */
+/* line 2173, scss/boxes.scss */
+.header-right {
+  padding: 10px 20px 0 0;
+  color: #4c4c4c;
+  float: right;
+  position: relative;
+  z-index: 2;
+}
+/* line 2179, scss/boxes.scss */
+.header-right a {
+  color: #f15a24;
+}
+/* line 2181, scss/boxes.scss */
+.header-right a:hover {
+  color: #f15a24;
+  text-decoration: none;
+}
+/* line 2186, scss/boxes.scss */
+.header-right .separator {
+  color: #999;
+}
+/* line 2189, scss/boxes.scss */
+.header-right .link-account, .header-right .link-support, .header-right .link-suggest {
+  color: #4c4c4c;
+}
+/* line 2192, scss/boxes.scss */
+.header-right .link-support {
+  padding: 0 0 3px 17px;
+  background: url(images/i_support-dot.png) 0 50% no-repeat;
+}
+/* line 2196, scss/boxes.scss */
+.header-right fieldset {
+  width: 206px;
+  padding: 6px 0 6px 30px;
+  height: 15px;
+  background: url(images/bkg_header-search.png) no-repeat 0 0;
+  position: relative;
+  top: 50px;
+}
+/* line 2203, scss/boxes.scss */
+.header-right fieldset input.input-text {
+  width: 200px;
+  float: left;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: none;
+  color: #999;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 2215, scss/boxes.scss */
+.header-right .super {
+  position: absolute;
+  z-index: 1;
+  white-space: nowrap;
+  right: 20px;
+  top: 20px;
+  font: 11px / 1.2 Tahoma, Arial, Helvetica, sans-serif;
+}
+
+/* Search autocomplete */
+/* line 2227, scss/boxes.scss */
+div.autocomplete {
+  z-index: 10000;
+  position: absolute;
+  width: 250px;
+  background-color: white;
+  border: 1px solid #b7b7b7;
+  border-top: none;
+  padding: 0;
+  top: 26px !important;
+  left: auto !important;
+  right: 3px !important;
+}
+/* line 2238, scss/boxes.scss */
+div.autocomplete ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 2241, scss/boxes.scss */
+div.autocomplete ul li {
+  padding: .5em .7em;
+  min-height: 32px;
+  cursor: pointer;
+  text-align: left;
+  color: #2f2f2f;
+  line-height: 1.3em;
+}
+/* line 2242, scss/boxes.scss */
+div.autocomplete ul li.selected {
+  background-color: #fbdfc9;
+}
+
+/* line 2255, scss/boxes.scss */
+.header-right .autocomplete-indicator {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+/* line 2263, scss/boxes.scss */
+.header-right .autocomplete-indicator img {
+  display: block;
+}
+
+/* Footer */
+/* line 2270, scss/boxes.scss */
+.footer {
+  clear: both;
+  font-size: 11px;
+  margin: 10px 8px 15px 8px;
+  padding: 0 19px 0 0;
+  background: url(images/bkg_footer.png) no-repeat 100% 0;
+}
+/* line 2276, scss/boxes.scss */
+.footer .footer-inner {
+  padding: 13px 0 0 19px;
+  background: url(images/bkg_footer.png) no-repeat 0 0;
+}
+/* line 2280, scss/boxes.scss */
+.footer .footer-select {
+  float: right;
+  text-align: right;
+  color: #484848;
+  width: 35%;
+}
+/* line 2286, scss/boxes.scss */
+.footer .language-select select {
+  width: 300px !important;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #b7b8b9;
+  padding: 0;
+}
+/* line 2293, scss/boxes.scss */
+.footer .legality {
+  float: left;
+  width: 30%;
+  color: #484848;
+}
+/* line 2297, scss/boxes.scss */
+.footer .legality .copyright {
+  color: #000;
+  padding-left: 28px;
+  margin-bottom: 7px;
+  line-height: 22px;
+  display: block;
+  background: url(images/bkg_footer-logo.png) no-repeat 0 0;
+}
+/* line 2305, scss/boxes.scss */
+.footer .legality p {
+  margin: 0;
+  padding-left: 28px;
+}
+/* line 2310, scss/boxes.scss */
+.footer .footer-links {
+  margin: 0 35% 0 30%;
+  padding-top: 5px;
+}
+/* line 2313, scss/boxes.scss */
+.footer .footer-links li {
+  margin-bottom: 7px;
+  line-height: 1.2;
+}
+/* line 2316, scss/boxes.scss */
+.footer .footer-links li a {
+  margin-bottom: 7px;
+  line-height: 1.2;
+  color: #fa710c;
+}
+
+/* COLUMNS
+********************************************************************************************/
+/* line 2329, scss/boxes.scss */
+.catalog-categories .side-col {
+  width: 25em;
+  padding-right: 25px;
+}
+/* line 2333, scss/boxes.scss */
+.catalog-categories .main-col {
+  padding-left: 25px;
+  margin-left: 25em;
+}
+
+/* Catalog/Categories */
+/* Catalog/Categories */
+/* line 2344, scss/boxes.scss */
+.order-summary .side-col {
+  padding-right: 25px;
+}
+/* line 2347, scss/boxes.scss */
+.order-summary .main-col {
+  padding-left: 25px;
+}
+
+/* Order/Create */
+/* Order/Create */
+/* HEADINGS
+********************************************************************************************/
+/* line 2359, scss/boxes.scss */
+h3 {
+  font: normal 15px / 1.1 Tahoma, Arial, Helvetica, sans-serif;
+  color: #000;
+}
+
+/* Content Header */
+/* line 2366, scss/boxes.scss */
+.content-header {
+  position: relative;
+  z-index: 1;
+  margin: 11px 0 15px;
+  background: #dfdfdf url(images/bkg_content-header.png) repeat-x 0 0;
+  border: 1px solid #dedede;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 0 4px 0 12px;
+  -moz-box-shadow: 0 6px 10px #c4c4c4;
+  box-shadow: 0 6px 10px #c4c4c4;
+}
+/* line 2377, scss/boxes.scss */
+.content-header table {
+  width: 100%;
+}
+/* line 2380, scss/boxes.scss */
+.content-header h3 {
+  float: left;
+  padding: 8px 0 9px;
+  margin: 0;
+}
+/* line 2385, scss/boxes.scss */
+.content-header .head h3 {
+  float: none;
+}
+/* line 2388, scss/boxes.scss */
+.content-header .button-set {
+  white-space: nowrap;
+  text-align: right;
+}
+/* line 2392, scss/boxes.scss */
+.content-header .content-buttons, .content-header .form-buttons {
+  margin: 0;
+}
+/* line 2395, scss/boxes.scss */
+.content-header button {
+  margin-top: 4px;
+}
+/* line 2399, scss/boxes.scss */
+.content-header .form-buttons form select {
+  vertical-align: top;
+  margin-top: 4px;
+}
+/* line 2403, scss/boxes.scss */
+.content-header .form-buttons form strong {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 27px;
+  margin-top: 4px;
+}
+/* line 2410, scss/boxes.scss */
+.content-header td.content-buttons {
+  width: 13%;
+  white-space: nowrap !important;
+  margin: 0;
+}
+
+/* .content-buttons button,
+.content-header button,
+.filter-actions button { margin:0 0 0 5px; } */
+/* line 2421, scss/boxes.scss */
+.side-col h3 {
+  font: normal 27px / 1.05 Verdana, Geneva, sans-serif;
+  margin: 0 0 .6em;
+  color: #f15a24;
+  word-wrap: break-word;
+}
+
+/* line 2428, scss/boxes.scss */
+html[lang="de"] .side-col h3 {
+  font-size: 24px;
+}
+
+/* line 2432, scss/boxes.scss */
+.side-col .content-header {
+  border-bottom: 0;
+  margin-right: 12px;
+  margin-bottom: .6em;
+}
+
+/* line 2438, scss/boxes.scss */
+.catalog-categories .side-col .content-header {
+  margin-right: 0;
+}
+
+/* Catalog/Categories */
+/* line 2444, scss/boxes.scss */
+.left-col-block {
+  width: 200px;
+}
+
+/* Floating Content Header */
+/* Used to make action buttons always within reach */
+/* line 2451, scss/boxes.scss */
+.content-header-floating {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: url(images/bkg_panel-floating.png) repeat-x 0 100%;
+}
+/* line 2459, scss/boxes.scss */
+.content-header-floating .content-header {
+  margin: 0 !important;
+  background: none;
+  padding: 2px 0 16px 24px;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 0;
+}
+/* line 2468, scss/boxes.scss */
+.content-header-floating .content-header h3 {
+  font-size: 17px;
+  font-weight: normal;
+  color: #fff;
+}
+/* line 2474, scss/boxes.scss */
+.content-header-floating td {
+  padding-right: 13px;
+}
+/* line 2477, scss/boxes.scss */
+.content-header-floating button {
+  margin-top: 3px;
+}
+/* line 2480, scss/boxes.scss */
+.content-header-floating .content-buttons {
+  float: right;
+}
+
+/* line 2485, scss/boxes.scss */
+.content-buttons {
+  margin-bottom: 5px;
+  float: right;
+  display: inline;
+}
+
+/* line 2492, scss/boxes.scss */
+.content-header-floating .form-buttons {
+  padding-right: 20px;
+}
+/* line 2495, scss/boxes.scss */
+.content-header-floating h3 {
+  margin-left: 20px;
+  display: inline;
+}
+
+/* Box Head */
+/* line 2503, scss/boxes.scss */
+.box-head {
+  margin-bottom: .6em;
+  text-align: right;
+}
+/* line 2506, scss/boxes.scss */
+.box-head h4 {
+  float: left;
+  margin-bottom: 0;
+}
+
+/* Icon Head */
+/* Headings with icon preceding text*/
+/* line 2515, scss/boxes.scss */
+.icon-head {
+  min-height: 18px;
+  background-repeat: no-repeat;
+  background-position: 0 8px;
+  padding-left: 22px !important;
+}
+
+/* line 2522, scss/boxes.scss */
+.entry-edit .entry-edit-head .icon-head {
+  background-position: 16px 6px;
+  padding-left: 38px !important;
+}
+
+/* line 2527, scss/boxes.scss */
+.head-adminhtml {
+  padding-left: 0;
+}
+
+/* line 2531, scss/boxes.scss */
+.head-customer-address-list {
+  background-image: url(images/fam_house.gif);
+}
+
+/* line 2535, scss/boxes.scss */
+.head-edit-form {
+  background-image: url(images/fam_page_white.png);
+}
+
+/* line 2539, scss/boxes.scss */
+.head-customer-view {
+  background-image: url(images/fam_status_online.gif);
+  padding-left: 18px;
+}
+
+/* line 2544, scss/boxes.scss */
+.head-customer, .head-customer-groups {
+  background-image: url(images/fam_group.gif);
+}
+
+/* line 2548, scss/boxes.scss */
+.head-user {
+  background-image: url(images/fam_user.gif);
+}
+
+/* line 2552, scss/boxes.scss */
+.head-user-edit {
+  background-image: url(images/fam_user_edit.gif);
+}
+
+/* line 2556, scss/boxes.scss */
+.head-user-comment {
+  background-image: url(images/fam_user_comment.gif);
+}
+
+/* line 2560, scss/boxes.scss */
+.head-comment {
+  background-image: url(images/fam_comment.gif);
+}
+
+/* line 2564, scss/boxes.scss */
+.head-cart {
+  background-image: url(images/fam_cart.gif);
+}
+
+/* line 2568, scss/boxes.scss */
+.head-account {
+  background-image: url(images/fam_account.gif);
+}
+
+/* line 2572, scss/boxes.scss */
+.head-online-visitors {
+  background-image: url(images/fam_monitor.gif);
+}
+
+/* line 2576, scss/boxes.scss */
+.head-products, .head-catalog-product {
+  background-image: url(images/fam_package.gif);
+}
+
+/* line 2580, scss/boxes.scss */
+.head-newsletter-queue {
+  background-image: url(images/fam_newspaper_go.gif);
+}
+
+/* line 2584, scss/boxes.scss */
+.head-newsletter-list {
+  background-image: url(images/fam_newspaper.gif);
+}
+
+/* line 2588, scss/boxes.scss */
+.head-newsletter-report {
+  background-image: url(images/fam_newspaper_error.gif);
+}
+
+/* line 2592, scss/boxes.scss */
+.head-tag, .head-tag-product {
+  background-image: url(images/fam_tag_orange.gif);
+}
+
+/* line 2596, scss/boxes.scss */
+.head-sales-order, .head-sales-invoice {
+  background-image: url(images/fam_folder_table.gif);
+}
+
+/* line 2600, scss/boxes.scss */
+.head-categories {
+  background-image: url(images/fam_folder_database.gif);
+  padding-left: 20px;
+  color: #253033 !important;
+}
+
+/* line 2606, scss/boxes.scss */
+.head-catalog-product-attribute {
+  background-image: url(images/fam_rainbow.gif);
+  padding-left: 24px;
+}
+
+/* line 2611, scss/boxes.scss */
+.head-product-attribute-sets {
+  background-image: url(images/fam_folder_palette.gif);
+  padding-left: 23px;
+}
+
+/* line 2616, scss/boxes.scss */
+.head-tax {
+  background-image: url(images/fam_money_add.gif);
+}
+
+/* line 2620, scss/boxes.scss */
+.head-cms-page, .head-cms-block {
+  background-image: url(images/application_view_tile.gif);
+}
+
+/* line 2624, scss/boxes.scss */
+.head-backups-control {
+  background-image: url(images/fam_server_database.gif);
+}
+
+/* line 2628, scss/boxes.scss */
+.head-money, .head-promo-quote {
+  background-image: url(images/fam_money.gif);
+}
+
+/* line 2632, scss/boxes.scss */
+.head-shipping-address, .head-billing-address {
+  background-image: url(images/fam_house.gif);
+}
+
+/* line 2636, scss/boxes.scss */
+.head-shipping-method {
+  background-image: url(images/fam_lorry.gif);
+}
+
+/* line 2640, scss/boxes.scss */
+.head-payment-method {
+  background-image: url(images/fam_creditcards.gif);
+}
+
+/* line 2644, scss/boxes.scss */
+.head-order-date {
+  background-image: url(images/fam_calendar.gif);
+}
+
+/* line 2648, scss/boxes.scss */
+.head-customer-sales-statistics {
+  background-image: url(images/fam_money.gif);
+}
+
+/* line 2652, scss/boxes.scss */
+.head-notification {
+  background-image: url(images/fam_folder_table.gif);
+}
+
+/* line 2656, scss/boxes.scss */
+.head-compilation {
+  background-image: url(images/fam_package_go.gif);
+}
+
+/******************************************************************************/
+/********************************* PAGE SPECIFIC ******************************/
+/******************************************************************************/
+/* LOGIN
+*******************************************************************************/
+/* line 2667, scss/boxes.scss */
+#page-login {
+  background: scroll #d5d5d5 url(images/bkg_login.jpg) 50% 0 no-repeat;
+}
+
+/* line 2671, scss/boxes.scss */
+.login-box {
+  width: 704px;
+  margin: 0 auto;
+  padding: 130px 0 0;
+}
+
+/* line 2677, scss/boxes.scss */
+.login-form {
+  padding: 0 0 20px;
+  text-align: left;
+  background: url(images/bkg_login-box.png) 0 0 no-repeat;
+}
+/* line 2681, scss/boxes.scss */
+.login-form .input-box {
+  padding: 0 0 0 72px;
+}
+/* line 2684, scss/boxes.scss */
+.login-form .input-left {
+  float: left;
+}
+/* line 2687, scss/boxes.scss */
+.login-form .input-right {
+  float: right;
+  padding: 0 72px 0 0;
+}
+/* line 2691, scss/boxes.scss */
+.login-form .input-box br {
+  display: none;
+}
+/* line 2695, scss/boxes.scss */
+.login-form input.input-text {
+  width: 255px;
+  background: transparent url(images/bkg_login-input.png) no-repeat 0 0;
+  border: 0;
+  padding: 8px 10px 9px;
+  font-size: 16px;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 2704, scss/boxes.scss */
+.login-form input.validation-failed {
+  background-position: 0 -47px;
+}
+/* line 2708, scss/boxes.scss */
+.login-form h2 {
+  font: bold 16px / 1.1 Helvetica, Arial, sans-serif;
+  color: #f47b20;
+  margin: 0 0 40px;
+  background: url(images/login-logo.gif) no-repeat 33px 19px;
+  padding: 38px 0 20px 239px;
+}
+/* line 2715, scss/boxes.scss */
+.login-form label {
+  font-weight: bold;
+  font: bold 16px / 1.1 Helvetica, Arial, sans-serif;
+  color: #555;
+  display: block;
+  padding: 0 0 5px 5px;
+}
+/* line 2722, scss/boxes.scss */
+.login-form .form-buttons {
+  margin: 12px 0 0 0;
+  padding: 0 72px;
+  clear: both;
+  text-align: right;
+}
+
+/* line 2730, scss/boxes.scss */
+.login-container a {
+  color: #0065b1;
+  text-decoration: none;
+}
+/* line 2733, scss/boxes.scss */
+.login-container a:hover {
+  color: #0065b1;
+  text-decoration: underline;
+}
+
+/* line 2739, scss/boxes.scss */
+.login-form .form-buttons .left {
+  font-size: 13px;
+  line-height: 34px;
+}
+
+/* line 2745, scss/boxes.scss */
+.login-container .login-support {
+  margin: 0;
+  text-align: center;
+  padding: 10px 0 30px;
+  color: #555;
+  font-size: 11px;
+  background: url(images/bkg_login-box.png) 0 100% no-repeat;
+}
+/* line 2753, scss/boxes.scss */
+.login-container .legal {
+  margin: 0;
+  text-align: center;
+  padding: 10px 0 0;
+  color: #a09f9f;
+  font-size: 11px;
+}
+
+/* line 2763, scss/boxes.scss */
+.login-form .validation-advice {
+  margin: 3px 0 0 0;
+}
+/* line 2766, scss/boxes.scss */
+.login-form .forgot-link {
+  margin: 0 17px 0 0;
+  text-align: right;
+}
+
+/* line 2773, scss/boxes.scss */
+.login-container .block-billing {
+  margin: 0;
+  background: url(images/bkg_login-box.png) 0 50% no-repeat;
+  padding: 10px 0;
+}
+/* line 2777, scss/boxes.scss */
+.login-container .block-billing span {
+  display: block;
+  border: solid #ededed;
+  border-width: 1px 0;
+  margin: 0 32px;
+  font: bold 16px / 1.1 Helvetica, Arial, sans-serif;
+  padding: 20px 40px 20px;
+  text-align: left;
+  color: #555;
+}
+/* line 2788, scss/boxes.scss */
+.login-container input.forgot-password {
+  width: 560px !important;
+  background-position: 0 -98px;
+  padding: 8px 10px 9px;
+}
+/* line 2792, scss/boxes.scss */
+.login-container input.forgot-password.validation-failed {
+  background-position: 0 -145px;
+}
+/* line 2796, scss/boxes.scss */
+.login-container button.btn-login {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 0;
+}
+/* line 2801, scss/boxes.scss */
+.login-container button.btn-login span {
+  height: 34px;
+  margin: 0 34px 0 10px;
+  font: bold 13px / 34px Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  background: transparent url(images/bkg_btn-login.png) repeat-x 0 -35px;
+  position: relative;
+  border: 0;
+  display: block;
+  text-shadow: 0 -2px 1px #a35112;
+}
+/* line 2813, scss/boxes.scss */
+.login-container button.btn-login span:before, .login-container button.btn-login span:after {
+  content: "";
+  height: 34px;
+  position: absolute;
+  top: 0;
+  background: url(images/bkg_btn-login.png) no-repeat 0 0;
+}
+/* line 2820, scss/boxes.scss */
+.login-container button.btn-login span:before {
+  width: 15px;
+  left: -15px;
+}
+/* line 2824, scss/boxes.scss */
+.login-container button.btn-login span:after {
+  width: 34px;
+  right: -34px;
+  background-position: -16px 0;
+}
+/* line 2832, scss/boxes.scss */
+.login-container .form-button {
+  width: 95px;
+  height: 34px;
+  text-align: left;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  background: transparent url(images/btn-admin-login.png) no-repeat 0 0;
+  border: 0;
+}
+
+/* line 2847, scss/boxes.scss */
+html[lang="fr"] .login-container .form-button {
+  background-image: url(images/btn-admin-login-vf.png);
+}
+
+/* line 2851, scss/boxes.scss */
+.login-container .messages {
+  margin: -15px 72px 30px;
+}
+
+/* DASHBOARD
+*******************************************************************************/
+/* line 2858, scss/boxes.scss */
+.dashboard-container {
+  border: 1px solid #ccc;
+}
+/* line 2860, scss/boxes.scss */
+.dashboard-container .switcher {
+  margin: 0;
+  padding: 5px 25px;
+}
+
+/* STORE MANAGEMENT
+*******************************************************************************/
+/* line 2869, scss/boxes.scss */
+.adminhtml-system-store-deletestore .content-footer .content-buttons, .adminhtml-system-store-deletegroup .content-footer .content-buttons, .adminhtml-system-store-deletewebsite .content-footer .content-buttons {
+  float: left;
+}
+
+/* SALES
+*******************************************************************************/
+/* Disabled block */
+/* line 2878, scss/boxes.scss */
+.overlay span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin: -5px 0 0;
+  color: #000;
+}
+
+/* Prices */
+/* line 2890, scss/boxes.scss */
+.price {
+  white-space: nowrap !important;
+}
+
+/* Incl tax (for order tables) */
+/* line 2896, scss/boxes.scss */
+.price-incl-tax, .price-excl-tax {
+  display: block;
+}
+/* line 2898, scss/boxes.scss */
+.price-incl-tax .label, .price-excl-tax .label {
+  display: block;
+  white-space: nowrap;
+}
+/* line 2902, scss/boxes.scss */
+.price-incl-tax .price, .price-excl-tax .price {
+  /*display:block;*/
+  font-weight: bold;
+}
+
+/* Excl tax (for order tables) */
+/* Orders / Invoices / Shipments / Credit Memos Table */
+/* line 2913, scss/boxes.scss */
+.order-tables td h5.title {
+  font-size: 1em;
+  font-weight: bold;
+}
+/* line 2917, scss/boxes.scss */
+.order-tables td .option-label {
+  font-weight: bold;
+  font-style: italic;
+}
+/* line 2921, scss/boxes.scss */
+.order-tables td .option-value {
+  padding-left: 10px;
+}
+/* line 2924, scss/boxes.scss */
+.order-tables td .qty-table {
+  border: 0 !important;
+  width: 100%;
+}
+/* line 2927, scss/boxes.scss */
+.order-tables td .qty-table td {
+  border: 0 !important;
+  padding: 0 4px !important;
+}
+
+/* line 2935, scss/boxes.scss */
+dl.item-options dt {
+  font-weight: bold;
+  font-style: italic;
+}
+/* line 2939, scss/boxes.scss */
+dl.item-options dd {
+  padding-left: 10px;
+}
+
+/* line 2944, scss/boxes.scss */
+ul.item-options li {
+  padding-left: .7em;
+}
+
+/* Create Order */
+/* line 2951, scss/boxes.scss */
+.page-create-order .side-col {
+  width: 260px;
+  background: none;
+  padding: 0;
+}
+/* line 2956, scss/boxes.scss */
+.page-create-order .main-col {
+  padding-left: 28px;
+}
+/* line 2959, scss/boxes.scss */
+.page-create-order .switcher {
+  margin-bottom: 25px;
+}
+
+/* line 2964, scss/boxes.scss */
+.create-order-sidebar-container {
+  border: 1px solid #d6d6d6;
+  background: #fafafa;
+}
+
+/* line 2970, scss/boxes.scss */
+.create-order-sidebar-block .content {
+  margin: 0 !important;
+  padding: 4px 6px;
+}
+/* line 2974, scss/boxes.scss */
+.create-order-sidebar-block .head {
+  border-top: 1px solid #ddd;
+  background: #ececec;
+  padding: 2px 6px 1px;
+  font-size: .9em;
+  text-align: right;
+}
+/* line 2980, scss/boxes.scss */
+.create-order-sidebar-block .head h5 {
+  float: left;
+  margin: 0;
+  color: #2c464f;
+  text-align: left;
+}
+/* line 2987, scss/boxes.scss */
+.create-order-sidebar-block .content table td, .create-order-sidebar-block table th {
+  padding: 0 3px 0 0;
+}
+/* line 2990, scss/boxes.scss */
+.create-order-sidebar-block select {
+  width: 170px;
+}
+/* line 2993, scss/boxes.scss */
+.create-order-sidebar-block ul {
+  margin-left: 20px;
+}
+
+/* line 2998, scss/boxes.scss */
+.order-choose-address {
+  margin: 0 0 10px 0;
+  padding: 8px 15px;
+  background: #e7efef;
+}
+
+/*Address Selector */
+/* line 3006, scss/boxes.scss */
+.order-save-in-address-book {
+  margin: 0;
+  padding: 8px 15px;
+  background: #e7efef;
+}
+
+/* Save in Address Book Checkbox */
+/* line 3016, scss/boxes.scss */
+.entry-edit .content .hor-scroll {
+  max-width: 665px;
+  margin: 0 auto;
+}
+/* line 3020, scss/boxes.scss */
+.entry-edit .content .form-list {
+  width: 100%;
+}
+/* line 3025, scss/boxes.scss */
+.entry-edit .order-address td.label {
+  width: 150px !important;
+}
+/* line 3027, scss/boxes.scss */
+.entry-edit .order-address td.label label {
+  width: auto !important;
+  padding-right: 27px;
+}
+/* line 3031, scss/boxes.scss */
+.entry-edit .order-address td.label span.required {
+  right: 15px;
+}
+/* line 3035, scss/boxes.scss */
+.entry-edit .order-address input.input-text, .entry-edit .order-address .textarea {
+  width: 95% !important;
+  margin: 0 -17px;
+}
+/* line 3039, scss/boxes.scss */
+.entry-edit .order-address .select {
+  width: 99.8%;
+  margin: 0 -17px;
+}
+
+/* line 3046, scss/boxes.scss */
+.order-search-items .entry-edit .grid {
+  height: 610px;
+  overflow: auto;
+}
+/* line 3049, scss/boxes.scss */
+.order-search-items .entry-edit .grid table {
+  width: 99.9%;
+}
+
+/* .create-order-totals { background:url(images/bkg_create_order_totals.gif) repeat-y 50% 0 !important; } */
+/* Product Configuration Popup */
+/* line 3058, scss/boxes.scss */
+.product-configure-popup {
+  background: #ECEDED;
+  border: 1px solid #555555;
+  left: 50%;
+  margin: -200px 0 0 -450px;
+  position: fixed;
+  top: 50%;
+  width: 900px;
+  z-index: 1000;
+}
+/* line 3067, scss/boxes.scss */
+.product-configure-popup > form > .entry-edit > .entry-edit-head {
+  padding: 3px 5px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-width: 0 0 1px;
+  border-color: #fff;
+  color: #fff;
+  background: url(images/bkg_row-headings.png) repeat-x 0 0 #dc6700;
+}
+/* line 3076, scss/boxes.scss */
+.product-configure-popup > form > .entry-edit > .entry-edit-head .icon-head {
+  color: #fff;
+  padding-left: 10px !important;
+}
+/* line 3081, scss/boxes.scss */
+.product-configure-popup .validation-advice {
+  margin-left: 0;
+}
+
+/* line 3086, scss/boxes.scss */
+#product_composite_configure_messages {
+  margin-left: 0 !important;
+  padding: 10px 15px;
+}
+
+/* line 3092, scss/boxes.scss */
+.product-configure-popup .content {
+  max-height: 400px;
+  overflow: auto;
+  background: #fff;
+  margin: 12px !important;
+  border: 1px solid #d6d6d6;
+}
+/* line 3098, scss/boxes.scss */
+.product-configure-popup .content .grid {
+  padding: 0;
+}
+/* line 3100, scss/boxes.scss */
+.product-configure-popup .content .grid table {
+  border-bottom: 1px solid #CBD3D4;
+}
+/* line 3105, scss/boxes.scss */
+.product-configure-popup .product-options {
+  border-bottom: 1px solid #e7e7e7;
+  margin: 0 0 15px;
+  padding: 0 0 12px;
+}
+/* line 3109, scss/boxes.scss */
+.product-configure-popup .product-options .required {
+  color: #333 !important;
+  font-weight: normal !important;
+}
+/* line 3112, scss/boxes.scss */
+.product-configure-popup .product-options .required em {
+  color: #d40707;
+  margin: 0 5px 0 -3px;
+}
+/* line 3118, scss/boxes.scss */
+.product-configure-popup .last-fieldset .product-options {
+  border: 0 none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* line 3123, scss/boxes.scss */
+.product-configure-popup .buttons-set {
+  margin: 0;
+  padding: 10px 12px;
+}
+/* line 3126, scss/boxes.scss */
+.product-configure-popup .buttons-set button {
+  margin: 0 0 0 5px;
+}
+
+/* Backups */
+/* line 3134, scss/boxes.scss */
+.backup-dialog {
+  background: #ECEDED;
+  border: 1px solid #555555;
+  left: 50%;
+  margin: -200px 0 0 -235px;
+  position: fixed;
+  top: 50%;
+  width: 470px;
+  z-index: 1000;
+}
+/* line 3143, scss/boxes.scss */
+.backup-dialog > .entry-edit > .entry-edit-head {
+  padding: 3px 5px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-width: 0 0 1px;
+  border-color: #fff;
+  color: #fff;
+  background: url(images/bkg_row-headings.png) repeat-x 0 0 #dc6700;
+}
+/* line 3152, scss/boxes.scss */
+.backup-dialog > .entry-edit > .entry-edit-head h4 {
+  padding-left: 10px;
+}
+/* line 3155, scss/boxes.scss */
+.backup-dialog > .entry-edit > .entry-edit-head .head-edit-form {
+  background-image: none;
+  color: white;
+}
+/* line 3159, scss/boxes.scss */
+.backup-dialog > .entry-edit > .entry-edit-head .icon-head {
+  color: #fff;
+  padding-left: 10px !important;
+}
+/* line 3164, scss/boxes.scss */
+.backup-dialog .content {
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  max-height: 400px;
+  overflow: auto;
+}
+/* line 3170, scss/boxes.scss */
+.backup-dialog .question {
+  margin-top: 15px;
+}
+/* line 3173, scss/boxes.scss */
+.backup-dialog .buttons-set {
+  border-top: 1px solid #ddd;
+  background: #eee;
+  margin: 0;
+  overflow: hidden;
+  padding: 7px 10px 8px;
+  width: 448px;
+}
+/* line 3180, scss/boxes.scss */
+.backup-dialog .buttons-set button {
+  margin: 0 0 0 5px;
+}
+/* line 3184, scss/boxes.scss */
+.backup-dialog #ftp-credentials-container {
+  margin-top: 25px;
+}
+/* line 3187, scss/boxes.scss */
+.backup-dialog .password-box-container {
+  margin-top: 15px;
+}
+/* line 3190, scss/boxes.scss */
+.backup-dialog #ftp-credentials-container fieldset {
+  margin-bottom: 0;
+}
+/* line 3194, scss/boxes.scss */
+.backup-dialog input[type=text], .backup-dialog input[type=password] {
+  width: 180px;
+}
+/* line 3198, scss/boxes.scss */
+.backup-dialog .exclude-media-checkbox-container {
+  margin-top: 15px;
+}
+/* line 3201, scss/boxes.scss */
+.backup-dialog td.maintenance-checkbox-container {
+  margin-top: 0;
+  padding-top: 4px;
+}
+
+/* Gift Card Product */
+/* line 3210, scss/boxes.scss */
+.giftcard-form .availability {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+/* line 3214, scss/boxes.scss */
+.giftcard-form .in-stock {
+  color: #1b6800;
+}
+/* line 3217, scss/boxes.scss */
+.giftcard-form .out-of-stock {
+  color: #cf3a00;
+}
+/* line 3220, scss/boxes.scss */
+.giftcard-form .price-box {
+  margin: 1em 0;
+}
+/* line 3223, scss/boxes.scss */
+.giftcard-form label {
+  float: left;
+  width: 25%;
+  padding-top: 5px;
+  text-align: right;
+}
+/* line 3228, scss/boxes.scss */
+.giftcard-form label em {
+  display: none;
+}
+/* line 3231, scss/boxes.scss */
+.giftcard-form label.required:after {
+  content: '*';
+  color: #D40707;
+}
+/* line 3236, scss/boxes.scss */
+.giftcard-form .input-box {
+  float: right;
+  width: 72%;
+}
+/* line 3240, scss/boxes.scss */
+.giftcard-form .field {
+  margin-bottom: 10px;
+  width: 50%;
+  float: left;
+}
+/* line 3245, scss/boxes.scss */
+.giftcard-form .v-fix {
+  float: left;
+}
+/* line 3247, scss/boxes.scss */
+.giftcard-form .v-fix .validation-advice {
+  margin-right: -100px;
+}
+/* line 3251, scss/boxes.scss */
+.giftcard-form .input-box p.notice {
+  float: left;
+  font-size: 11px;
+  margin: -4px 0 -5px;
+}
+/* line 3255, scss/boxes.scss */
+.giftcard-form .input-box p.notice span {
+  display: block;
+  padding-left: 10px;
+}
+
+/* line 3263, scss/boxes.scss */
+.giftcard-amount-form .form-list .input-text {
+  width: 70px;
+}
+/* line 3266, scss/boxes.scss */
+.giftcard-amount-form .form-list select {
+  width: 165px;
+}
+
+/* line 3271, scss/boxes.scss */
+.giftcard-send-form .field .input-text {
+  width: 80%;
+}
+
+/* line 3275, scss/boxes.scss */
+.giftcard-qty-form .field .input-text {
+  width: 143px;
+}
+
+/* line 3279, scss/boxes.scss */
+.giftcard-send-form .form-list textarea {
+  height: 100px;
+}
+
+/* Product Options */
+/* line 3285, scss/boxes.scss */
+.product-options {
+  margin: 10px 0 0;
+}
+/* line 3288, scss/boxes.scss */
+.product-options dt label {
+  font-weight: bold;
+  font-size: 12px;
+}
+/* line 3292, scss/boxes.scss */
+.product-options dt .qty-holder {
+  float: right;
+}
+/* line 3294, scss/boxes.scss */
+.product-options dt .qty-holder label {
+  vertical-align: middle;
+}
+/* line 3298, scss/boxes.scss */
+.product-options dt .qty-disabled {
+  background: none;
+  border: 0;
+  padding: 3px;
+  color: #000;
+}
+/* line 3305, scss/boxes.scss */
+.product-options dd {
+  margin: 5px 0 15px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid #e7e7e7;
+}
+/* line 3309, scss/boxes.scss */
+.product-options dd.last {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* line 3314, scss/boxes.scss */
+.product-options dd .input-box {
+  display: block;
+}
+/* line 3318, scss/boxes.scss */
+.product-options dd input.input-text {
+  width: 98%;
+}
+/* line 3321, scss/boxes.scss */
+.product-options dd input.datetime-picker {
+  width: 150px;
+}
+/* line 3325, scss/boxes.scss */
+.product-options dd .time-picker {
+  display: -moz-inline-box;
+  display: inline-block;
+  padding: 2px 0;
+  vertical-align: middle;
+}
+/* line 3330, scss/boxes.scss */
+.product-options dd .time-picker select {
+  vertical-align: middle;
+}
+/* line 3334, scss/boxes.scss */
+.product-options dd textarea {
+  width: 98%;
+  height: 8em;
+}
+/* line 3338, scss/boxes.scss */
+.product-options dd select {
+  width: 100%;
+}
+/* line 3343, scss/boxes.scss */
+.product-options .options-list li {
+  vertical-align: middle;
+  margin: 0;
+  padding: 2px 0;
+  line-height: 1.315;
+}
+/* line 3350, scss/boxes.scss */
+.product-options .options-list input.radio {
+  float: left;
+  margin: 2px -18px 0 0;
+}
+/* line 3354, scss/boxes.scss */
+.product-options .options-list input.checkbox {
+  float: left;
+  margin: 2px -20px 0 0;
+}
+/* line 3359, scss/boxes.scss */
+.product-options .options-list .label {
+  display: block;
+  margin-left: 20px;
+}
+/* line 3364, scss/boxes.scss */
+.product-options li {
+  margin: 3px 0;
+}
+
+/* Order Totals */
+/* line 3371, scss/boxes.scss */
+.order-totals {
+  margin-left: auto;
+  border: 1px solid #d7c699 !important;
+  padding: 12px 0;
+  background: #fcfac9;
+  text-align: right;
+}
+/* line 3377, scss/boxes.scss */
+.order-totals table {
+  border: none;
+  background: none;
+  margin-left: auto;
+}
+/* line 3381, scss/boxes.scss */
+.order-totals table td {
+  padding: 3px 20px 3px 10px;
+}
+/* line 3383, scss/boxes.scss */
+.order-totals table td.label {
+  white-space: normal;
+  padding: 3px 10px 3px 20px;
+}
+/* line 3387, scss/boxes.scss */
+.order-totals table td.last {
+  padding: 2px 6px;
+}
+
+/* line 3394, scss/boxes.scss */
+.order-totals-bottom {
+  padding: 0 20px;
+}
+
+/* line 3398, scss/boxes.scss */
+.order-totals table .validation-advice {
+  text-align: right;
+  white-space: nowrap;
+  background-position: 100% 1px;
+  padding-right: 14px;
+  padding-left: 0;
+}
+
+/* line 3406, scss/boxes.scss */
+.grand-total, .grand_total {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #eb4d00 !important;
+}
+
+/* Shopping cart total summary row expandable to details */
+/* line 3414, scss/boxes.scss */
+.summary-total {
+  cursor: pointer;
+}
+/* line 3416, scss/boxes.scss */
+.summary-total td {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+/* line 3420, scss/boxes.scss */
+.summary-total .summary-collapse {
+  float: right;
+  padding-left: 20px;
+  background: url(images/bkg_collapse.gif) 0 4px no-repeat;
+  text-align: right;
+  cursor: pointer;
+}
+
+/* line 3430, scss/boxes.scss */
+.show-details .summary-collapse {
+  background-position: 0 -52px;
+}
+/* line 3433, scss/boxes.scss */
+.show-details td {
+  border-top: 1px solid #eae1b2;
+}
+
+/* line 3438, scss/boxes.scss */
+.summary-details td {
+  font-size: 11px;
+  background-color: #fdfcdf;
+}
+
+/* line 3443, scss/boxes.scss */
+.summary-details-first td {
+  border-top: 1px solid #eae1b2;
+}
+
+/* Order Constants */
+/* line 3450, scss/boxes.scss */
+.payment-methods dt {
+  margin-bottom: 3px;
+}
+/* line 3453, scss/boxes.scss */
+.payment-methods dd {
+  margin-left: 20px;
+}
+/* line 3456, scss/boxes.scss */
+.payment-methods .validation-advice {
+  margin-left: 2px;
+}
+
+/* Cards List */
+/* line 3464, scss/boxes.scss */
+.cards-list dt {
+  font-weight: bold;
+  margin: 5px 0 0;
+}
+/* line 3468, scss/boxes.scss */
+.cards-list dd {
+  margin-left: 0;
+}
+/* line 3471, scss/boxes.scss */
+.cards-list .offset {
+  padding: 2px 0 2px 20px;
+}
+/* line 3475, scss/boxes.scss */
+.cards-list .info-table th, .cards-list .info-table td {
+  text-align: left;
+  vertical-align: top;
+}
+/* line 3479, scss/boxes.scss */
+.cards-list .info-table th {
+  font-weight: bold;
+  padding: 2px 7px 2px 0;
+}
+/* line 3483, scss/boxes.scss */
+.cards-list .info-table td {
+  padding: 2px 0;
+}
+
+/* line 3489, scss/boxes.scss */
+.release-amounts {
+  margin: 0.5em 0;
+}
+
+/* Payment Bridge */
+/* line 3495, scss/boxes.scss */
+.pbridge-reload {
+  display: block;
+  text-align: right;
+}
+
+/* Centinel */
+/* line 3502, scss/boxes.scss */
+.centinel .authentication {
+  background: #fff;
+}
+/* line 3504, scss/boxes.scss */
+.centinel .authentication iframe {
+  width: 99%;
+  height: 400px;
+  background: transparent !important;
+  margin: 0 0 7px !important;
+  padding: 0 !important;
+  border: 1px solid #ddd !important;
+}
+
+/* Gift Messages */
+/* line 3517, scss/boxes.scss */
+.giftmessage-order-create .entire-order, .giftmessage-order-create .each-order-item {
+  background-color: #eee;
+  padding: 6px 14px;
+  height: 275px;
+}
+/* line 3522, scss/boxes.scss */
+.giftmessage-order-create .entire-order .entry-edit, .giftmessage-order-create .each-order-item .scroll {
+  height: 250px;
+  overflow: auto;
+}
+/* line 3526, scss/boxes.scss */
+.giftmessage-order-create .single {
+  width: 100%;
+  float: left;
+  padding: 1.2em 1.5em;
+}
+/* line 3531, scss/boxes.scss */
+.giftmessage-order-create h5 {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+/* line 3537, scss/boxes.scss */
+.giftmessage-order-create h6 {
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 1.55;
+  background-color: #cfcfcf;
+  margin-bottom: 10px;
+  padding: 2px 6px;
+  width: 95%;
+}
+/* line 3546, scss/boxes.scss */
+.giftmessage-order-create .fieldset {
+  padding: 0;
+}
+/* line 3549, scss/boxes.scss */
+.giftmessage-order-create .form-list {
+  width: 100%;
+}
+/* line 3552, scss/boxes.scss */
+.giftmessage-order-create .form-list td.label label {
+  width: 100px;
+}
+/* line 3556, scss/boxes.scss */
+.giftmessage-order-create .form-list td.value input.input-text, .giftmessage-order-create .form-list td.value textarea {
+  width: 95%;
+}
+
+/* line 3564, scss/boxes.scss */
+.giftmessage-single-item {
+  padding: 0 !important;
+}
+/* line 3566, scss/boxes.scss */
+.giftmessage-single-item .item-container {
+  cursor: auto;
+}
+/* line 3569, scss/boxes.scss */
+.giftmessage-single-item .item-text {
+  padding: 2px 4px;
+}
+/* line 3572, scss/boxes.scss */
+.giftmessage-single-item .gift-form {
+  margin-top: 3px;
+  background: #f7f6f4 url(images/gift-message-grid-column-bg.gif) 0 0 repeat-x;
+}
+/* line 3576, scss/boxes.scss */
+.giftmessage-single-item .gift-form .entry-edit fieldset {
+  border: none !important;
+  margin-bottom: 0;
+  background: none !important;
+  padding: 15px;
+}
+/* line 3581, scss/boxes.scss */
+.giftmessage-single-item .gift-form .entry-edit fieldset .last {
+  margin-bottom: 0;
+}
+/* line 3585, scss/boxes.scss */
+.giftmessage-single-item .gift-form .entry-edit input.input-text {
+  width: 75% !important;
+}
+/* line 3588, scss/boxes.scss */
+.giftmessage-single-item .gift-form .entry-edit textarea {
+  width: 96% !important;
+}
+/* line 3593, scss/boxes.scss */
+.giftmessage-single-item .action-link {
+  padding-right: 10px;
+  background: url(images/gift-message-expand.gif) 100% 50% no-repeat;
+  cursor: pointer;
+}
+/* line 3598, scss/boxes.scss */
+.giftmessage-single-item .open {
+  background: url(images/gift-message-collapse.gif) 100% 50% no-repeat;
+}
+
+/* line 3604, scss/boxes.scss */
+.giftmessage-whole-order-container .entry-edit input.input-text {
+  width: 280px !important;
+}
+/* line 3607, scss/boxes.scss */
+.giftmessage-whole-order-container .entry-edit textarea {
+  width: 99% !important;
+  padding: 2px 3px;
+}
+/* line 3611, scss/boxes.scss */
+.giftmessage-whole-order-container .entry-edit label {
+  width: 121px;
+}
+
+/* PayPal */
+/* line 3618, scss/boxes.scss */
+.pp-general-uk > .config-heading .heading strong, .pp-method-payflow > .config-heading .heading strong, .pp-method-express > .config-heading .heading strong, .pp-method-general-bml > .config-heading .heading strong, .pp-method-payflow-bml > .config-heading .heading strong, .pp-method-express-bml > .config-heading .heading strong {
+  padding-left: 56px;
+  background: url(images/paypal/logo-paypal.png) no-repeat 0 2px;
+}
+
+/* line 3624, scss/boxes.scss */
+.pp-method-general > .config-heading .heading strong {
+  padding-left: 56px;
+  background: url(images/paypal/logo-paypal.png) no-repeat 0 2px;
+}
+/* line 3628, scss/boxes.scss */
+.pp-method-general > .config-heading .button-container {
+  padding: 6px 0 0 180px;
+  background: url(images/paypal/pp-allinone.png) no-repeat 0 0;
+  height: 28px;
+}
+
+/* line 3635, scss/boxes.scss */
+.pp-method-express > .config-heading .button-container {
+  padding: 0 0 0 160px;
+  background: url(images/paypal/pp-alt.png) no-repeat 0 0;
+  height: 29px;
+}
+
+/* line 3641, scss/boxes.scss */
+.pp-method-payflow > .config-heading .button-container {
+  padding: 0px 0 0 99px;
+  background: url(images/paypal/pp-gateways.png) no-repeat 1px 0;
+  height: 36px;
+}
+
+/* line 3647, scss/boxes.scss */
+.pp-general-uk > .config-heading .button-container {
+  padding: 9px 0 0 201px;
+  background: url(images/paypal/pp-uk.png) no-repeat 0 0;
+  height: 27px;
+}
+
+/* line 3653, scss/boxes.scss */
+.pp-method-general-bml > .config-heading .button-container {
+  padding: 6px 0 0 237px;
+  background: url(images/paypal/pp-allinone-bml.png) no-repeat 0 0;
+  height: 28px;
+}
+
+/* line 3659, scss/boxes.scss */
+.pp-method-payflow-bml > .config-heading .button-container {
+  padding: 4px 0 0 156px;
+  background: url(images/paypal/pp-gateways-bml.png) no-repeat 1px 0;
+  height: 41px;
+}
+
+/* line 3665, scss/boxes.scss */
+.pp-method-express-bml > .config-heading .button-container {
+  padding: 1px 0 0 217px;
+  background: url(images/paypal/pp-alt-bml.png) no-repeat 0 0;
+  height: 30px;
+}
+
+/* Packaging for Shipping Popup */
+/* line 3673, scss/boxes.scss */
+#popup-window-mask, .popup-window-mask {
+  background: #000;
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  /* IE8 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+/* line 3688, scss/boxes.scss */
+.packaging-window {
+  background: #ECEDED;
+  border: 1px solid #555555;
+  left: 50%;
+  margin: -200px 0 0 -471px;
+  position: fixed;
+  top: 50%;
+  width: 1100px;
+  z-index: 1000;
+}
+
+/* line 3699, scss/boxes.scss */
+.packed-window {
+  background: #ECEDED;
+  border: 1px solid #555555;
+  left: 50%;
+  margin: -200px 0 0 -471px;
+  position: fixed;
+  top: 50%;
+  width: 1100px;
+  z-index: 1000;
+}
+/* line 3708, scss/boxes.scss */
+.packed-window > .entry-edit > .entry-edit-head {
+  padding: 3px 5px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-width: 0 0 1px;
+  border-color: #fff;
+  color: #fff;
+  background: url(images/bkg_row-headings.png) repeat-x 0 0 #dc6700;
+}
+
+/* line 3720, scss/boxes.scss */
+.packaging-window > .entry-edit > .entry-edit-head {
+  padding: 3px 5px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-width: 0 0 1px;
+  border-color: #fff;
+  color: #fff;
+  background: url(images/bkg_row-headings.png) repeat-x 0 0 #dc6700;
+}
+
+/* line 3731, scss/boxes.scss */
+.packed-window > .entry-edit > .entry-edit-head h4.icon-head, .packaging-window > .entry-edit > .entry-edit-head h4.icon-head {
+  color: #fff;
+  padding-left: 10px !important;
+}
+
+/* line 3736, scss/boxes.scss */
+.packed-window .entry-edit-head {
+  padding: 3px 5px;
+  margin-bottom: 0;
+}
+
+/* line 3742, scss/boxes.scss */
+.packaging-window .entry-edit-head {
+  padding: 3px 5px;
+  margin-bottom: 0;
+}
+/* line 3745, scss/boxes.scss */
+.packaging-window .entry-edit-head button {
+  float: right;
+}
+/* line 3749, scss/boxes.scss */
+.packaging-window .messages {
+  border: 1px solid #f16048;
+  color: #df280a;
+  background: #faebe7 url(images/error_msg_icon.gif) no-repeat 10px 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px 10px 10px 35px;
+}
+/* line 3757, scss/boxes.scss */
+.packaging-window .validation-failed {
+  background: #fef0eD;
+  border: 1px dashed #D6340E;
+}
+
+/* line 3763, scss/boxes.scss */
+.packed-window .packed-content {
+  overflow: auto;
+  height: 400px;
+  height: auto !important;
+  max-height: 400px;
+  margin: 0 0 10px;
+  padding: 10px 10px 0;
+}
+
+/* line 3773, scss/boxes.scss */
+.packaging-window .packaging-content {
+  overflow: auto;
+  height: 400px;
+  height: auto !important;
+  max-height: 400px;
+  margin: 0 0 10px;
+  padding: 10px 10px 0;
+}
+/* line 3781, scss/boxes.scss */
+.packaging-window .package-block {
+  background: #fefefe;
+  border: 2px solid #CDDDDD;
+  margin: 0 0 20px;
+  padding: 10px;
+}
+/* line 3787, scss/boxes.scss */
+.packaging-window .package-options {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  padding: 10px 0 0;
+  margin: 3px 0 0;
+}
+/* line 3792, scss/boxes.scss */
+.packaging-window .package-options td {
+  vertical-align: middle;
+}
+/* line 3795, scss/boxes.scss */
+.packaging-window .package-options select {
+  width: 130px;
+}
+
+/* line 3805, scss/boxes.scss */
+.packaging-window .package-options input.input-text, .packaging-window .package-options textarea {
+  padding: 1px;
+  border: 1px solid #b2b2b2;
+  color: #000;
+  background: #fff;
+  font: 12px Arial, Helvetica, sans-serif;
+  -moz-box-shadow: 0 0 2px 1px #dadada;
+  box-shadow: 0 0 2px 1px #dadada;
+}
+/* line 3814, scss/boxes.scss */
+.packaging-window .package-options select {
+  padding: 1px;
+  border: 1px solid #b2b2b2;
+  color: #000;
+  background: #fff;
+  font: 12px Arial, Helvetica, sans-serif;
+  -moz-box-shadow: 0 0 2px 1px #dadada;
+  box-shadow: 0 0 2px 1px #dadada;
+  padding: 0;
+}
+/* line 3824, scss/boxes.scss */
+.packaging-window .package-options .input-text {
+  width: 50px;
+}
+/* line 3830, scss/boxes.scss */
+.packaging-window .package-options .customs-value {
+  width: 80px;
+}
+/* line 3833, scss/boxes.scss */
+.packaging-window .package-options .options-weight {
+  width: 75px;
+}
+/* line 3836, scss/boxes.scss */
+.packaging-window .package-options .options-units-weight, .packaging-window .package-options .options-units-dimensions {
+  width: 45px;
+}
+/* line 3839, scss/boxes.scss */
+.packaging-window .package-options .options-content-type {
+  width: 120px;
+}
+/* line 3842, scss/boxes.scss */
+.packaging-window .package-options input[type=text].disabled, .packaging-window .package-options select.disabled {
+  background: #eee;
+}
+/* line 3846, scss/boxes.scss */
+.packaging-window .package-options-contents {
+  border-top: 0;
+}
+/* line 3849, scss/boxes.scss */
+.packaging-window .package-add-products {
+  margin: 10px 0 0;
+}
+/* line 3851, scss/boxes.scss */
+.packaging-window .package-add-products .grid {
+  padding: 0;
+  margin: 0;
+}
+/* line 3854, scss/boxes.scss */
+.packaging-window .package-add-products .grid button {
+  vertical-align: middle;
+}
+/* line 3859, scss/boxes.scss */
+.packaging-window .package-number {
+  font-weight: bold;
+}
+/* line 3861, scss/boxes.scss */
+.packaging-window .package-number span {
+  margin-left: 5px;
+}
+/* line 3865, scss/boxes.scss */
+.packaging-window .buttons-set {
+  padding: 0 10px;
+}
+
+/* line 3871, scss/boxes.scss */
+.packed-window .package {
+  background: #fefefe;
+  border: 7px solid #d5d5d5;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+/* line 3876, scss/boxes.scss */
+.packed-window .package h4 {
+  background: #fefefe;
+  border: solid #ccc;
+  border-width: 0 0 1px 1px;
+  float: right;
+  color: #222;
+  font-size: 12px;
+  margin: -10px -10px 0 0;
+  padding: 5px 10px;
+  position: relative;
+  z-index: 100;
+}
+/* line 3888, scss/boxes.scss */
+.packed-window .package strong {
+  display: block;
+  padding: 0 0 3px;
+}
+/* line 3892, scss/boxes.scss */
+.packed-window .package .grid {
+  padding: 0;
+}
+/* line 3896, scss/boxes.scss */
+.packed-window .package-info {
+  background: #f3f3f3;
+  border-bottom: 1px solid #ccc;
+  margin: -10px -10px 10px;
+  padding: 5px 10px;
+  position: relative;
+}
+/* line 3903, scss/boxes.scss */
+.packed-window .package-options {
+  width: 60%;
+}
+/* line 3905, scss/boxes.scss */
+.packed-window .package-options td, .packed-window .package-options th {
+  padding: 1px 0;
+}
+/* line 3909, scss/boxes.scss */
+.packed-window .buttons-set {
+  padding: 5px 10px;
+}
+
+/* Order comment */
+/* line 3916, scss/boxes.scss */
+.order-comment {
+  width: 96%;
+  height: 8em;
+  resize: vertical;
+}
+
+/* CATALOG
+*******************************************************************************/
+/* SAASDEV-644 - Added no-wrap behavior into "Display Settings" tab */
+/* line 3927, scss/boxes.scss */
+#category_edit_form .form-list td.label label {
+  white-space: nowrap;
+}
+
+/* Category */
+/* line 3934, scss/boxes.scss */
+.categories-side-col .content-header {
+  padding: 0;
+}
+/* line 3936, scss/boxes.scss */
+.categories-side-col .content-header h3 {
+  float: none;
+}
+/* line 3939, scss/boxes.scss */
+.categories-side-col .content-header button {
+  margin: 5px 0 0;
+}
+/* line 3943, scss/boxes.scss */
+.categories-side-col .switcher {
+  margin: 10px 20px 0 0;
+}
+/* line 3946, scss/boxes.scss */
+.categories-side-col .tree-actions {
+  text-align: center;
+  margin: 10px 20px 10px 0;
+}
+/* line 3950, scss/boxes.scss */
+.categories-side-col .tree-holder {
+  margin-right: 20px;
+}
+
+/* line 3955, scss/boxes.scss */
+.no-active-category a span {
+  color: #aaa !important;
+}
+
+/* line 3959, scss/boxes.scss */
+#tree-div {
+  overflow: auto !important;
+  padding-bottom: 15px;
+  width: 200px;
+}
+
+/* line 3965, scss/boxes.scss */
+.x-tree-node {
+  margin: 0 !important;
+}
+/* line 3967, scss/boxes.scss */
+.x-tree-node .leaf .x-tree-node-icon {
+  background-image: url(images/fam_leaf.png);
+}
+/* line 3970, scss/boxes.scss */
+.x-tree-node .system-leaf .x-tree-node-icon {
+  background-image: url(images/fam_application_form_delete.png);
+}
+
+/* line 3975, scss/boxes.scss */
+.x-tree-node-ct {
+  overflow: auto;
+}
+/* line 3977, scss/boxes.scss */
+.x-tree-node-ct .x-tree-node-ct {
+  overflow: visible;
+}
+
+/* Product - Websites */
+/* line 3984, scss/boxes.scss */
+.webiste-groups {
+  padding: 10px 20px;
+}
+
+/* line 3988, scss/boxes.scss */
+.group-stores {
+  padding: 2px 10px;
+}
+
+/* Products - Bundles */
+/* line 3995, scss/boxes.scss */
+.bundle-option-row table tbody td {
+  white-space: nowrap;
+}
+/* line 3997, scss/boxes.scss */
+.bundle-option-row table tbody td label {
+  float: left;
+}
+/* line 4002, scss/boxes.scss */
+.bundle-option-row input.option-label {
+  width: 50% !important;
+}
+/* line 4005, scss/boxes.scss */
+.bundle-option-row input.option-position {
+  width: 70px !important;
+}
+
+/* line 4011, scss/boxes.scss */
+.catalog-categories .side-col {
+  width: 240px;
+}
+
+/* Products - Tier Price */
+/* line 4017, scss/boxes.scss */
+.tier-price-input {
+  margin-bottom: 8px;
+}
+/* line 4020, scss/boxes.scss */
+.tier-price-input input.price {
+  width: 80px;
+  margin-right: 10px;
+}
+/* line 4024, scss/boxes.scss */
+.tier-price-input input.qty {
+  width: 80px;
+}
+/* line 4028, scss/boxes.scss */
+.tier-price-input .tier-container {
+  position: relative;
+  clear: both;
+}
+/* line 4031, scss/boxes.scss */
+.tier-price-input .tier-container div {
+  float: left;
+}
+/* line 4034, scss/boxes.scss */
+.tier-price-input .tier-container label {
+  width: 30px;
+  margin: 0;
+  padding: 0;
+}
+/* line 4040, scss/boxes.scss */
+.tier-price-input .validation-advice {
+  margin: 0;
+  height: 25px;
+}
+/* line 4044, scss/boxes.scss */
+.tier-price-input .custgroup-div select {
+  width: auto;
+  padding: 0;
+}
+/* line 4048, scss/boxes.scss */
+.tier-price-input .qty-div {
+  padding-left: 20px;
+}
+/* line 4051, scss/boxes.scss */
+.tier-price-input .price-div {
+  padding-left: 20px;
+}
+/* line 4053, scss/boxes.scss */
+.tier-price-input .price-div .validation-advice {
+  margin: 0;
+}
+
+/* line 4059, scss/boxes.scss */
+.btn-remove-tier-group {
+  float: right;
+  right: 24px;
+  top: 5px;
+}
+
+/* Product - Gallery */
+/* line 4067, scss/boxes.scss */
+.image-preview {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* Attributes */
+/* line 4076, scss/boxes.scss */
+.edit-attribute-set .form-list td.label {
+  width: 105px;
+}
+/* line 4078, scss/boxes.scss */
+.edit-attribute-set .form-list td.label label {
+  width: 105px;
+}
+/* line 4082, scss/boxes.scss */
+.edit-attribute-set .form-list td.value .input-text {
+  width: 160px;
+}
+/* line 4086, scss/boxes.scss */
+.edit-attribute-set .entry-edit fieldset input.input-text {
+  width: 200px;
+}
+
+/* Review & Ratings */
+/* line 4093, scss/boxes.scss */
+.ratings {
+  margin: 0;
+}
+
+/* line 4097, scss/boxes.scss */
+.rating-box {
+  float: left;
+  position: relative;
+  width: 69px;
+  height: 16px;
+  margin: 0 5px 3px 0;
+  background: url(images/product_rating_blank_star.gif) repeat-x;
+}
+/* line 4104, scss/boxes.scss */
+.rating-box .rating {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  background: url(images/product_rating_full_star.gif) repeat-x;
+}
+
+/* line 4114, scss/boxes.scss */
+.field-row .ratings {
+  width: 120px;
+  float: left;
+  clear: right;
+}
+/* line 4119, scss/boxes.scss */
+.field-row .ratings-container {
+  width: 250px;
+  float: left;
+}
+
+/* line 4125, scss/boxes.scss */
+.product-review-box {
+  width: 450px;
+}
+/* line 4127, scss/boxes.scss */
+.product-review-box table {
+  width: 100%;
+}
+/* line 4130, scss/boxes.scss */
+.product-review-box td, .product-review-box th {
+  text-align: center;
+  padding-right: 5px;
+}
+/* line 4134, scss/boxes.scss */
+.product-review-box td.label {
+  width: 100px;
+  text-align: left;
+}
+
+/* Price Rules */
+/* line 4143, scss/boxes.scss */
+.rule-tree ul {
+  padding-left: 16px !important;
+  border-left: dotted 1px #888;
+}
+/* line 4147, scss/boxes.scss */
+.rule-tree .x-tree ul {
+  padding-left: 0 !important;
+  border-left: none !important;
+}
+
+/* line 4154, scss/boxes.scss */
+.rule-param .label {
+  font-weight: bold;
+  color: black;
+}
+/* line 4157, scss/boxes.scss */
+.rule-param .label:hover {
+  font-weight: bold;
+  color: blue;
+}
+/* line 4162, scss/boxes.scss */
+.rule-param .element {
+  display: none;
+}
+/* line 4165, scss/boxes.scss */
+.rule-param input {
+  width: auto !important;
+  min-width: 170px;
+}
+/* line 4169, scss/boxes.scss */
+.rule-param select {
+  width: auto !important;
+  min-width: 170px;
+}
+/* line 4172, scss/boxes.scss */
+.rule-param select.multiselect {
+  vertical-align: top;
+}
+
+/* line 4179, scss/boxes.scss */
+.rule-param-edit .label {
+  display: none;
+}
+/* line 4182, scss/boxes.scss */
+.rule-param-edit .element {
+  display: inline;
+}
+
+/* line 4187, scss/boxes.scss */
+.rule-param-add, .rule-param-apply {
+  font-weight: normal;
+  color: green;
+  text-decoration: none;
+}
+/* line 4191, scss/boxes.scss */
+.rule-param-add:hover, .rule-param-apply:hover {
+  font-weight: normal;
+  color: blue;
+  text-decoration: none;
+}
+
+/* line 4198, scss/boxes.scss */
+.rule-param-remove {
+  font-weight: normal;
+  color: red;
+  text-decoration: none;
+}
+/* line 4202, scss/boxes.scss */
+.rule-param-remove:hover {
+  font-weight: normal;
+  color: blue;
+  text-decoration: none;
+}
+
+/* line 4209, scss/boxes.scss */
+.rule-chooser {
+  border: solid 1px #ccc;
+  margin: 5px;
+  padding: 5px;
+  display: none;
+}
+
+/* line 4216, scss/boxes.scss */
+.rule-param-wait {
+  padding-left: 20px;
+  background-image: url(images/rule-ajax-loader.gif);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+
+/* line 4224, scss/boxes.scss */
+.rule-tree .rule-param-children dl {
+  float: left;
+  width: 32%;
+  margin: 4px 0 15px 7px;
+}
+/* line 4229, scss/boxes.scss */
+.rule-tree .rule-param-children dt {
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+/* line 4232, scss/boxes.scss */
+.rule-tree .rule-param-children dt a {
+  color: #2f2f2f;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* line 4236, scss/boxes.scss */
+.rule-tree .rule-param-children dt a:hover {
+  color: #2f2f2f;
+  text-decoration: none;
+}
+/* line 4242, scss/boxes.scss */
+.rule-tree .rule-param-children dd {
+  margin: 3px 0;
+}
+/* line 4244, scss/boxes.scss */
+.rule-tree .rule-param-children dd li {
+  margin: 2px 0;
+}
+/* line 4247, scss/boxes.scss */
+.rule-tree .rule-param-children dd a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* line 4250, scss/boxes.scss */
+.rule-tree .rule-param-children dd a:hover {
+  text-decoration: none;
+}
+
+/* Product Customer Defined options */
+/* line 4260, scss/boxes.scss */
+.option-box .option-header input.input-text, .option-box .option-header textarea {
+  padding: 1px;
+  border: 1px solid #b2b2b2;
+  color: #000;
+  background: #fff;
+  font: 12px Arial, Helvetica, sans-serif;
+  -moz-box-shadow: 0 0 2px 1px #dadada;
+  box-shadow: 0 0 2px 1px #dadada;
+}
+/* line 4269, scss/boxes.scss */
+.option-box .option-header select {
+  padding: 1px;
+  border: 1px solid #b2b2b2;
+  color: #000;
+  background: #fff;
+  font: 12px Arial, Helvetica, sans-serif;
+  -moz-box-shadow: 0 0 2px 1px #dadada;
+  box-shadow: 0 0 2px 1px #dadada;
+  padding: 0;
+}
+
+/* line 4282, scss/boxes.scss */
+.custom-options .box {
+  padding: 1px 1.5em;
+}
+/* line 4285, scss/boxes.scss */
+.custom-options .option-box {
+  border: 1px solid #cddddd;
+  padding: 1em;
+  background: #e7efef;
+  margin: 1.5em 0;
+}
+/* line 4291, scss/boxes.scss */
+.custom-options .option-header {
+  border: 0;
+  width: 100%;
+  background: #e7efef;
+  border-bottom: 1em solid #e7efef;
+}
+/* line 4296, scss/boxes.scss */
+.custom-options .option-header .input-text, .custom-options .option-header .select {
+  width: 95%;
+}
+/* line 4299, scss/boxes.scss */
+.custom-options .option-header th {
+  padding: 2px;
+  line-height: 28px;
+}
+/* line 4303, scss/boxes.scss */
+.custom-options .option-header td {
+  padding: 5px 2px;
+}
+/* line 4307, scss/boxes.scss */
+.custom-options .opt-title {
+  width: 175px;
+}
+/* line 4310, scss/boxes.scss */
+.custom-options .opt-type {
+  width: 150px;
+}
+/* line 4313, scss/boxes.scss */
+.custom-options .opt-req {
+  width: 80px;
+}
+/* line 4316, scss/boxes.scss */
+.custom-options .opt-order {
+  width: 70px;
+}
+/* line 4319, scss/boxes.scss */
+.custom-options .option-box .border {
+  width: 615px;
+}
+/* line 4322, scss/boxes.scss */
+.custom-options th {
+  white-space: nowrap;
+}
+/* line 4325, scss/boxes.scss */
+.custom-options .type-title {
+  width: auto;
+}
+/* line 4328, scss/boxes.scss */
+.custom-options .type-price {
+  width: 60px;
+}
+/* line 4331, scss/boxes.scss */
+.custom-options .type-type {
+  width: 80px;
+}
+/* line 4334, scss/boxes.scss */
+.custom-options .type-uqty {
+  width: 100px;
+}
+/* line 4337, scss/boxes.scss */
+.custom-options .type-sku {
+  width: 150px;
+}
+/* line 4340, scss/boxes.scss */
+.custom-options .type-order {
+  width: 60px;
+}
+/* line 4343, scss/boxes.scss */
+.custom-options .type-butt {
+  width: 33px;
+}
+/* line 4346, scss/boxes.scss */
+.custom-options .type-last {
+  width: auto;
+}
+/* line 4350, scss/boxes.scss */
+.custom-options .option-box .border input.input-text, .custom-options .option-box .border select.select {
+  width: 90% !important;
+}
+/* line 4353, scss/boxes.scss */
+.custom-options .option-box .border .type-last input.input-text {
+  width: 60px !important;
+}
+/* line 4356, scss/boxes.scss */
+.custom-options .option-box .border input.type-sku {
+  width: 150px !important;
+}
+/* line 4360, scss/boxes.scss */
+.custom-options .giftregistry-custom-attributes {
+  overflow: hidden;
+  width: 100%;
+}
+/* line 4363, scss/boxes.scss */
+.custom-options .giftregistry-custom-attributes .option-header {
+  border-bottom: none;
+  float: left;
+  margin-right: 10px;
+  width: auto;
+}
+/* line 4369, scss/boxes.scss */
+.custom-options .giftregistry-custom-attributes .grid {
+  clear: left;
+  padding: 1em 0 0;
+}
+
+/* Bundle product */
+/* line 4379, scss/boxes.scss */
+.bundle .option-box {
+  padding-bottom: 2em;
+}
+/* line 4381, scss/boxes.scss */
+.bundle .option-box .border {
+  width: 100%;
+  border-bottom: 0;
+}
+/* line 4384, scss/boxes.scss */
+.bundle .option-box .border td {
+  border-bottom: 1px solid #dce5e6 !important;
+}
+/* line 4389, scss/boxes.scss */
+.bundle .option-title {
+  padding: 0 0 10px;
+  border-bottom: 1px solid #cddddd;
+}
+/* line 4392, scss/boxes.scss */
+.bundle .option-title button {
+  float: right;
+}
+/* line 4395, scss/boxes.scss */
+.bundle .option-title label {
+  font-weight: bold;
+  line-height: 21px;
+  padding-right: 1em;
+  float: left;
+}
+/* line 4401, scss/boxes.scss */
+.bundle .option-title .input-text {
+  float: left;
+  width: 260px;
+  vertical-align: middle;
+}
+/* line 4407, scss/boxes.scss */
+.bundle .option-header {
+  clear: both;
+  margin-top: 5px;
+}
+/* line 4411, scss/boxes.scss */
+.bundle .border .last {
+  width: 33px;
+}
+
+/* Downloadable Product */
+/* line 4418, scss/boxes.scss */
+.files {
+  width: 195px;
+}
+/* line 4420, scss/boxes.scss */
+.files input.input-text {
+  float: left;
+  width: 134px !important;
+}
+
+/* line 4426, scss/boxes.scss */
+.files-wide {
+  width: 355px;
+}
+/* line 4428, scss/boxes.scss */
+.files-wide input.input-text {
+  float: left;
+  width: 294px !important;
+}
+
+/* line 4434, scss/boxes.scss */
+.files label, .files-wide label {
+  float: left;
+  width: 55px;
+}
+
+/* line 4439, scss/boxes.scss */
+.files .row, .files-wide .row {
+  margin-bottom: 5px;
+}
+
+/* Files Uploader */
+/* line 4445, scss/boxes.scss */
+.files .flex, .files-wide .flex {
+  float: right !important;
+  position: static !important;
+}
+
+/* line 4450, scss/boxes.scss */
+.files .uploader, .files-wide .uploader {
+  float: left;
+  overflow: hidden;
+}
+
+/* line 4455, scss/boxes.scss */
+.files .uploader {
+  width: 100px;
+}
+
+/* line 4459, scss/boxes.scss */
+.files-wide .uploader {
+  width: 260px;
+}
+
+/* line 4463, scss/boxes.scss */
+.files .uploader .file-row-info, .files-wide .uploader .file-row-info, .files .uploader .file-row-narrow, .files-wide .uploader .file-row-narrow {
+  margin: 0 !important;
+}
+
+/* line 4467, scss/boxes.scss */
+td.input-price {
+  white-space: nowrap;
+}
+/* line 4469, scss/boxes.scss */
+td.input-price .validation-advice {
+  white-space: normal;
+}
+/* line 4472, scss/boxes.scss */
+td.input-price input.input-text {
+  width: 4em !important;
+}
+
+/* line 4478, scss/boxes.scss */
+input.sort {
+  width: 4em !important;
+}
+/* line 4481, scss/boxes.scss */
+input.downloads {
+  width: 6.5em !important;
+}
+
+/* CUSTOMER
+*******************************************************************************/
+/* Addresses */
+/* line 4491, scss/boxes.scss */
+.address-list {
+  width: 28em;
+  padding-right: 22px;
+}
+/* line 4494, scss/boxes.scss */
+.address-list address {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 4498, scss/boxes.scss */
+.address-list .btn-edit-address, .address-list .btn-remove-address {
+  position: absolute;
+  top: 8px;
+}
+/* line 4502, scss/boxes.scss */
+.address-list .btn-edit-address {
+  right: 8px;
+}
+/* line 4505, scss/boxes.scss */
+.address-list .btn-remove-address {
+  right: 27px;
+}
+/* line 4508, scss/boxes.scss */
+.address-list li {
+  position: relative;
+  padding: 12px 14px;
+  cursor: pointer;
+  border-top: 1px solid #e6e6e6;
+  background: url(images/address_list_li.gif) repeat;
+}
+/* line 4514, scss/boxes.scss */
+.address-list li.on {
+  background: #e7efef;
+}
+/* line 4517, scss/boxes.scss */
+.address-list li.over {
+  background-color: #fbdfc9;
+}
+/* line 4520, scss/boxes.scss */
+.address-list li table {
+  width: 100%;
+}
+
+/* line 4526, scss/boxes.scss */
+.delete-address {
+  float: right;
+  margin: 0 0 10px 10px;
+}
+
+/* line 4531, scss/boxes.scss */
+.address-type .address-type-line {
+  display: block;
+  margin: 2px 0;
+}
+/* line 4534, scss/boxes.scss */
+.address-type .address-type-line input {
+  margin-right: 3px;
+}
+
+/* NEWSLETTER
+*******************************************************************************/
+/* line 4542, scss/boxes.scss */
+.template-preview {
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+}
+
+/* SYSTEM
+*******************************************************************************/
+/* line 4552, scss/boxes.scss */
+.stores-tree td {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+/* line 4555, scss/boxes.scss */
+.stores-tree td.label label {
+  display: inline;
+  width: auto;
+  padding-right: 10px;
+}
+/* line 4560, scss/boxes.scss */
+.stores-tree td.website-label label {
+  font-weight: bold;
+}
+/* line 4563, scss/boxes.scss */
+.stores-tree td.store-group-label label {
+  font-weight: bold;
+  padding-left: 15px;
+}
+/* line 4567, scss/boxes.scss */
+.stores-tree td.store-label label {
+  padding-left: 30px;
+}
+/* line 4571, scss/boxes.scss */
+.stores-tree .buttons-set {
+  margin: 10px 0;
+}
+
+/* line 4576, scss/boxes.scss */
+.log-details {
+  border: 1px solid #d6d6d6;
+  padding: 15px;
+  background: #fafafa;
+  margin: 0 0 15px;
+}
+/* line 4581, scss/boxes.scss */
+.log-details table {
+  width: 100%;
+}
+/* line 4583, scss/boxes.scss */
+.log-details table th, .log-details table td {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  vertical-align: middle;
+}
+/* line 4588, scss/boxes.scss */
+.log-details table th {
+  font-weight: bold;
+  padding-right: 30px;
+  white-space: nowrap;
+}
+
+/* Configuration */
+/*fieldset.config td       { padding-top:5px; padding-bottom:5px; }
+fieldset.config input.input-text { width:250px; }
+fieldset.config select.select { width:256px; }*/
+/* line 4602, scss/boxes.scss */
+div.tree_item, div.tree_item_last {
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+/* line 4607, scss/boxes.scss */
+div.tree_item {
+  background-image: url(images/tree_icons/join.gif);
+}
+/* line 4610, scss/boxes.scss */
+div.tree_item_last {
+  background-image: url(images/tree_icons/joinbottom.gif);
+}
+/* line 4613, scss/boxes.scss */
+div.tree_line {
+  position: absolute;
+  left: 0;
+  background-image: url(images/tree_icons/line.gif);
+}
+
+/* line 4620, scss/boxes.scss */
+img.attribute-global {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+/* line 4627, scss/boxes.scss */
+ul.config-tabs dt {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 2px 6px;
+  margin: 0 0 5px;
+  font-weight: bold;
+  color: #000;
+}
+/* line 4634, scss/boxes.scss */
+ul.config-tabs dl {
+  margin-bottom: 15px;
+}
+
+/* line 4639, scss/boxes.scss */
+.inline-table {
+  border: 0 !important;
+}
+/* line 4641, scss/boxes.scss */
+.inline-table td {
+  border: 0 !important;
+  padding: 0 5px 5px !important;
+}
+
+/* line 4648, scss/boxes.scss */
+.system-fieldset-sub-head td {
+  padding: 20px 5px 5px 5px;
+}
+/* line 4651, scss/boxes.scss */
+.system-fieldset-sub-head h4 {
+  /* border-bottom:1px solid #ccc; */
+  margin: 0 0 15px;
+}
+
+/* line 4657, scss/boxes.scss */
+.comment {
+  padding: 5px;
+}
+/* line 4659, scss/boxes.scss */
+.comment a {
+  color: #888;
+  font-size: 11px;
+  margin-left: 3px;
+}
+
+/* line 4666, scss/boxes.scss */
+.paypal-payment-notice {
+  font-weight: bold;
+  margin: -10px 0 10px 0;
+}
+
+/* line 4671, scss/boxes.scss */
+.payment-group-title {
+  border: 0;
+  padding: 10px 5px 10px;
+}
+/* line 4674, scss/boxes.scss */
+.payment-group-title strong {
+  display: inline;
+  font-size: 13px;
+  border: 0;
+}
+/* line 4679, scss/boxes.scss */
+.payment-group-title a {
+  color: #888;
+  font-size: 11px;
+  margin-left: 3px;
+}
+
+/* line 4686, scss/boxes.scss */
+.adminhtml-system-config-edit .note {
+  width: 283px;
+}
+
+/* Config with nested accordion */
+/* line 4693, scss/boxes.scss */
+.complex.active {
+  margin-bottom: 30px;
+}
+/* line 4697, scss/boxes.scss */
+.complex > .config > .comment, .complex > .config > .payment-group-title {
+  padding-left: 0;
+  padding-bottom: 15px;
+}
+
+/* line 4704, scss/boxes.scss */
+.section-config.complex table.form-list {
+  width: 100% !important;
+}
+
+/* line 4709, scss/boxes.scss */
+.complex table td:first-child {
+  padding-left: 0px !important;
+}
+/* line 4712, scss/boxes.scss */
+.complex table td.use-default {
+  width: 1px;
+  white-space: nowrap;
+}
+
+/* Nested accordion */
+/* line 4720, scss/boxes.scss */
+.section-config .section-config {
+  border: 1px solid #adadad;
+  margin: -1px 0 0;
+  border-top: 0;
+}
+/* line 4724, scss/boxes.scss */
+.section-config .section-config > .entry-edit-head {
+  background: #e6e6e6;
+  border: 0;
+  border-top: 1px solid #d6d6d6;
+  margin: 0;
+  padding: 0 10px 0 0;
+  -moz-box-shadow: none;
+  background: #e0e0e0 url(images/bkg_nested-heading.png) repeat-x 0 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 4737, scss/boxes.scss */
+.complex tr[id] + tr.nested > td > div > .entry-edit-head, .nested:first-child > td > div > .entry-edit-head {
+  border-top-color: #adadad;
+}
+
+/* line 4742, scss/boxes.scss */
+.section-config .section-config > .entry-edit-head > a {
+  color: #7e7e7e;
+  font-weight: bold;
+  font-size: 12px;
+  background: url(images/bkg_config-nested.png) 100% 13px no-repeat;
+  padding: 8px 0 7px 10px;
+  border: 0;
+}
+/* line 4749, scss/boxes.scss */
+.section-config .section-config > .entry-edit-head > a.open {
+  background-position: 100% -188px;
+}
+/* line 4755, scss/boxes.scss */
+.section-config .section-config > .config {
+  border: 0;
+  border-top: 1px solid #d6d6d6;
+  margin: 0;
+  padding: 15px 12px 20px;
+  background: #fff;
+}
+
+/* Accordion with configure button */
+/* line 4767, scss/boxes.scss */
+.with-button.active > .config {
+  z-index: 1;
+  position: relative;
+}
+/* line 4771, scss/boxes.scss */
+.with-button.active:after {
+  background: transparent url(images/bkg_config-shaddow.png) repeat-x 0 0;
+  height: 5px;
+  overflow: hidden;
+  position: relative;
+  left: 0;
+  margin: 0 0 -5px;
+  z-index: 2;
+  display: block;
+  content: '';
+}
+
+/* line 4784, scss/boxes.scss */
+tr:last-child .with-button.active:after {
+  display: none;
+}
+
+/* line 4788, scss/boxes.scss */
+.config-heading {
+  padding: 10px 10px 10px 0;
+  background: #dfdfdf url(images/bkg_config-heading.png) repeat-x 0 0;
+  border-top: 1px solid #d6d6d6;
+  margin: 0;
+}
+
+/* line 4795, scss/boxes.scss */
+.complex tr[id] + tr.nested > td > div > .config-heading, .nested:first-child > td > div > .config-heading {
+  border-top-color: #adadad;
+}
+
+/* line 4800, scss/boxes.scss */
+.config-heading .button-container {
+  float: right;
+  text-align: right;
+}
+/* line 4804, scss/boxes.scss */
+.config-heading .button {
+  padding: 0 0 0 5px !important;
+  margin: 0;
+  line-height: 0;
+  font-size: 0;
+  height: 28px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+/* line 4815, scss/boxes.scss */
+.config-heading button.button span {
+  font-size: 13px;
+  font-weight: bold;
+  display: block;
+  text-transform: capitalize;
+  background: transparent url(images/bkg_btn.png) 100% 0 no-repeat;
+  float: none;
+  height: 27px;
+  line-height: 25px;
+  padding: 1px 10px 0 5px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+/* line 4816, scss/boxes.scss */
+.config-heading button.button span:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 5px;
+  height: 28px;
+  background: transparent url(images/bkg_btn.png) 0 0 no-repeat;
+}
+/* line 4839, scss/boxes.scss */
+.config-heading button.button:hover span {
+  background-position: 100% -70px;
+}
+/* line 4841, scss/boxes.scss */
+.config-heading button.button:hover span:before {
+  background-position: 0 -70px;
+}
+/* line 4847, scss/boxes.scss */
+.config-heading .button .state-closed {
+  top: 0;
+}
+/* line 4850, scss/boxes.scss */
+.config-heading .button .state-opened {
+  top: 28px;
+}
+/* line 4854, scss/boxes.scss */
+.config-heading .button.open .state-closed, .config-heading .button.open .state-opened {
+  top: -28px;
+}
+/* line 4858, scss/boxes.scss */
+.config-heading .button:active {
+  outline: 0 !important;
+}
+/* line 4860, scss/boxes.scss */
+.config-heading .button:active span {
+  outline: 0 !important;
+}
+/* line 4866, scss/boxes.scss */
+.config-heading button.disabled span, .config-heading button.disabled:hover span {
+  background-position: 100% 0;
+  color: #999;
+}
+/* line 4870, scss/boxes.scss */
+.config-heading button.disabled span:before, .config-heading button.disabled:hover span:before {
+  background-position: 0 0;
+}
+/* line 4874, scss/boxes.scss */
+.config-heading .heading {
+  float: left;
+  padding-left: 26px;
+  background: transparent url(images/icon-enabled.png) no-repeat -999em -999em;
+}
+
+/* line 4881, scss/boxes.scss */
+.enabled .config-heading .heading {
+  background-position: 5px 0;
+}
+
+/* line 4886, scss/boxes.scss */
+.config-heading .heading strong {
+  font-size: 12px;
+  display: inline-block;
+}
+/* line 4890, scss/boxes.scss */
+.config-heading .heading a {
+  margin-left: 8px;
+  font-size: 11px;
+  color: #888;
+  font-weight: normal;
+}
+/* line 4895, scss/boxes.scss */
+.config-heading .heading a.link-demo:before {
+  content: '|';
+  display: inline-block;
+  margin-right: 8px;
+  color: #888;
+  font-size: 12px;
+}
+/* line 4903, scss/boxes.scss */
+.config-heading .heading .heading-intro {
+  display: block;
+  font-size: 11px;
+}
+
+/* line 4909, scss/boxes.scss */
+td.label label.enabled {
+  background: url(images/icon-enabled.png) no-repeat 100% 4px;
+  min-height: 20px;
+  margin-right: -20px;
+  padding-right: 20px;
+}
+
+/* Advanced nested config */
+/* line 4918, scss/boxes.scss */
+.section-config .config-advanced {
+  border: 0;
+  margin: 0;
+}
+/* line 4922, scss/boxes.scss */
+.section-config .config-advanced > .entry-edit-head {
+  background: none;
+  padding: 0 0 0;
+  border: 0;
+}
+/* line 4926, scss/boxes.scss */
+.section-config .config-advanced > .entry-edit-head a {
+  background: none;
+  padding: 0;
+  display: inline-block;
+  border-bottom: 1px dotted #f67610;
+  color: #f67610 !important;
+  line-height: 1.1;
+  white-space: nowrap;
+  background: none;
+}
+/* line 4934, scss/boxes.scss */
+.section-config .config-advanced > .entry-edit-head a.open {
+  background: none;
+}
+/* line 4938, scss/boxes.scss */
+.section-config .config-advanced > .entry-edit-head a:after {
+  content: '';
+  width: 7px;
+  height: 5px;
+  background: url(images/bkg_config-advanced.png) no-repeat 0 0;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -13px;
+  margin-left: 5px;
+}
+/* line 4949, scss/boxes.scss */
+.section-config .config-advanced > .entry-edit-head a.open:after {
+  background-position: 0 -5px;
+}
+/* line 4954, scss/boxes.scss */
+.section-config .config-advanced > .config {
+  border: 0;
+  padding: 15px 0 0;
+}
+
+/* Adjusting spacing between form field and nested accordion */
+/* line 4964, scss/boxes.scss */
+.complex tr.nested + tr[id] > td {
+  padding-top: 15px !important;
+  padding-bottom: 30px !important;
+}
+/* line 4967, scss/boxes.scss */
+.complex tr.nested + tr[id] > td.use-default {
+  padding-top: 18px !important;
+}
+/* line 4970, scss/boxes.scss */
+.complex tr.nested + tr[id] > td.scope-label {
+  padding-top: 19px !important;
+}
+/* line 4974, scss/boxes.scss */
+.complex tr[id] + tr.nested > td {
+  padding-top: 15px !important;
+}
+
+/* line 4979, scss/boxes.scss */
+.pp-buttons-container {
+  white-space: nowrap;
+  float: left;
+  position: relative;
+  z-index: 1;
+  margin-right: -200px;
+}
+/* line 4985, scss/boxes.scss */
+.pp-buttons-container button {
+  display: inline-block;
+}
+/* line 4987, scss/boxes.scss */
+.pp-buttons-container button:first-child {
+  margin: 0;
+}
+
+/* line 4993, scss/boxes.scss */
+.form-list td.pp-permissions-links {
+  font-size: 13px;
+  line-height: 30px;
+  text-align: left;
+}
+
+/* line 5000, scss/boxes.scss */
+.pp-permissions-links button {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+/* line 5004, scss/boxes.scss */
+.pp-permissions-links div {
+  font-size: 13px;
+  line-height: 1.35em;
+  padding: 3px 0 0;
+  text-align: left;
+}
+
+/* line 5014, scss/boxes.scss */
+.complex .form-list .form-list .form-list td:first-child, .complex .form-list .form-list .form-list td.label label {
+  width: 159px;
+}
+/* line 5018, scss/boxes.scss */
+.complex .form-list .form-list .form-list .config-advanced .form-list td.label {
+  width: 159px;
+}
+/* line 5020, scss/boxes.scss */
+.complex .form-list .form-list .form-list .config-advanced .form-list td.label label {
+  width: 159px;
+}
+/* line 5026, scss/boxes.scss */
+.complex .form-list .form-list .form-list .form-list td:first-child, .complex .form-list .form-list .form-list .form-list td.label label {
+  width: 146px;
+}
+/* line 5030, scss/boxes.scss */
+.complex .form-list .form-list .form-list .form-list .section-config .form-list td.label {
+  width: 146px;
+}
+/* line 5032, scss/boxes.scss */
+.complex .form-list .form-list .form-list .form-list .section-config .form-list td.label label {
+  width: 146px;
+}
+
+/* Tooltip for config */
+/* line 5043, scss/boxes.scss */
+.field-tooltip {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  z-index: 1;
+  background: url(images/icon-tooltip.png) no-repeat 0 0;
+  cursor: help;
+  vertical-align: middle;
+}
+/* line 5052, scss/boxes.scss */
+.field-tooltip:hover {
+  z-index: 100;
+}
+/* line 5054, scss/boxes.scss */
+.field-tooltip:hover > div:hover {
+  width: 316px;
+  background: transparent url(images/bkg_tooltip.png) repeat-y -680px 0;
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  left: -311px;
+  bottom: 28px;
+  padding: 3px 12px;
+  color: #464d50;
+  visibility: hidden;
+}
+/* line 5066, scss/boxes.scss */
+.field-tooltip:hover > div {
+  opacity: 1;
+  width: 316px;
+  visibility: visible;
+  bottom: 30px;
+}
+/* line 5073, scss/boxes.scss */
+.field-tooltip > span {
+  display: none;
+}
+/* line 5076, scss/boxes.scss */
+.field-tooltip > div {
+  width: 316px;
+  background: transparent url(images/bkg_tooltip.png) repeat-y -680px 0;
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  left: -311px;
+  bottom: 28px;
+  padding: 3px 12px;
+  color: #464d50;
+  visibility: hidden;
+}
+/* line 5087, scss/boxes.scss */
+.field-tooltip > div:before {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  content: '';
+  width: 340px;
+  height: 5px;
+  overflow: hidden;
+  background: url(images/bkg_tooltip.png) no-repeat 0 0;
+}
+/* line 5097, scss/boxes.scss */
+.field-tooltip > div:after {
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  content: '';
+  width: 340px;
+  height: 14px;
+  overflow: hidden;
+  background: url(images/bkg_tooltip.png) no-repeat -340px 0;
+}
+
+/* Import/export */
+/* line 5113, scss/boxes.scss */
+#profile-generator select {
+  width: 207px;
+}
+/* line 5116, scss/boxes.scss */
+#profile-generator input.input-text {
+  width: 200px;
+}
+
+/* line 5121, scss/boxes.scss */
+.field-row .with-tip {
+  display: block;
+  margin-left: 150px;
+}
+/* line 5124, scss/boxes.scss */
+.field-row .with-tip input {
+  float: none;
+}
+/* line 5127, scss/boxes.scss */
+.field-row .with-tip small {
+  display: block;
+  padding-top: 2px;
+}
+
+/* line 5134, scss/boxes.scss */
+#profile-generator .field-row button.delete {
+  vertical-align: middle;
+}
+/* line 5137, scss/boxes.scss */
+#profile-generator fieldset button.add {
+  display: inline;
+  margin: 0;
+}
+
+/** Product mass attribute update **/
+/* line 5145, scss/boxes.scss */
+.attribute-change-checkbox {
+  white-space: nowrap;
+  clear: none;
+  margin-left: 5px;
+}
+/* line 5149, scss/boxes.scss */
+.attribute-change-checkbox label {
+  margin-left: 5px;
+  float: none !important;
+}
+
+/* PopUp Calendar */
+/* line 5157, scss/boxes.scss */
+.calendar {
+  z-index: 105;
+}
+
+/** Order view **/
+/* line 5163, scss/boxes.scss */
+.order-history {
+  width: 70%;
+  margin-right: 27px;
+}
+
+/* line 5168, scss/boxes.scss */
+ul.super-product-attributes {
+  padding-left: 15px;
+}
+
+/** Media Library **/
+/* line 5175, scss/boxes.scss */
+.uploader .file-row {
+  width: 600px;
+  padding: 0.5em 0.6em;
+  margin: 0.5em 0.6em;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  /*vertical-align:middle;*/
+}
+/* line 5183, scss/boxes.scss */
+.uploader .file-row-narrow {
+  width: auto;
+  margin: 0 0 2px 40px;
+}
+/* line 5187, scss/boxes.scss */
+.uploader .file-row .file-info {
+  float: left;
+}
+/* line 5190, scss/boxes.scss */
+.uploader .file-row-info {
+  margin: 0 0 0 10px;
+}
+/* line 5192, scss/boxes.scss */
+.uploader .file-row-info .file-info-name {
+  font-weight: bold;
+}
+/* line 5197, scss/boxes.scss */
+.uploader .file-row .progress-text {
+  float: right;
+  font-weight: bold;
+}
+/* line 5201, scss/boxes.scss */
+.uploader .file-row .delete-button {
+  float: right;
+}
+/* line 5205, scss/boxes.scss */
+.uploader .buttons {
+  float: left;
+}
+/* line 5208, scss/boxes.scss */
+.uploader .flex {
+  float: right;
+}
+/* line 5211, scss/boxes.scss */
+.uploader .progress {
+  border: 1px solid #f0e6b7;
+  background-color: #feffcc;
+}
+/* line 5215, scss/boxes.scss */
+.uploader .error {
+  border: 1px solid #aa1717;
+  background-color: #ffe6de;
+}
+/* line 5218, scss/boxes.scss */
+.uploader .error .progress-text {
+  padding-right: 10px;
+}
+/* line 5222, scss/boxes.scss */
+.uploader .complete {
+  border: 1px solid #90c898;
+  background-color: #e5ffed;
+}
+
+/*.uploader .file-row .file-info-name { with:80%; overflow:hidden; }
+.uploader .file-row .file-info-size { width:20%; }*/
+/* line 5232, scss/boxes.scss */
+.grid tr.read {
+  background: #fff !important;
+}
+/* line 5235, scss/boxes.scss */
+.grid tr.unread {
+  background: #fcf6f5 !important;
+}
+
+/* line 5240, scss/boxes.scss */
+.grid-row-title {
+  color: #444;
+  font-weight: bold;
+}
+
+/* line 5245, scss/boxes.scss */
+.grid-severity-critical, .grid-severity-major, .grid-severity-minor, .grid-severity-notice {
+  display: block;
+  height: 16px;
+  background-image: url(images/bkg_notifications.gif);
+  background-repeat: no-repeat;
+  font: bold 10px / 16px Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 0 0 7px;
+  white-space: nowrap;
+  color: #fff;
+}
+/* line 5256, scss/boxes.scss */
+.grid-severity-critical span, .grid-severity-major span, .grid-severity-minor span, .grid-severity-notice span {
+  display: block;
+  height: 16px;
+  background-image: url(images/bkg_notifications.gif);
+  background-repeat: no-repeat;
+  font: bold 10px / 16px Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 0 0 7px;
+  white-space: nowrap;
+  color: #fff;
+}
+
+/* line 5270, scss/boxes.scss */
+.grid-severity-critical {
+  background-position: 0 0;
+  margin: 1px 0;
+}
+/* line 5273, scss/boxes.scss */
+.grid-severity-critical span {
+  background-position: 100% 0;
+  padding: 0 7px 0 0;
+}
+
+/* line 5279, scss/boxes.scss */
+.grid-severity-major {
+  background-position: 0 -16px;
+  margin: 1px 0;
+}
+/* line 5282, scss/boxes.scss */
+.grid-severity-major span {
+  background-position: 100% -16px;
+  padding: 0 7px 0 0;
+}
+
+/* line 5288, scss/boxes.scss */
+.grid-severity-minor {
+  background-position: 0 -32px;
+  margin: 1px 0;
+}
+/* line 5291, scss/boxes.scss */
+.grid-severity-minor span {
+  background-position: 100% -32px;
+  padding: 0 7px 0 0;
+}
+
+/* line 5297, scss/boxes.scss */
+.grid-severity-notice {
+  background-position: 0 -48px;
+  margin: 1px 0;
+}
+/* line 5300, scss/boxes.scss */
+.grid-severity-notice span {
+  background-position: 100% -48px;
+  padding: 0 7px 0 0;
+}
+
+/* line 5306, scss/boxes.scss */
+.super-attributes {
+  margin: 0;
+  padding: 0;
+}
+/* line 5310, scss/boxes.scss */
+.super-attributes li.attribute {
+  border: 1px solid #dfdfdf;
+  background-color: #ededed;
+  margin: 1px 0;
+}
+/* line 5314, scss/boxes.scss */
+.super-attributes li.attribute ul.attribute-values {
+  margin: 0;
+  padding: 0;
+}
+/* line 5318, scss/boxes.scss */
+.super-attributes li.attribute div.values-container {
+  width: 80%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+/* line 5324, scss/boxes.scss */
+.super-attributes li.attribute-value {
+  display: block;
+  margin: 1px 0;
+}
+/* line 5327, scss/boxes.scss */
+.super-attributes li.attribute-value .validation-advice {
+  margin: 0;
+  white-space: normal;
+}
+/* line 5331, scss/boxes.scss */
+.super-attributes li.attribute-value .attribute-value-label-container {
+  width: 200px;
+}
+/* line 5336, scss/boxes.scss */
+.super-attributes div.attribute-name-container, .super-attributes li.attribute div.values-container {
+  display: block;
+}
+
+/* line 5341, scss/boxes.scss */
+.configurable-simple-product div.values-container, .super-attributes li.attribute-value .attribute-values-container, .configurable-simple-product .attribute-values-container, .super-attributes li.attribute-value .attribute-values-container-main, .configurable-simple-product .attribute-values-container-main {
+  display: block;
+}
+
+/* line 5346, scss/boxes.scss */
+.super-attributes li.attribute-value .attribute-value-label-container {
+  display: block;
+}
+/* line 5349, scss/boxes.scss */
+.super-attributes li.attribute-value .attribute-price {
+  width: 70px !important;
+}
+
+/* line 5354, scss/boxes.scss */
+.configurable-simple-product .attribute-price, .super-attributes li.attribute-value .attribute-price-type, .configurable-simple-product .attribute-price-type {
+  width: 70px !important;
+}
+
+/* line 5358, scss/boxes.scss */
+.super-attributes div.attribute-name-container {
+  cursor: move;
+  background-image: url(images/arrow_sort_move.gif);
+  background-repeat: no-repeat;
+  background-position: 4px 50%;
+  font-weight: bold;
+  padding-left: 15px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+/** Product Gallery Image Previews **/
+/* line 5372, scss/boxes.scss */
+.preview .cell-image .place-holder {
+  border: 1px solid #aeaeae;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+/* line 5377, scss/boxes.scss */
+.preview .cell-image .place-holder span {
+  margin-top: 30px;
+  display: block;
+}
+/* line 5382, scss/boxes.scss */
+.preview .cell-position input.input-text {
+  width: 90% !important;
+}
+
+/* line 5387, scss/boxes.scss */
+.fieldset-wide .data .preview .cell-position input.input-text {
+  width: 90% !important;
+}
+
+/* line 5391, scss/boxes.scss */
+.tier .data {
+  width: 465px;
+}
+/* line 5393, scss/boxes.scss */
+.tier .data select {
+  width: 99%;
+}
+/* line 5396, scss/boxes.scss */
+.tier .data input.qty {
+  width: 20px !important;
+}
+
+/* line 5401, scss/boxes.scss */
+.weee .data, .giftcard-amounts .data {
+  width: 465px;
+}
+/* line 5403, scss/boxes.scss */
+.weee .data select, .giftcard-amounts .data select {
+  width: 99%;
+}
+
+/* Links */
+/* line 5410, scss/boxes.scss */
+.link-feed {
+  background: url(images/icon_feed.gif) no-repeat left 1px;
+  padding-left: 18px;
+  white-space: nowrap;
+}
+
+/* line 5416, scss/boxes.scss */
+#page-help-link {
+  line-height: 26px;
+  padding-left: 20px;
+  color: #ebebff;
+  background: url(images/fam_help.gif) no-repeat 0 50%;
+}
+/* line 5421, scss/boxes.scss */
+#page-help-link:link, #page-help-link:visited {
+  text-decoration: none;
+}
+/* line 5424, scss/boxes.scss */
+#page-help-link:hover {
+  color: #fff;
+}
+
+/* Magento Connect Package Extensions */
+/* line 5431, scss/boxes.scss */
+.table-editable {
+  border: solid 1px #ccc;
+  background: #fafafa;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+/* line 5436, scss/boxes.scss */
+.table-editable th {
+  border-bottom: solid 1px #ccc;
+  text-align: center;
+  padding: 1px 3px;
+  vertical-align: middle;
+}
+/* line 5442, scss/boxes.scss */
+.table-editable td {
+  padding: 1px 3px;
+  vertical-align: middle;
+}
+/* line 5446, scss/boxes.scss */
+.table-editable select {
+  height: 19px;
+}
+
+/* CMS
+*******************************************************************************/
+/* line 5454, scss/boxes.scss */
+.breadcrumbs {
+  margin: 0 0 10px;
+}
+/* line 5456, scss/boxes.scss */
+.breadcrumbs li {
+  display: inline;
+}
+/* line 5458, scss/boxes.scss */
+.breadcrumbs li span {
+  margin: 0 2px;
+}
+
+/* line 5464, scss/boxes.scss */
+.adminhtml-cms-page-revision-preview {
+  background: #fff;
+}
+
+/* line 5468, scss/boxes.scss */
+.toolbar {
+  background: url(images/bkg_panel-floating.png) repeat-x 0 100%;
+  color: #fff;
+  padding: 6px 0 20px 24px;
+  margin-bottom: -12px;
+  position: relative;
+  z-index: 100;
+}
+/* line 5475, scss/boxes.scss */
+.toolbar label {
+  color: #fff;
+  vertical-align: middle;
+}
+/* line 5479, scss/boxes.scss */
+.toolbar select {
+  margin-right: 7px;
+  margin-left: 7px;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 0;
+  border-color: #9e9e9e;
+  vertical-align: middle;
+}
+/* line 5488, scss/boxes.scss */
+.toolbar button {
+  vertical-align: middle;
+}
+
+/*table.mceLayout { width:100% !important; }*/
+/* line 5495, scss/boxes.scss */
+.cms-revision-preview {
+  height: 100%;
+}
+/* line 5497, scss/boxes.scss */
+.cms-revision-preview iframe {
+  width: 100%;
+  height: 91%;
+  border: 0;
+}
+
+/* line 5504, scss/boxes.scss */
+.cms-revision-info {
+  border: 1px solid #d6d6d6;
+  padding: 15px;
+  background: #fafafa;
+  margin: 0 0 15px;
+}
+/* line 5509, scss/boxes.scss */
+.cms-revision-info table {
+  width: 100%;
+}
+/* line 5511, scss/boxes.scss */
+.cms-revision-info table th, .cms-revision-info table td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  vertical-align: middle;
+}
+/* line 5516, scss/boxes.scss */
+.cms-revision-info table th {
+  font-weight: bold;
+  padding-right: 30px;
+  white-space: nowrap;
+}
+
+/* CMS Hierarchy */
+/* line 5526, scss/boxes.scss */
+.cms-tree {
+  width: 100%;
+  /*height:300px;*/
+  overflow: auto;
+}
+/* line 5531, scss/boxes.scss */
+.cms-tree .cms_node_root.x-tree-node-expanded .x-tree-node-icon, .cms-tree .cms_node_root.x-tree-node-collapsed .x-tree-node-icon {
+  background-image: url(images/cms_tree_icons/cms_node_root.gif);
+}
+/* line 5536, scss/boxes.scss */
+.cms-tree .cms_node .x-tree-node-icon {
+  background-image: url(images/cms_tree_icons/cms_node2.gif) !important;
+}
+/* line 5539, scss/boxes.scss */
+.cms-tree .cms_node.x-tree-node-leaf .x-tree-node-icon {
+  background-image: url(images/cms_tree_icons/cms_page2.gif);
+}
+/* line 5544, scss/boxes.scss */
+.cms-tree .cms_page.x-tree-node-expanded .x-tree-node-icon, .cms-tree .cms_page.x-tree-node-collapsed .x-tree-node-icon {
+  background-image: url(images/cms_tree_icons/cms_page.gif);
+}
+/* line 5548, scss/boxes.scss */
+.cms-tree .x-tree-node-leaf .x-tree-node-icon {
+  background-image: url(images/cms_tree_icons/cms_page2.gif);
+}
+/* line 5551, scss/boxes.scss */
+.cms-tree .disallowed.x-tree-node-leaf .x-tree-node-icon {
+  background-image: url(images/cms_tree_icons/cms_page-disabled.gif);
+}
+/* line 5554, scss/boxes.scss */
+.cms-tree .x-tree-node .disallowed a span, .cms-tree .x-dd-drag-ghost .disallowed a span {
+  color: #aaa;
+}
+/* line 5557, scss/boxes.scss */
+.cms-tree .cms-current a span {
+  background-color: #f5d6c7;
+  color: #000;
+}
+/* line 5561, scss/boxes.scss */
+.cms-tree .modified a {
+  background-image: url(images/fam_bullet_disk.png);
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+}
+
+/* line 5570, scss/boxes.scss */
+.cms-hierarchy .x-tree-node-ct {
+  overflow: inherit;
+}
+/* line 5573, scss/boxes.scss */
+.cms-hierarchy .switcher {
+  margin-bottom: 20px;
+}
+/* line 5575, scss/boxes.scss */
+.cms-hierarchy .switcher select {
+  width: auto !important;
+}
+/* line 5579, scss/boxes.scss */
+.cms-hierarchy .col-left {
+  padding: 0 10px 0;
+  border-right: 1px solid #d6d6d6;
+}
+/* line 5583, scss/boxes.scss */
+.cms-hierarchy .col-right {
+  padding: 0 10px 20px;
+}
+/* line 5585, scss/boxes.scss */
+.cms-hierarchy .col-right .form-list td.label {
+  width: 120px;
+}
+/* line 5587, scss/boxes.scss */
+.cms-hierarchy .col-right .form-list td.label label {
+  width: 105px;
+}
+/* line 5592, scss/boxes.scss */
+.cms-hierarchy .cms-tree {
+  height: 400px;
+}
+
+/* CMS Widgets Instance */
+/* line 5600, scss/boxes.scss */
+.options-box .option-box {
+  border: 1px solid #cddddd;
+  padding: 1em;
+  background: #e7efef;
+  margin: 1.5em 0;
+}
+/* line 5606, scss/boxes.scss */
+.options-box .option-title {
+  padding: 0 0 10px;
+  border-bottom: 1px solid #cddddd;
+}
+/* line 5609, scss/boxes.scss */
+.options-box .option-title button {
+  float: right;
+}
+/* line 5612, scss/boxes.scss */
+.options-box .option-title label {
+  font-weight: bold;
+  line-height: 21px;
+  padding-right: 1em;
+  float: left;
+}
+/* line 5618, scss/boxes.scss */
+.options-box .option-title select {
+  float: left;
+  width: 260px;
+  vertical-align: middle;
+}
+/* line 5624, scss/boxes.scss */
+.options-box .option-header {
+  margin: 5px 0 0;
+  width: 100%;
+  border: 0;
+  background: #e7efef;
+  border-bottom: 1em solid #e7efef;
+}
+/* line 5630, scss/boxes.scss */
+.options-box .option-header .input-text, .options-box .option-header select {
+  width: 95%;
+}
+/* line 5633, scss/boxes.scss */
+.options-box .option-header th {
+  padding: 2px;
+}
+/* line 5636, scss/boxes.scss */
+.options-box .option-header td {
+  padding: 5px 2px;
+}
+/* line 5639, scss/boxes.scss */
+.options-box .option-header .tree {
+  margin: 5px 0 0;
+}
+
+/* CMS Popup Window */
+/* line 5647, scss/boxes.scss */
+.popup-window {
+  height: auto !important;
+}
+/* line 5648, scss/boxes.scss */
+.popup-window .magento_message {
+  padding: 0 18px;
+}
+/* line 5652, scss/boxes.scss */
+.popup-window .grid {
+  position: static;
+}
+/* line 5656, scss/boxes.scss */
+.popup-window .table_window td.value2 .grid td, .popup-window .table_window td.value2 .grid th {
+  padding: 2px 4px !important;
+}
+/* line 5659, scss/boxes.scss */
+.popup-window .table_window td.value2 .grid tr.headings th {
+  padding: 1px 4px 2px !important;
+}
+/* line 5663, scss/boxes.scss */
+.popup-window .columns {
+  background-image: none;
+}
+/* line 5666, scss/boxes.scss */
+.popup-window .middle {
+  background: none;
+  padding: 10px 0;
+}
+/* line 5670, scss/boxes.scss */
+.popup-window .uploader .file-row {
+  margin: 16px 0;
+  width: auto;
+}
+/* line 5674, scss/boxes.scss */
+.popup-window #contents-uploader {
+  margin-bottom: 10px;
+  background: #d7e5ef;
+  padding: 5px 10px;
+}
+/* line 5678, scss/boxes.scss */
+.popup-window #contents-uploader .flex {
+  font-size: 0;
+  line-height: 0;
+  height: 28px;
+}
+/* line 5684, scss/boxes.scss */
+.popup-window #contents {
+  margin-left: -3px;
+  height: 400px;
+  overflow: auto;
+  position: relative;
+}
+/* line 5689, scss/boxes.scss */
+.popup-window #contents .filecnt {
+  float: left;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  padding: 3px;
+  display: inline;
+  margin: 0 0 15px 4px;
+  overflow: hidden;
+  position: relative;
+  width: 100px;
+}
+/* line 5700, scss/boxes.scss */
+.popup-window #contents .selected {
+  border: 1px solid #f1af73;
+  background-color: #f0f0f0;
+  cursor: default;
+}
+/* line 5705, scss/boxes.scss */
+.popup-window #contents .nm {
+  text-align: center;
+}
+/* line 5707, scss/boxes.scss */
+.popup-window #contents .nm img {
+  vertical-align: bottom;
+}
+/* line 5712, scss/boxes.scss */
+.popup-window #contents .filecnt.file-js {
+  float: none;
+  width: auto;
+  display: block;
+  margin-bottom: 8px;
+}
+/* line 5717, scss/boxes.scss */
+.popup-window #contents .filecnt.file-js p {
+  background: url(images/js_icon.gif) no-repeat 0 0;
+  padding: 0 0 0 20px;
+  line-height: 16px;
+  margin: 0;
+}
+/* line 5724, scss/boxes.scss */
+.popup-window #contents .filecnt.file-font {
+  width: 150px;
+}
+/* line 5726, scss/boxes.scss */
+.popup-window #contents .filecnt.file-font p {
+  background: url(images/icon_font.gif) no-repeat 0 0;
+  padding: 0 0 0 20px;
+  line-height: 16px;
+  margin: 0;
+}
+
+/* Widget Insert */
+/* line 5739, scss/boxes.scss */
+#widget_window .magento_content {
+  height: auto !important;
+  min-height: 450px;
+}
+
+/* CMS Widget Chooser */
+/* line 5747, scss/boxes.scss */
+#widget-chooser .columns {
+  background-image: none;
+}
+/* line 5750, scss/boxes.scss */
+#widget-chooser .magento_message {
+  padding: 10px 18px;
+}
+/* line 5754, scss/boxes.scss */
+#widget-chooser .grid th, #widget-chooser .grid td {
+  padding: 2px 4px 2px 4px;
+}
+/* line 5757, scss/boxes.scss */
+#widget-chooser .grid tr.filter th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* line 5762, scss/boxes.scss */
+#widget-chooser .side-col {
+  padding-top: 0.5em;
+}
+/* line 5765, scss/boxes.scss */
+#widget-chooser .main-col {
+  padding-right: 4px;
+}
+
+/* CMS Variables Popup */
+/* line 5772, scss/boxes.scss */
+#variables-chooser .magento_message {
+  padding: 10px 18px;
+}
+
+/* Product description WYSIWYG editor */
+/* line 5779, scss/boxes.scss */
+#catalog-wysiwyg-editor .buttons-set {
+  margin-top: 10px;
+}
+/* line 5782, scss/boxes.scss */
+#catalog-wysiwyg-editor .magento_content {
+  height: auto !important;
+  overflow: hidden;
+}
+/* line 5786, scss/boxes.scss */
+#catalog-wysiwyg-editor .textarea {
+  width: 930px !important;
+}
+/* line 5789, scss/boxes.scss */
+#catalog-wysiwyg-editor .magento_message {
+  padding: 0 7px;
+}
+/* line 5792, scss/boxes.scss */
+#catalog-wysiwyg-editor .magento_buttons {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+/* APP TAB */
+/* line 5801, scss/boxes.scss */
+.app-tab h1 {
+  padding: 15px 24px 15px !important;
+}
+/* line 5804, scss/boxes.scss */
+.app-tab .top-tip {
+  position: relative !important;
+  float: right;
+  z-index: 1;
+  cursor: help;
+  top: 30px !important;
+  left: 0 !important;
+  margin: 0 10px 0 0;
+}
+/* line 5813, scss/boxes.scss */
+.app-tab #integr-tip {
+  margin: 8px 0 0 0 !important;
+  position: absolute;
+  right: -5px;
+  top: 10px;
+  -moz-box-shadow: 0 0 2px 1px #dadada;
+  box-shadow: 0 0 2px 1px #dadada;
+}
+
+/* line 5824, scss/boxes.scss */
+.app-store input, .app-store select, .app-store textarea {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* line 5829, scss/boxes.scss */
+.app-store .connect-block .search button {
+  margin-left: 0;
+}
+/* line 5832, scss/boxes.scss */
+.app-store .trusted-ext h5 {
+  font: 25px / 28px tahoma, arial, helvetica, sans-serif !important;
+  margin: 23px 0 30px;
+}
+
+/* Splash */
+/* line 5841, scss/boxes.scss */
+.mdte .splash-content {
+  min-height: 350px;
+  padding: 0 0 15px;
+}
+/* line 5844, scss/boxes.scss */
+.mdte .splash-content .disc {
+  list-style: inside disc;
+  margin: 0 0 .5em;
+}
+/* line 5847, scss/boxes.scss */
+.mdte .splash-content .disc li {
+  padding-left: 10px;
+}
+/* line 5851, scss/boxes.scss */
+.mdte .splash-content .splash-pic {
+  float: right;
+  width: 400px;
+  margin: 0 0 10px 10px;
+}
+/* line 5858, scss/boxes.scss */
+.mdte .buttons-set .more-info {
+  font-weight: bold;
+  border-bottom: 4px solid #dfdfdf;
+  margin: 0 0 7px;
+  padding: 0 0 7px;
+}
+/* line 5863, scss/boxes.scss */
+.mdte .buttons-set .more-info a {
+  font-weight: normal;
+}
+/* line 5867, scss/boxes.scss */
+.mdte .buttons-set .skip-splash label {
+  vertical-align: middle;
+}
+/* line 5870, scss/boxes.scss */
+.mdte .buttons-set button {
+  float: right;
+}
+
+/* Theme selection */
+/* line 5879, scss/boxes.scss */
+.themes-screen .themes-user {
+  float: left;
+  width: 270px;
+}
+/* line 5882, scss/boxes.scss */
+.themes-screen .themes-user .content-header {
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+  border-bottom-color: #d1d1d1;
+  border-right-color: #d1d1d1;
+}
+/* line 5888, scss/boxes.scss */
+.themes-screen .themes-user .themes-customized {
+  padding: 20px;
+}
+/* line 5890, scss/boxes.scss */
+.themes-screen .themes-user .themes-customized h3.block-title {
+  border-bottom: 1px solid #e0e0e1;
+  padding: 0 0 10px;
+  margin: 0 0 20px;
+}
+/* line 5897, scss/boxes.scss */
+.themes-screen .themes-preinstalled {
+  margin-left: 270px;
+}
+/* line 5899, scss/boxes.scss */
+.themes-screen .themes-preinstalled .content-header {
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  border-bottom-color: #d1d1d1;
+  border-left-color: #d1d1d1;
+}
+/* line 5905, scss/boxes.scss */
+.themes-screen .themes-preinstalled .inner-wrapper {
+  float: left;
+  width: 100%;
+}
+/* line 5909, scss/boxes.scss */
+.themes-screen .themes-preinstalled .themes-section {
+  border: 2px solid #d9d9d9;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 15px;
+  background: #eaeaeb url(images/bkg_preinstalled.png) repeat-x 0 0;
+  overflow: hidden;
+}
+/* line 5918, scss/boxes.scss */
+.themes-screen .pager {
+  margin: 0 0 20px;
+  padding: 0 0 5px;
+  border-bottom: 1px solid #e0e0e1;
+}
+/* line 5923, scss/boxes.scss */
+.themes-screen .themes-user .pager {
+  margin-top: -10px;
+}
+/* line 5925, scss/boxes.scss */
+.themes-screen .themes-user .pager .separator {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  margin: 2px 0;
+}
+
+/* line 5935, scss/boxes.scss */
+.mdte .themes-preinstalled .themes-grid {
+  margin-right: -5%;
+}
+/* line 5938, scss/boxes.scss */
+.mdte .theme-item {
+  width: 200px;
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 3.8% 30px 0;
+}
+/* line 5945, scss/boxes.scss */
+.mdte .theme-current {
+  margin: 10px 0 10px 20px;
+}
+/* line 5948, scss/boxes.scss */
+.mdte .theme-thumb {
+  width: 200px;
+  margin-bottom: 13px;
+  height: 200px;
+  display: block;
+  -moz-box-shadow: 0 2px 7px 2px #a5a5a5;
+  box-shadow: 0 3px 6px #dadada;
+}
+/* line 5956, scss/boxes.scss */
+.mdte .theme-name {
+  font-size: 12px;
+  padding: 0 7px;
+  margin: 0 0 5px;
+  font-weight: normal;
+}
+/* line 5962, scss/boxes.scss */
+.mdte .theme-desc {
+  font-size: 11px;
+  padding: 0 7px;
+  margin: 0 0 5px;
+}
+/* line 5967, scss/boxes.scss */
+.mdte .theme-actions {
+  margin: 10px -10px 0 7px;
+}
+/* line 5971, scss/boxes.scss */
+.mdte .themes-screen button.scalable span {
+  height: auto;
+  font-size: 11px;
+  line-height: 20px;
+  background-position: 0 50%;
+  padding: 0;
+}
+/* line 5977, scss/boxes.scss */
+.mdte .themes-screen button.scalable span span span {
+  padding-right: 6px !important;
+  padding-left: 21px;
+}
+/* line 5982, scss/boxes.scss */
+.mdte .themes-screen button.cancel span span span, .mdte .themes-screen button.delete span span span {
+  padding-left: 16px;
+}
+/* line 5985, scss/boxes.scss */
+.mdte .themes-screen button.btn-preview span span span {
+  padding-left: 21px;
+}
+
+/* line 5992, scss/boxes.scss */
+button.btn-customize span span span {
+  background: url(images/btn_customize_icon.png) 0 50% no-repeat;
+  padding-left: 21px;
+}
+/* line 5996, scss/boxes.scss */
+button.btn-preview span span span, button.preview span span span {
+  background: url(images/bkg_btn-preview.png) 0 50% no-repeat;
+  padding-left: 23px;
+}
+/* line 6000, scss/boxes.scss */
+button.btn-duplicate span span span {
+  background: url(images/btn_duplicate_icon.png) 0 50% no-repeat;
+  padding-left: 23px;
+}
+
+/* Theme Customization #CSS Editor */
+/* line 6008, scss/boxes.scss */
+.files_list_container ul li {
+  clear: both;
+  margin: 3px 0;
+}
+/* line 6011, scss/boxes.scss */
+.files_list_container ul li .file-js {
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  padding: 5px 5px 10px 30px;
+  background: #ececec url("images/js_icon.gif") 5px 50% no-repeat;
+}
+/* line 6017, scss/boxes.scss */
+.files_list_container ul li.movable {
+  position: relative;
+  z-index: 1;
+  padding: 1px 1px 1px 14px;
+}
+/* line 6022, scss/boxes.scss */
+.files_list_container ul li .file-js:hover {
+  background-color: #e5e5e5;
+}
+/* line 6025, scss/boxes.scss */
+.files_list_container ul li a.remove {
+  float: right;
+}
+/* line 6028, scss/boxes.scss */
+.files_list_container ul li .up, .files_list_container ul li .down {
+  margin: 2px 5px;
+  width: 15px;
+  position: absolute;
+  left: 0;
+  top: -1px;
+  height: 15px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  outline: none;
+  display: block;
+  overflow: hidden;
+}
+/* line 6041, scss/boxes.scss */
+.files_list_container ul li .up {
+  background: #ececec url("images/bkg_movable-arrows.png") 50% 3px no-repeat;
+}
+/* line 6044, scss/boxes.scss */
+.files_list_container ul li .down {
+  background: #ececec url("images/bkg_movable-arrows.png") 50% -27px no-repeat;
+  bottom: 0;
+  top: auto;
+}
+/* line 6049, scss/boxes.scss */
+.files_list_container ul li .up:hover, .files_list_container ul li .down:hover {
+  background-color: #e5e5e5;
+}
+
+/* line 6054, scss/boxes.scss */
+.uploader_container {
+  margin: 20px 0 0 0;
+}
+/* line 6056, scss/boxes.scss */
+.uploader_container .flex {
+  float: right !important;
+}
+
+/* Theme settings */
+/* .mdte .settings { margin-bottom:10px; padding:10px 15px; border:1px solid #d6d6d6; background:#fafafa; }
+.mdte .settings fieldset { margin-bottom:30px; } */
+/* line 6067, scss/boxes.scss */
+.mdte .settings .form-list label {
+  width: 130px;
+}
+/* line 6070, scss/boxes.scss */
+.mdte .settings .form-list .label {
+  width: 150px;
+}
+/* line 6074, scss/boxes.scss */
+.mdte .settings .form-list .value .input-checkbox {
+  margin-right: 5px;
+}
+/* line 6077, scss/boxes.scss */
+.mdte .settings .form-list .value .input-text {
+  width: 78px;
+  margin-right: 5px;
+  border: 1px solid #c8c8c8;
+}
+/* line 6082, scss/boxes.scss */
+.mdte .settings .form-list .value .input-text-title {
+  width: 280px;
+  border: 1px solid #c8c8c8;
+}
+/* line 6086, scss/boxes.scss */
+.mdte .settings .form-list .value .or-custom {
+  margin: 0 10px;
+}
+/* line 6089, scss/boxes.scss */
+.mdte .settings .form-list .value .bg-position {
+  float: left;
+  width: 50px;
+}
+/* line 6095, scss/boxes.scss */
+.mdte .settings .heading-tab {
+  margin: 0 10px 20px 0;
+  font-size: 14px;
+}
+/* line 6099, scss/boxes.scss */
+.mdte .settings .ui-widget-content {
+  background: none;
+  border: 0;
+}
+/* line 6103, scss/boxes.scss */
+.mdte .settings .ui-tabs {
+  -moz-border-radius: 0;
+  border-radius: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* line 6107, scss/boxes.scss */
+.mdte .settings .ui-tabs * {
+  -moz-border-radius: 0;
+  border-radius: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* line 6116, scss/boxes.scss */
+#tabs-headings fieldset, #tabs-headings .fieldset {
+  border: 1px solid #e0e0e0;
+  margin: 0 0 20px;
+  padding: 16px;
+  background: #eceded url(images/bkg_box.png) repeat-x 0 -20px;
+}
+
+/* line 6124, scss/boxes.scss */
+.mdte .settings .ui-tabs .ui-tabs-panel {
+  border: 1px solid #e0e0e0;
+  margin: 0 0 20px;
+  padding: 16px;
+  background: #eceded url(images/bkg_box.png) repeat-x 0 -20px;
+}
+
+/* line 6132, scss/boxes.scss */
+#tabs-headings .ui-tabs fieldset, #tabs-headings .ui-tabs .fieldset {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* line 6141, scss/boxes.scss */
+.mdte .settings .ui-tabs .ui-tabs-panel fieldset, .mdte .settings .ui-tabs .ui-tabs-panel .fieldset {
+  background: none;
+  border: none;
+  padding: 0;
+}
+/* line 6147, scss/boxes.scss */
+.mdte .settings .ui-widget-header {
+  border: 0;
+  background: none;
+  padding: 1px 0 0 2px;
+}
+/* line 6152, scss/boxes.scss */
+.mdte .settings .ui-tabs .ui-tabs-nav li {
+  margin: 2px 1px 0;
+  background: #d5d6d6 url(images/bkg_tabs-nav-item.png) repeat-x 0 100%;
+}
+/* line 6156, scss/boxes.scss */
+.mdte .settings .ui-state-default {
+  border-color: #aeafaf;
+}
+/* line 6158, scss/boxes.scss */
+.mdte .settings .ui-state-default a {
+  color: #000;
+  padding: 2px 22px;
+  font-size: 13px;
+  font-weight: normal;
+}
+/* line 6165, scss/boxes.scss */
+.mdte .settings .ui-state-active {
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  margin: 0 2px 0 !important;
+}
+/* line 6169, scss/boxes.scss */
+.mdte .settings .ui-state-active a {
+  color: #000;
+  padding-top: 4px;
+  background: #fff;
+}
+
+/* Catalog Images Sizes */
+/* line 6179, scss/boxes.scss */
+.table-cat-img-sizes td {
+  vertical-align: middle;
+}
+
+/* Images frame fill option */
+/* line 6185, scss/boxes.scss */
+.option-fill-frame {
+  border-top: 1px #dedede solid;
+  margin: 10px 0 0;
+  padding: 15px 0;
+}
+/* line 6189, scss/boxes.scss */
+.option-fill-frame input[type="checkbox"] {
+  vertical-align: top;
+  margin-top: 2px;
+}
+/* line 6193, scss/boxes.scss */
+.option-fill-frame .tip {
+  font-size: 11px;
+  color: #666;
+  margin: 10px 0 0;
+  overflow: hidden;
+  padding: 10px 0 0 70px;
+  background: url(images/bkg_fill-frame.png) no-repeat 0 0;
+  min-height: 40px;
+}
+
+/* CMS Hierarchy */
+/* line 6207, scss/boxes.scss */
+.cms-hierarchy .switcher {
+  margin-bottom: 20px;
+}
+/* line 6209, scss/boxes.scss */
+.cms-hierarchy .switcher select {
+  width: auto !important;
+}
+/* line 6213, scss/boxes.scss */
+.cms-hierarchy .col-left {
+  padding: 0 10px 0;
+  border-right: 1px solid #d6d6d6;
+}
+/* line 6217, scss/boxes.scss */
+.cms-hierarchy .col-right {
+  padding: 0 10px 20px;
+}
+/* line 6219, scss/boxes.scss */
+.cms-hierarchy .col-right .form-list td.label {
+  width: 120px;
+}
+/* line 6221, scss/boxes.scss */
+.cms-hierarchy .col-right .form-list td.label label {
+  width: 105px;
+}
+/* line 6226, scss/boxes.scss */
+.cms-hierarchy .cms-tree {
+  height: 400px;
+}
+
+/* Gift Card Account */
+/* line 6233, scss/boxes.scss */
+.adminhtml-giftcardaccount-edit .columns .form-list td.value {
+  vertical-align: bottom;
+}
+
+/* Iframe preview */
+/* line 6239, scss/boxes.scss */
+#cms-revision-preview {
+  width: 100%;
+  height: 100%;
+}
+/* line 6242, scss/boxes.scss */
+#cms-revision-preview #preview_iframe {
+  width: 100%;
+  height: 90%;
+}
+
+/* Getting Started Wizard */
+/* line 6250, scss/boxes.scss */
+.gsw {
+  text-align: left;
+  position: relative;
+  z-index: 999;
+}
+
+/* line 6256, scss/boxes.scss */
+.gsw-bar {
+  height: 34px;
+  padding: 0 14px;
+  margin: 0 0 -6px;
+  background: url(images/gsw/bkg_gsw-bar.png) 0 0 repeat-x;
+  cursor: pointer;
+  position: relative;
+  z-index: 999;
+}
+/* line 6264, scss/boxes.scss */
+.gsw-bar h2 {
+  font: bold 13px / 28px Tahoma, Verdana, Arial, sans-serif;
+  color: #fff;
+  padding: 0 16px;
+}
+/* line 6269, scss/boxes.scss */
+.gsw-bar.gsw-opened h2 {
+  background-position: 0 -83px;
+}
+/* line 6272, scss/boxes.scss */
+.gsw-bar h2 span {
+  display: inline-block;
+  padding-left: 42px;
+  font-weight: normal;
+}
+
+/* line 6279, scss/boxes.scss */
+.gsw-content {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  left: 0;
+  background: url(images/gsw/bkg_gsw.png) 0 100% repeat-x;
+  z-index: 997;
+}
+/* line 6286, scss/boxes.scss */
+.gsw-content .gsw-content-inner {
+  padding: 0 0 7px;
+}
+/* line 6289, scss/boxes.scss */
+.gsw-content .btn-close {
+  width: 17px;
+  height: 17px;
+  background: url(images/gsw/btn-gsw-close.png) 0 0 no-repeat;
+  text-align: left;
+  text-indent: -999em;
+  position: absolute;
+  right: 11px;
+  bottom: 11px;
+  overflow: hidden;
+}
+
+/* line 6302, scss/boxes.scss */
+.gsw-menu {
+  float: left;
+  width: 220px;
+}
+/* line 6305, scss/boxes.scss */
+.gsw-menu ul {
+  background: #fff;
+  padding: 6px 0 0;
+  border: solid #acabaa;
+  border-width: 0 1px 1px 0;
+}
+/* line 6310, scss/boxes.scss */
+.gsw-menu ul li {
+  position: relative;
+}
+/* line 6312, scss/boxes.scss */
+.gsw-menu ul li a {
+  display: block;
+  border-bottom: 1px solid #f5f5f5;
+  font: normal 12px / 1.25 Tahoma, Verdana, Arial, sans-serif;
+  color: #666;
+  text-decoration: none !important;
+}
+/* line 6319, scss/boxes.scss */
+.gsw-menu ul li.parent > a {
+  background: url(images/gsw/i_parent.png) 100% 50% no-repeat;
+}
+/* line 6322, scss/boxes.scss */
+.gsw-menu ul li a span {
+  display: block;
+  border-bottom: 1px solid #efefef;
+  padding: 10px 0 11px 30px;
+  background-position: 2px 50%;
+  background-repeat: no-repeat;
+}
+/* line 6328, scss/boxes.scss */
+.gsw-menu ul li a span em {
+  font-style: normal;
+}
+/* line 6332, scss/boxes.scss */
+.gsw-menu ul li.complete > a span {
+  background-image: url(images/gsw/i_complete.png);
+}
+/* line 6335, scss/boxes.scss */
+.gsw-menu ul li.in-progress > a span {
+  background-image: url(images/gsw/i_in-progress.png);
+}
+/* line 6338, scss/boxes.scss */
+.gsw-menu ul li:last-child a, .gsw-menu ul li.last a {
+  border-bottom: 0;
+}
+/* line 6340, scss/boxes.scss */
+.gsw-menu ul li:last-child a span, .gsw-menu ul li.last a span {
+  border-bottom: 0;
+}
+/* line 6345, scss/boxes.scss */
+.gsw-menu ul .level-sub {
+  float: left;
+  position: absolute;
+  left: 219px;
+  top: -1px;
+  width: 230px;
+  padding-left: 3px;
+  border-left: 1px solid transparent;
+}
+/* line 6353, scss/boxes.scss */
+.gsw-menu ul .level-sub ul {
+  padding: 0;
+  border-width: 1px;
+}
+/* line 6357, scss/boxes.scss */
+.gsw-menu ul .level-sub li a span {
+  padding: 9px 20px 11px 30px;
+}
+/* line 6361, scss/boxes.scss */
+.gsw-menu ul li:hover {
+  background: #f9f8f8 url(images/gsw/bkg_gsw-menu-hover.gif) 0 100% repeat-x;
+}
+/* line 6363, scss/boxes.scss */
+.gsw-menu ul li:hover > a {
+  color: #000;
+}
+
+/* < IE8 only */
+/* IE8 only > */
+/* line 6374, scss/boxes.scss */
+.gsw-step {
+  margin: 0 0 0 457px;
+  padding: 10px 30px 0 0;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #666;
+}
+/* line 6380, scss/boxes.scss */
+.gsw-step h3 {
+  margin: 7px 0;
+  font: normal 23px / 1.15 Arial, Helvetica, sans-serif;
+  color: #f15a24;
+}
+/* line 6385, scss/boxes.scss */
+.gsw-step p {
+  margin: 0 0 7px;
+}
+
+/* line 6390, scss/boxes.scss */
+.gsw-step-content {
+  min-width: 500px;
+  max-width: 900px;
+}
+/* line 6393, scss/boxes.scss */
+.gsw-step-content .gsw-img {
+  display: block;
+}
+
+/* line 6398, scss/boxes.scss */
+.gsw-content-3 dd {
+  margin: 15px 0 -25px;
+}
+
+/* line 6402, scss/boxes.scss */
+.gsw-content-4 dt {
+  margin: -27px 0 0;
+}
+
+/* line 6406, scss/boxes.scss */
+.gsw-content-5 dd, .gsw-content-6 dd, .gsw-content-7 dd {
+  margin: 15px 0 -40px;
+}
+
+/* line 6410, scss/boxes.scss */
+.gsw-content-8 dd {
+  margin: 15px 0 -30px;
+}
+
+/* line 6414, scss/boxes.scss */
+.gsw-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white url(images/gsw/bkg_gsw-overlay.gif) 0 100% repeat-x;
+  overflow: hidden;
+  z-index: 99998;
+  -moz-opacity: .84;
+  opacity: .84;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=84)";
+}
+
+/* line 6430, scss/boxes.scss */
+.gsw-popup {
+  width: 718px;
+  border: 1px solid #adadad;
+  background: #f3f3f3;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 7px #8d8e8e;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=135, Color='#8d8e8e')";
+  box-shadow: 0 0 7px #8d8e8e;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -335px;
+  z-index: 99999;
+}
+/* line 6444, scss/boxes.scss */
+.gsw-popup .gsw-popup-title {
+  background: #f7f7f7 url(images/gsw/bkg_gsw-popup-title.png) repeat-x 0 100%;
+  min-height: 21px;
+  padding: 5px 6px 6px;
+  color: #000;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+/* line 6451, scss/boxes.scss */
+.gsw-popup .gsw-popup-title .link-back {
+  float: left;
+  padding-left: 20px;
+  background: url(images/gsw/i_gsw-back.gif) 0 50% no-repeat;
+  text-decoration: none !important;
+  color: #000;
+  display: none;
+}
+/* line 6458, scss/boxes.scss */
+.gsw-popup .gsw-popup-title .link-back:hover {
+  color: #333;
+}
+/* line 6462, scss/boxes.scss */
+.gsw-popup .gsw-popup-title .btn-close {
+  float: right;
+  width: 16px;
+  height: 17px;
+  background: url(images/gsw/i_gsw-close.png) 0 0 no-repeat;
+  text-indent: -999em;
+  overflow: hidden;
+}
+/* line 6471, scss/boxes.scss */
+.gsw-popup h2 {
+  font: normal 21px / 1.05 Arial, Helvetica, sans-serif;
+  color: #f15a24;
+  text-align: center;
+}
+/* line 6476, scss/boxes.scss */
+.gsw-popup .gsw-popup-wrapper {
+  padding: 10px 110px 16px;
+  position: relative;
+}
+/* line 6480, scss/boxes.scss */
+.gsw-popup .gsw-popup-content {
+  margin: 0 auto;
+  border: 1px solid #dbdbdb;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: white url(images/gsw/bkg_gsw-popup2.gif) 0 100% repeat-x;
+  padding: 15px;
+}
+/* line 6487, scss/boxes.scss */
+.gsw-popup .gsw-popup-content .gsw-title {
+  margin: 0 0 5px;
+}
+/* line 6490, scss/boxes.scss */
+.gsw-popup .gsw-popup-content .gsw-title-paypal {
+  text-align: right;
+}
+/* line 6492, scss/boxes.scss */
+.gsw-popup .gsw-popup-content .gsw-title-paypal h3 {
+  float: left;
+  width: 108px;
+  height: 35px;
+  text-align: left;
+  overflow: hidden;
+  text-indent: -999em;
+  background: url(images/logo_paypal.png) no-repeat 0 0;
+}
+/* line 6501, scss/boxes.scss */
+.gsw-popup .gsw-popup-content .gsw-title-paypal a {
+  display: inline-block;
+  font-size: 11px;
+  vertical-align: middle;
+  background: url(images/i_question.png) no-repeat 0 0.2em;
+  margin-top: 10px;
+  padding-left: 18px;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* line 6510, scss/boxes.scss */
+.gsw-popup .gsw-popup-content .gsw-title-paypal a:hover {
+  text-decoration: underline;
+}
+/* line 6516, scss/boxes.scss */
+.gsw-popup .gsw-fieldset {
+  min-height: 300px;
+  border: 1px solid #b0b0b0;
+  padding: 10px 15px;
+  background: white url(images/gsw/bkg_gsw-popup3.gif) 0 100% repeat-x;
+}
+/* line 6523, scss/boxes.scss */
+.gsw-popup .gsw-form li {
+  margin: 0 0 7px;
+}
+/* line 6526, scss/boxes.scss */
+.gsw-popup .gsw-form label {
+  font-weight: bold;
+  padding-left: 2px;
+}
+/* line 6529, scss/boxes.scss */
+.gsw-popup .gsw-form label em {
+  margin-left: 3px;
+}
+/* line 6532, scss/boxes.scss */
+.gsw-popup .gsw-form label small {
+  font-size: 10px;
+  font-weight: normal;
+}
+/* line 6537, scss/boxes.scss */
+.gsw-popup .gsw-form .input-box {
+  margin: 5px 0 0;
+}
+/* line 6540, scss/boxes.scss */
+.gsw-popup .gsw-form input.input-text {
+  display: block;
+  width: 364px;
+}
+/* line 6544, scss/boxes.scss */
+.gsw-popup .gsw-form textarea {
+  display: block;
+  width: 364px;
+  height: 4em;
+}
+/* line 6549, scss/boxes.scss */
+.gsw-popup .gsw-form select {
+  display: block;
+  width: 386px !important;
+  margin: 5px 0 0;
+}
+/* line 6554, scss/boxes.scss */
+.gsw-popup .gsw-form input.input-file {
+  width: 364px;
+}
+/* line 6558, scss/boxes.scss */
+.gsw-popup .gsw-form li.gsw-required {
+  margin: 0;
+  text-align: right;
+}
+/* line 6563, scss/boxes.scss */
+.gsw-popup .gsw-form li.control input.radio, .gsw-popup .gsw-form li.control input.checkbox {
+  float: left;
+  margin: 2px 5px;
+}
+/* line 6569, scss/boxes.scss */
+.gsw-popup .gsw-form p.note {
+  margin: 0;
+  padding: 0 0 0 13px;
+  background: url(images/note_bg.gif) 1px 6px no-repeat;
+  font-size: 11px;
+}
+/* line 6576, scss/boxes.scss */
+.gsw-popup .buttons-set {
+  padding: 10px 0 0;
+  text-align: right;
+  clear: both;
+}
+/* line 6581, scss/boxes.scss */
+.gsw-popup .gsw-popup-content-alt {
+  margin: 0 -95px 0;
+  padding: 15px 0;
+}
+/* line 6584, scss/boxes.scss */
+.gsw-popup .gsw-popup-content-alt p {
+  margin: 15px 0;
+}
+/* line 6586, scss/boxes.scss */
+.gsw-popup .gsw-popup-content-alt p:first-child {
+  margin-top: 0;
+}
+/* line 6589, scss/boxes.scss */
+.gsw-popup .gsw-popup-content-alt p:last-child {
+  margin-bottom: 0;
+}
+/* line 6594, scss/boxes.scss */
+.gsw-popup .gsw-popup-main {
+  float: right;
+  width: 415px;
+  color: #333;
+  font-size: 13px;
+}
+/* line 6600, scss/boxes.scss */
+.gsw-popup .gsw-popup-aside {
+  width: 254px;
+  float: left;
+  color: #666;
+}
+/* line 6605, scss/boxes.scss */
+.gsw-popup .gsw-express-checkout {
+  position: relative;
+}
+/* line 6607, scss/boxes.scss */
+.gsw-popup .gsw-express-checkout .gsw-popup-aside {
+  background: url(images/gsw/content/bkg_express-checkout.png) no-repeat 0 0;
+  padding-top: 70px;
+  margin-bottom: 60px;
+}
+/* line 6613, scss/boxes.scss */
+.gsw-popup .gsw-list > li {
+  background: url(images/gsw/bkg_gsw-list.png) no-repeat 0 0.4em;
+  padding-left: 14px;
+  margin-bottom: 10px;
+}
+/* line 6618, scss/boxes.scss */
+.gsw-popup .gsw-popup-intro {
+  font-weight: bold;
+  font-size: 14px;
+}
+/* line 6622, scss/boxes.scss */
+.gsw-popup .gsw-popup-fieldset {
+  background: #fff;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding: 12px 9px 12px;
+  border: 1px solid #bcbcbc;
+  margin: 15px 0;
+}
+/* line 6629, scss/boxes.scss */
+.gsw-popup .gsw-popup-fieldset:last-child {
+  margin-bottom: 0;
+}
+/* line 6632, scss/boxes.scss */
+.gsw-popup .gsw-popup-fieldset label {
+  font-weight: normal;
+  display: block;
+  font-size: 13px;
+  color: #333;
+  margin: 0 0 10px;
+  padding: 0 0 0 3px;
+}
+/* line 6640, scss/boxes.scss */
+.gsw-popup .gsw-popup-fieldset .input-box {
+  font-weight: normal;
+  display: block;
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+/* line 6645, scss/boxes.scss */
+.gsw-popup .gsw-popup-fieldset .input-box .validation-advice {
+  font-weight: normal !important;
+  font-size: 12px !important;
+  color: #e51a1a !important;
+  background: none;
+  padding: 4px 0 0 4px;
+  margin: 0;
+}
+/* line 6654, scss/boxes.scss */
+.gsw-popup .gsw-popup-fieldset input[type="text"] {
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  background: #fff;
+  padding: 5px 10px;
+  width: 306px;
+  font-size: 16px;
+  line-height: 1;
+  color: #111;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* line 6671, scss/boxes.scss */
+html[lang|="fr"] .gsw-popup .gsw-popup-fieldset input[type="text"] {
+  width: 266px;
+}
+/* line 6674, scss/boxes.scss */
+html[lang|="de"] .gsw-popup .gsw-popup-fieldset input[type="text"] {
+  width: 260px;
+}
+/* line 6677, scss/boxes.scss */
+html[lang|="es"] .gsw-popup .gsw-popup-fieldset input[type="text"] {
+  width: 288px;
+}
+
+/* line 6684, scss/boxes.scss */
+.gsw-popup .gsw-popup-fieldset input[type="text"]:focus {
+  border-color: #488ecb;
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 2px 0 rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 2px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 2px 0 rgba(0, 0, 0, 0.4);
+}
+/* line 6690, scss/boxes.scss */
+.gsw-popup .gsw-popup-fieldset input[type="text"].validation-failed {
+  border-color: #cf1010;
+}
+/* line 6694, scss/boxes.scss */
+.gsw-popup .gsw-express-checkout .buttons-set {
+  text-align: left;
+  padding: 0 0 0 9px;
+}
+/* line 6698, scss/boxes.scss */
+.gsw-popup .input-box {
+  position: relative;
+  z-index: 1;
+}
+/* line 6699, scss/boxes.scss */
+.gsw-popup .input-box.status-loading {
+  background: transparent url(images/gsw/status-loading.gif) no-repeat 96% 0;
+}
+/* line 6705, scss/boxes.scss */
+.gsw-popup #advice-success-business_account {
+  color: #3a9a01;
+  padding: 4px 0 0 4px;
+}
+/* line 6709, scss/boxes.scss */
+.gsw-popup .advice-enabled-business_account {
+  padding: 4px 0 0 4px;
+}
+/* line 6712, scss/boxes.scss */
+.gsw-popup .gsw-express-checkout .gsw-popup-links {
+  position: absolute;
+  left: 14px;
+  bottom: 32px;
+}
+/* line 6716, scss/boxes.scss */
+.gsw-popup .gsw-express-checkout .gsw-popup-links .gsw-paypal-logo {
+  display: inline-block;
+  width: 54px;
+  height: 14px;
+  background: url(images/gsw/content/paypallogo-small.png) 0 0 no-repeat;
+  vertical-align: bottom;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+/* line 6725, scss/boxes.scss */
+.gsw-popup .gsw-express-checkout .gsw-popup-links a {
+  color: #165B92;
+}
+/* line 6730, scss/boxes.scss */
+.gsw-popup .gsw-other-paypal-solution p:first-child {
+  margin: 0 0 10px;
+}
+/* line 6733, scss/boxes.scss */
+.gsw-popup .gsw-other-paypal-solution .gsw-list {
+  font-weight: bold;
+  color: #3d6469;
+  margin-bottom: 30px;
+}
+/* line 6740, scss/boxes.scss */
+.gsw-popup button.btn-gsw {
+  -webkit-border-fit: lines;
+  margin: 0;
+  overflow: visible;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: bold 16px / 36px Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+/* line 6741, scss/boxes.scss */
+.gsw-popup button.btn-gsw::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+/* line 6753, scss/boxes.scss */
+.gsw-popup button.btn-gsw span {
+  display: block;
+  height: 36px;
+  font: bold 16px / 36px Arial, Helvetica, sans-serif;
+  color: #fff;
+  background: url(images/gsw/bkg_gsw-buttons.png) 0 0 no-repeat;
+  padding: 0 0 0 5px;
+}
+/* line 6754, scss/boxes.scss */
+.gsw-popup button.btn-gsw span span {
+  text-shadow: 0 -1px 1px #7e7e7e;
+}
+/* line 6764, scss/boxes.scss */
+.gsw-popup button.btn-gsw:hover span {
+  background-position: 0 -36px;
+}
+/* line 6767, scss/boxes.scss */
+.gsw-popup button.btn-gsw span span {
+  background-position: 100% 0;
+  padding: 0 30px 0 25px;
+}
+/* line 6771, scss/boxes.scss */
+.gsw-popup button.btn-gsw:hover span span {
+  background-position: 100% -36px;
+}
+/* line 6775, scss/boxes.scss */
+.gsw-popup button.btn-gsw-submit {
+  margin-left: 10px;
+}
+/* line 6777, scss/boxes.scss */
+.gsw-popup button.btn-gsw-submit span {
+  background-position: 0 -72px;
+}
+/* line 6780, scss/boxes.scss */
+.gsw-popup button.btn-gsw-submit:hover span {
+  background-position: 0 -108px;
+}
+/* line 6783, scss/boxes.scss */
+.gsw-popup button.btn-gsw-submit span span {
+  background-position: 100% -72px;
+}
+/* line 6786, scss/boxes.scss */
+.gsw-popup button.btn-gsw-submit:hover span span {
+  background-position: 100% -108px;
+}
+/* line 6791, scss/boxes.scss */
+.gsw-popup .ppec-enabled button.btn-gsw-submit {
+  display: none;
+}
+/* line 6795, scss/boxes.scss */
+.gsw-popup .input-box .btn-gsw {
+  vertical-align: middle;
+  margin-left: 5px;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 1px;
+}
+/* line 6803, scss/boxes.scss */
+.gsw-popup .input-box.status-waiting .btn-gsw, .gsw-popup .input-box.status-success .btn-gsw {
+  display: inline-block;
+}
+/* line 6807, scss/boxes.scss */
+.gsw-popup .input-box button.btn-update span {
+  background: transparent url(images/bkg_btn.png) 0 0 no-repeat;
+  padding: 0 0 0 5px;
+  overflow: hidden;
+  height: 28px;
+}
+/* line 6812, scss/boxes.scss */
+.gsw-popup .input-box button.btn-update span span {
+  background-position: 100% 0;
+  padding: 0 8px 0 2px;
+  font: bold 12px / 27px Tahoma, Verdana, Arial, sans-serif;
+  text-shadow: none;
+  color: #333;
+}
+/* line 6820, scss/boxes.scss */
+.gsw-popup .input-box button.btn-update:hover > span {
+  background-position: 0 -70px;
+}
+/* line 6822, scss/boxes.scss */
+.gsw-popup .input-box button.btn-update:hover > span > span {
+  background-position: 100% -70px;
+}
+
+/* FF Fix */
+/* <- Safari & Google Chrome Fix */
+/* line 6834, scss/boxes.scss */
+.gsw-popup-loading-mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #d85909;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  z-index: 1007;
+}
+/* line 6850, scss/boxes.scss */
+.gsw-popup-loading-mask .loader {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 120px;
+  margin-left: -120px;
+  padding: 15px 60px;
+  background: #fff4e9;
+  border: 2px solid #f1af73;
+  color: #d85909;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Google Shopping */
+/* line 6868, scss/boxes.scss */
+.adminhtml-googleshopping-types-new .form-list, .adminhtml-googleshopping-types-edit .form-list {
+  width: 970px;
+}
+
+/* line 6872, scss/boxes.scss */
+.adminhtml-googleshopping-types-new #attributes_details, .adminhtml-googleshopping-types-edit #attributes_details {
+  padding: 4px 0 0;
+}
+
+/* line 6876, scss/boxes.scss */
+.adminhtml-googleshopping-types-new .entry-edit-head, .adminhtml-googleshopping-types-edit .entry-edit-head {
+  padding: 4px 15px;
+}
+
+/* line 6880, scss/boxes.scss */
+.adminhtml-googleshopping-types-new #category_show, .adminhtml-googleshopping-types-edit #category_show {
+  padding: 4px 0 8px;
+}
+
+/* line 6884, scss/boxes.scss */
+.adminhtml-googleshopping-types-new #select_googleshopping_category, .adminhtml-googleshopping-types-edit #select_googleshopping_category {
+  margin-left: -4px;
+}
+
+/* line 6888, scss/boxes.scss */
+.tree-categories .x-tree-node-icon {
+  background: none;
+  height: 0;
+  width: 0;
+}
+
+/* Import / Export Tax Rates */
+/* line 6896, scss/boxes.scss */
+.adminhtml-tax-rate-importexport #import_form input[type=file] {
+  float: left;
+  margin: 2px 0 0;
+}
+
+/* Orders / Invoices / Shipments / Credit Memos Table */
+/* line 6903, scss/boxes.scss */
+.adminhtml-sales-order-view .form-list td.label label, .adminhtml-sales-order-invoice-view .form-list td.label label, .adminhtml-sales-order-creditmemo-view .form-list td.label label, .adminhtml-sales-order-shipment-view .form-list td.label label, .adminhtml-sales-order-invoice-new .form-list td.label label, .adminhtml-sales-order-shipment-new .form-list td.label label, .adminhtml-sales-order-creditmemo-new .form-list td.label label {
+  padding-top: 0;
+}
+
+/* Frontend app instance */
+/* line 6909, scss/boxes.scss */
+.adminhtml-widget-instance-edit #widget_instace_tabs_properties_section_content .form-list td.value {
+  vertical-align: bottom;
+}
+
+/*****************************************/
+/******** ALIGNMENTS AND CLEARS **********/
+/*****************************************/
+/* Directional and spacial */
+/* line 6919, scss/boxes.scss */
+.f-left, .left {
+  float: left;
+}
+
+/* line 6923, scss/boxes.scss */
+.f-right, .right {
+  float: right;
+}
+
+/* line 6927, scss/boxes.scss */
+.v-top {
+  vertical-align: top;
+}
+
+/* line 6931, scss/boxes.scss */
+.v-middle {
+  vertical-align: middle !important;
+}
+
+/* line 6935, scss/boxes.scss */
+.v-bottom {
+  vertical-align: bottom;
+}
+
+/* line 6939, scss/boxes.scss */
+.a-left {
+  text-align: left !important;
+}
+
+/* line 6943, scss/boxes.scss */
+.a-center {
+  text-align: center !important;
+}
+
+/* line 6947, scss/boxes.scss */
+.a-right {
+  text-align: right !important;
+}
+
+/* line 6951, scss/boxes.scss */
+.nm {
+  margin: 0 !important;
+}
+
+/* line 6955, scss/boxes.scss */
+.np {
+  padding: 0 !important;
+}
+
+/* line 6959, scss/boxes.scss */
+.no-display, .no-show {
+  display: none;
+}
+
+/* line 6963, scss/boxes.scss */
+.nowrap, .nobr {
+  white-space: nowrap;
+}
+
+/* line 6967, scss/boxes.scss */
+.wrap {
+  white-space: normal !important;
+}
+
+/* line 6971, scss/boxes.scss */
+.no-float {
+  float: none !important;
+}
+
+/* line 6975, scss/boxes.scss */
+.pointer {
+  cursor: pointer;
+}
+
+/* Color */
+/* line 6981, scss/boxes.scss */
+.emph, .accent {
+  color: #eb5e00 !important;
+}
+
+/* line 6985, scss/boxes.scss */
+.subdue {
+  color: #306375;
+}
+
+/* Font */
+/* line 6991, scss/boxes.scss */
+.bold {
+  font-weight: bold !important;
+}
+
+/* line 6995, scss/boxes.scss */
+.normal {
+  font-weight: normal !important;
+}
+
+/* IE hacks */
+/* line 7001, scss/boxes.scss */
+.mdte .themes-section .themes-grid .theme-actions button {
+  min-width: 85 px;
+}
+
+/* line 7005, scss/boxes.scss */
+.gsw-popup-loading-mask {
+  background: url(images/bkg_transparent.png) 0 0 repeat;
+}
+
+/* Clear */
+/* This keeps our HTML free of buncha clearing elements */
+/* line 7013, scss/boxes.scss */
+.config-heading:after, .gsw-popup .gsw-popup-content-alt:after, .form-list li:after, .footer .legality:after {
+  display: block;
+  clear: both;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 7024, scss/boxes.scss */
+.message-popup .message-popup-head:after, .message-popup .message-popup-content .message:after {
+  display: block;
+  clear: both;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 7035, scss/boxes.scss */
+.login-form .form-buttons:after, .wrapper:after, .option-title:after, .columns:after, .main-col:after, .content-header-floating:after, .entry-edit .entry-edit-head:after, .content-header:after, .login-box .button-set:after, ul.tabs-horiz:after, dl.accordion dt:after, .field-100:after {
+  display: block;
+  clear: both;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 7046, scss/boxes.scss */
+.entry-edit fieldset li:after, .entry-edit fieldset span.field-row:after {
+  display: block;
+  clear: both;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 7057, scss/boxes.scss */
+.content:after, #topnav:after, .main:after, .container:after, .footer:after, .middle:after, .header:after, .box-head:after, div.actions:after, .tier-container:after, .clear:after, .notification-global:after, .files .row:after, .files-wide .row:after, .grid tr.filter .range .range-line:after, .gsw-popup .gsw-popup-content .gsw-title:after, .files_list_container ul li.movable:after {
+  display: block;
+  clear: both;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 7069, scss/boxes.scss */
+.mdte .themes-section:after, .mdte .themes-section .themes-grid:after {
+  display: block;
+  clear: both;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+/* line 7079, scss/boxes.scss */
+.mdte .theme-current .current-theme-info:after {
+  display: block;
+  clear: both;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 7091, scss/boxes.scss */
+.gsw-content:after, .gsw-content .gsw-content-inner:after {
+  display: block;
+  clear: both;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 7103, scss/boxes.scss */
+.gsw-popup .gsw-popup-title:after, .gsw-popup .gsw-form li:after {
+  display: block;
+  clear: both;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 7114, scss/boxes.scss */
+.store-scope:after {
+  display: block;
+  clear: both;
+  content: ".";
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}

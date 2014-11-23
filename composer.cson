@@ -1,0 +1,28 @@
+{
+    name: "jreinke/magento-admin-theme"
+    type: "magento-module"
+    description: "Give your Magento admin panel a facelift (fork with fixes)"
+    license: "MIT"
+    authors: [
+        name: "Johann Reinke"
+        email: "info@bubbleshop.net"
+    ]
+    "minimum-stability": "dev"
+    require: {}
+    extra: {
+
+        ###
+        # Can't get it right, falling back to modman
+        map: [
+            ["bubble/app/code/community/Bubble", "app/code/community/Bubble"]
+            ["bubble/app/design/adminhtml/default/default/template/bubble", "app/design/adminhtml/default/default/template/bubble"]
+            ["bubble/app/design/adminhtml/default/default/layout/bubble", "app/design/adminhtml/default/default/layout/bubble"]
+            ["bubble/app/design/adminhtml/default/go", "app/design/adminhtml/default/go"]
+            ["bubble/app/etc/modules/Bubble_AdminTheme.xml", "app/etc/modules/Bubble_AdminTheme.xml"]
+            ["bubble/app/locale/fr_FR/Bubble_AdminTheme.csv", "app/locale/fr_FR/Bubble_AdminTheme.csv"]
+            ["bubble/skin/adminhtml/default/go", "skin/adminhtml/default/go"]
+        ]
+        ###
+    }
+
+}
