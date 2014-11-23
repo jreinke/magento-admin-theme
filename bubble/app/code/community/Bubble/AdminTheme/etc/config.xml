@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Bubble_AdminTheme>
-            <version>0.3.1</version>
+            <version>1.0.0</version>
         </Bubble_AdminTheme>
     </modules>
     <global>
@@ -67,12 +67,24 @@
             <go module="bubble_admintheme">
                 <label>Magento Go</label>
             </go>
+            <magento2 module="bubble_admintheme">
+                <label>Magento 2</label>
+            </magento2>
+            <flatgray module="bubble_admintheme">
+                <label>Flat Gray</label>
+            </flatgray>
+            <flatblue module="bubble_admintheme">
+                <label>Flat Blue</label>
+            </flatblue>
+            <flatorange module="bubble_admintheme">
+                <label>Flat Orange</label>
+            </flatorange>
         </themes>
     </adminhtml>
     <default>
         <bubble_admintheme>
             <config>
-                <theme>go</theme>
+                <theme>magento2</theme>
             </config>
         </bubble_admintheme>
     </default>

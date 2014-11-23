@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * @category    Bubble
+ * @package     Bubble_AdminTheme
+ * @version     1.3.1
+ * @copyright   Copyright (c) 2014 BubbleShop (https://www.bubbleshop.net)
+ */
 class Bubble_AdminTheme_Block_Adminhtml_Themes_Select extends Mage_Adminhtml_Block_Html_Select
 {
     protected function _construct()

@@ -1,0 +1,251 @@
+input.input-text, textarea, select {
+    font: 400 12px/1.33 'Open Sans', sans-serif;
+    display: inline-block;
+    padding: 1px 3px;
+    margin: 0;
+    background-color: #fff;
+    height: 26px;
+    color: #555;
+    border: 1px solid #ccc;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input {
+    vertical-align: middle;
+}
+
+input[type=text].disabled,
+input[type=text]:disabled,
+textarea:disabled,
+textarea.disabled,
+select.disabled,
+select:disabled {
+    background: #f6f6f6;
+}
+
+.form-list td.label label {
+    padding: 5px 15px 0 0;
+}
+
+.form-list td.label, .form-list td.label label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #555;
+}
+
+.form-list td.scope-label {
+    color: #999;
+    font-size: 11px;
+}
+
+.form-list td.value {
+    padding-left: 0 !important;
+}
+
+.form-list td.value p.note {
+    color: #555;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.form-list td.value input.input-text, .form-list td.value textarea {
+    width: 324px;
+}
+
+.form-list td.value select {
+    width: 330px;
+}
+
+select {
+    height: 26px;
+    padding: 4px 4px 5px;
+    margin: 0 0 8px;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+select optgroup {
+    font-weight: 600;
+}
+
+select[multiple], select[size] {
+    height: auto;
+}
+
+button, select {
+    text-transform: none;
+}
+
+select, textarea {
+    margin: 0;
+}
+
+button span {
+    padding: 0;
+}
+
+button.cancel span, button.delete span, button.save span,
+button.ok_button span, button.add span, button.back span,
+button.add-image span, button.add-widget span, button.go span,
+button.add-variable span {
+    background: none;
+    padding: 0;
+}
+
+button, .form-button {
+    background-image: none;
+    background-color: #777;
+    padding: 0 13px;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 26px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    vertical-align: middle;
+}
+
+button:focus,
+button:active,
+.form-button:focus,
+.form-button:active {
+    background: #888;
+    border: 0;
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+button:hover,
+.form-button:hover {
+    background: #888;
+}
+
+button.disabled,
+button[disabled],
+.form-button.disabled,
+.form-button[disabled]
+fieldset[disabled] button {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+button.save,
+button.add,
+button.ok_button,
+.form-button.ok_button {
+    background-image: none;
+    background-color: #2494f2;
+    padding: 0 13px;
+    color: #ffffff;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 26px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+button.save:focus, button.save:active,
+button.add:focus, button.add:active,
+button.ok_button:focus, button.ok_button:active,
+.form-button.ok_button:focus, .form-button.ok_button:active   {
+    background-color: #026294;
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+    color: #ffffff;
+}
+
+button.save:hover,
+button.add:hover,
+button.ok_button:hover,
+.form-button.ok_button:hover  {
+    background-color: #36a3ff;
+}
+
+button.save.disabled, button.save[disabled], fieldset[disabled] button.save,
+button.add.disabled, button.add[disabled], fieldset[disabled] button.add,
+button.ok_button.disabled, button.ok_button[disabled], fieldset[disabled] button.ok_button {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+button.delete, button.cancel, button.fail, button.cancel_button {
+    background: #e63a3a;
+    color: #fff;
+}
+
+button.delete:hover, button.cancel:hover, button.fail:hover, button.cancel_button:hover {
+    background: #fa4040;
+}
+
+button.delete, button.save, button.add, button.cancel, button.fail, button.ok_button, button.cancel_button {
+    padding: 0 13px;
+}
+
+button.back {
+    background: none;
+}
+
+button.back:before {
+    content: "\00ab";
+    padding-right: 4px;
+}
+
+button.disabled, button.disabled:hover, button.disabled:active {
+    background: #919191;
+}
+
+button.icon-btn {
+    width: auto !important;
+}
+
+button.icon-btn span {
+    text-indent: 0;
+    width: auto;
+    display: inline;
+}
+
+button.large,
+.form-button.large {
+    font-size: 22px;
+    padding: 14px 22px 16px;
+}
+
+.input-text.large {
+    padding: 12px 12px 14px;
+    font-size: 18px;
+}
+
+.field-100 {
+    background: none;
+    border: 0;
+    padding: 0;
+}
+
+.field-100 textarea, .field-100 input.input-text {
+    float: none;
+    border: 1px solid #ccc !important;
+    padding: 1px 3px !important;
+}
