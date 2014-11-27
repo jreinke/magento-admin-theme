@@ -28,8 +28,4 @@ or download package manually:
 
 Switch theme from dropdown added in footer.
 
-## Installation on Magento 1.6.x
-
-Please refer to [branch 1.6](https://github.com/jreinke/magento-admin-theme/tree/1.6).
-
-Full overview available [here](http://www.bubblecode.net/en/2012/05/02/give-your-magento-admin-panel-a-facelift/).
+Other awesome Magento extensions available here [www.bubbleshop.net](https://www.bubbleshop.net/)
