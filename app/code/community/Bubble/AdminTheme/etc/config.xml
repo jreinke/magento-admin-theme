@@ -67,6 +67,9 @@
             <go module="bubble_admintheme">
                 <label>Magento Go</label>
             </go>
+            <magento module="bubble_admintheme">
+                <label>Magento.com</label>
+            </magento>
             <magento2 module="bubble_admintheme">
                 <label>Magento 2</label>
             </magento2>
