@@ -1,3 +1,5 @@
+![Magento Admin Theme - Magento.com](http://i.imgur.com/9o7Dt70.png)
+
 ![Magento Admin Theme - Magento 2](http://i.imgur.com/gYzYTeI.png)
 
 ![Magento Admin Theme - Flat Gray](http://i.imgur.com/RZ5CjHA.png)
