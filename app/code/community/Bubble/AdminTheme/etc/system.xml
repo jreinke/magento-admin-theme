@@ -2,13 +2,13 @@
 <config>
     <tabs>
         <bubble translate="label">
-            <label><![CDATA[<div><img src="//i.imgur.com/cnx7nni.png" alt="BubbleCode" title="BubbleCode" width="108" height="23" style="display:block;" /></div>]]></label>
+            <label>Bubble Extensions</label>
             <sort_order>1000</sort_order>
         </bubble>
     </tabs>
     <sections>
         <bubble_admintheme translate="label" module="bubble_admintheme">
-            <label>Bubble AdminTheme</label>
+            <label>Admin Theme</label>
             <tab>bubble</tab>
             <sort_order>1000</sort_order>
             <show_in_default>1</show_in_default>
