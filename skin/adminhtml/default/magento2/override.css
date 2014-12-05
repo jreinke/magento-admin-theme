@@ -665,6 +665,10 @@ table.actions td {
     vertical-align: middle;
 }
 
+.dialog table.table_window .fieldset td {
+    vertical-align: top;
+}
+
 /* Login */
 #page-login {
     background: #f2ebde;
