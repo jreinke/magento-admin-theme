@@ -191,6 +191,10 @@ button.ok_button.disabled, button.ok_button[disabled], fieldset[disabled] button
     opacity: 0.5;
 }
 
+button.add.disabled span {
+    background: none;
+}
+
 button.delete, button.cancel, button.fail, button.cancel_button {
     background: #e63a3a;
     color: #fff;
