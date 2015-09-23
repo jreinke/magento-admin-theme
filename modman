@@ -1,0 +1,17 @@
+app/code/community/Bubble/AdminTheme
+app/design/adminhtml/base/default/layout/bubble
+app/design/adminhtml/base/default/template/bubble
+app/design/adminhtml/default/flatblue
+app/design/adminhtml/default/flatgray
+app/design/adminhtml/default/flatorange
+app/design/adminhtml/default/go
+app/design/adminhtml/default/magento
+app/design/adminhtml/default/magento2
+app/etc/modules/Bubble_AdminTheme.xml
+app/locale/fr_FR/Bubble_AdminTheme.csv
+skin/adminhtml/default/flatblue
+skin/adminhtml/default/flatgray
+skin/adminhtml/default/flatorange
+skin/adminhtml/default/go
+skin/adminhtml/default/magento
+skin/adminhtml/default/magento2

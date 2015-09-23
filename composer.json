@@ -1,0 +1,14 @@
+{
+    "name": "jreinke/magento-admin-theme",
+    "description": "Magento Admin Theme",
+    "type": "magento-module",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors": [
+        {
+            "name": "Johann Reinke",
+            "email": "info@bubbleshop.net"
+        }
+    ]
+}
