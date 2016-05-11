@@ -1,3 +1,7 @@
+
+Simple fork to add [SUPEE-6285 compatibility](https://github.com/jreinke/magento-admin-theme/pull/19)
+(*Thanks to [aurmil](https://github.com/aurmil) to submit [issue](https://github.com/jreinke/magento-admin-theme/issues/18) on [original project repository](https://github.com/jreinke/magento-admin-theme.git)*)
+
 ![Magento Admin Theme - Magento.com](http://i.imgur.com/9o7Dt70.png)
 
 ![Magento Admin Theme - Magento 2](http://i.imgur.com/gYzYTeI.png)
@@ -14,11 +18,11 @@ Install with [modgit](https://github.com/jreinke/modgit):
 
     $ cd /path/to/magento
     $ modgit init
-    $ modgit clone admin-theme https://github.com/jreinke/magento-admin-theme.git
+    $ modgit clone admin-theme https://github.com/nolwennig/magento-admin-theme.git
 
 or download package manually:
 
-* Download latest version [here](https://github.com/jreinke/magento-admin-theme/archive/master.zip)
+* Download latest version [here](https://github.com/nolwennig/magento-admin-theme/archive/master.zip)
 * Logout from admin
 * Unzip in Magento root folder
 * Clear cache
