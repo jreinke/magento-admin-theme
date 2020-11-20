@@ -16,4 +16,9 @@ class Bubble_AdminTheme_Adminhtml_ThemeController extends Mage_Adminhtml_Control
         }
         $this->_redirectReferer();
     }
+    
+    protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('system/config');
+   } 
 }
